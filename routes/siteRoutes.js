@@ -9,6 +9,6 @@ router.get('/', homeController.getIndex);
 
 router.get('/creation-de-compte', authentificationController.getCreationDeCompte);
 
-router.post('/connection', authentificationController.getConnection);
+router.post('/connection', authentificationController.postConnection);
 
 module.exports = router;
