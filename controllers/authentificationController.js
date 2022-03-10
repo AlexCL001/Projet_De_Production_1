@@ -7,9 +7,9 @@ exports.getCreationDeCompte = (req, res) => {
 };
 
 exports.postConnection = (req, res) => {
-    const name = req.body.name;
+    const name = req.body.nom;
     const email = req.body.email;
-    const password = req.body.password;
+    const password = req.body.motDePasse;
     
     axios.post('https://ski-api.herokuapp.com/signup', {
        "name": name,
@@ -23,7 +23,7 @@ exports.postConnection = (req, res) => {
         console.log(err);
     });
 
-    res.render('connection', {
+    res.render('connexion', {
         pageTitle: 'Connecter'
     });
 };
