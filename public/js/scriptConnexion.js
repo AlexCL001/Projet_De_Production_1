@@ -1,9 +1,11 @@
 const connectBtn = document.querySelector('#connectBtn')
+export let profil = {}
 
 const getAccesToken = () => localStorage.getItem('TOKEN')
-    const accesToken = getAccesToken()
 
-    if (!!accesToken) location.replace("/affichageProfil", {test: 'test'})
+const accesToken = getAccesToken()
+
+    if (!!accesToken) location.replace("/affichageProfil")
 
     const connexion = () => {
         let emailValue = document.querySelector('#email').value
@@ -24,7 +26,8 @@ const getAccesToken = () => localStorage.getItem('TOKEN')
             .then(response => response.json())
             .then(data => {
                 localStorage.setItem('TOKEN', data.token)
-                location.replace('/affichageProfil', {test: 'test'})
+                localStorage.setItem('PROFIL', data)
+                location.replace('/affichageProfil')
             })
             .catch(error => console.log('error'))
         }
