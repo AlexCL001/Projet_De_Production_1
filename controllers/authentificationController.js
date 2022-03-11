@@ -17,10 +17,10 @@ exports.postConnection = (req, res) => {
         "password": password
     })
     .then(response => {
-        console.log(response);
+        // console.log(response);
     })
     .catch(err => {
-        console.log(err);
+        // console.log(err);
     });
 
     res.render('connexion', {

@@ -1,16 +1,49 @@
 <main>
     <h1>Connexion au SKI API</h1>
     <table>
-        <form action="/affichageProfil" method="POST">
+        <!-- <form action="/affichageProfil" method="POST"> -->
         <tr>
             <td><label for="email">Email: </label></td>
-            <td><input type="text" name="email" placeholder="Email" id=""/></td>
+            <td><input type="text" id="email" name="email" placeholder="Email" id=""/></td>
         </tr>
         <tr>
             <td><label for="motDePasse">Mot de passe: </label></td>
-            <td><input type="password" name="password" placeholder="Entrer le mot de passe" id="" /></td>
+            <td><input type="password" id="password" name="password" placeholder="Entrer le mot de passe" id="" /></td>
         </tr>
-        <td><input type="submit" value="Se connecter"></td>
-        </form>
+        <td><button onclick="connexion()" type="submit">Se connecter</button></td>
+        <!-- </form> -->
     </table>
+    <script>
+        
+        const getAccesToken = () => localStorage.getItem('TOKEN')
+        const accesToken = getAccesToken()
+
+        if (!!accesToken) location.replace("/affichageProfil", {test: 'test'})
+
+        const connexion = () => {
+            let emailValue = document.querySelector('#email').value
+            let passwordValue = document.querySelector('#password').value
+            if (!!email && !!password) {
+                const body = JSON.stringify({
+                    email: emailValue,
+                    password: passwordValue,
+                })
+                fetch('https://ski-api.herokuapp.com/login', {
+                    method: "POST",
+                    body,
+                    headers:{ 
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                            }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('TOKEN', data.token)
+                    location.replace('/affichageProfil', {test: 'test'})
+                })
+                .catch(error => console.log('error'))
+            }
+        }
+
+    </script>
 </main>
