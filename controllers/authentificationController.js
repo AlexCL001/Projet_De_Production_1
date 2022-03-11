@@ -17,13 +17,40 @@ exports.postConnection = (req, res) => {
         "password": password
     })
     .then(response => {
+        // console.log(response);
+    })
+    .catch(err => {
+        // console.log(err);
+    });
+
+    res.render('creationCompteReussi', {
+        pageTitle: 'Connecter'
+    });
+};
+
+exports.postSignIn = (req, res) => {
+    const email = req.body.email;
+    const password = req.body.motDePasse;
+    
+    axios.post('https://ski-api.herokuapp.com/login', {
+       "email": email,
+        "password": password
+    })
+    .then(response => {
         console.log(response);
     })
     .catch(err => {
-        console.log(err);
+        // console.log(err);
     });
 
-    res.render('connexion', {
-        pageTitle: 'Connecter'
+    res.render('affichageProfil', {
+        pageTitle: 'Profil', 
+        //pass token 
+    });
+};
+
+exports.getProfil = (req, res) => {
+    res.render('affichageProfil', {
+        pageTitle: 'Profil'
     });
 };
