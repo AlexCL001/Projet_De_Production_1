@@ -1,20 +1,20 @@
-const connectBtn = document.querySelector('#connectBtn')
-export let profil = {}
+const connectBtn = document.querySelector('#connectBtn');
 
-const getAccesToken = () => localStorage.getItem('TOKEN')
 
-const accesToken = getAccesToken()
+const getAccesToken = () => localStorage.getItem('TOKEN');
 
-    if (!!accesToken) location.replace("/affichageProfil")
+const accesToken = getAccesToken();
+
+    if (!!accesToken) location.replace("/affichageProfil");
 
     const connexion = () => {
-        let emailValue = document.querySelector('#email').value
-        let passwordValue = document.querySelector('#password').value
+        let emailValue = document.querySelector('#email').value;
+        let passwordValue = document.querySelector('#password').value;
         if (!!email && !!password) {
             const body = JSON.stringify({
                 email: emailValue,
                 password: passwordValue,
-            })
+            });
             fetch('https://ski-api.herokuapp.com/login', {
                 method: "POST",
                 body,
@@ -25,12 +25,13 @@ const accesToken = getAccesToken()
             })
             .then(response => response.json())
             .then(data => {
-                localStorage.setItem('TOKEN', data.token)
-                localStorage.setItem('PROFIL', data)
-                location.replace('/affichageProfil')
+                localStorage.setItem('TOKEN', data.token);
+                localStorage.setItem('NAME', data.name);
+                localStorage.setItem('EMAIL', data.email);
+                location.replace('/affichageProfil');
             })
-            .catch(error => console.log('error'))
+            .catch(error => console.log('error'));
         }
-    }
+    };
 
-connectBtn.addEventListener("click", connexion)
+connectBtn.addEventListener("click", connexion);

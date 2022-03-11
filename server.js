@@ -16,7 +16,7 @@ app.set('layout', './layouts/mainLayout.ejs');
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(expressLayouts);
 app.use(siteRoutes);
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.listen(port);
 

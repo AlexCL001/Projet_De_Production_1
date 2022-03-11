@@ -1,8 +1,19 @@
-// const profil = localStorage.getItem('PROFIL')
-// const p = document.querySelector('p')
+const getToken = () => {
+  return window.localStorage.getItem("TOKEN");
+};
 
-// p.innerHTML = profil
-// console.log(profil.token)
+const token = getToken();
 
+if (!token) {
+  console.log(window.localStorage.getItem("TOKEN"));
+  window.location.replace("/");
+} else {
+  const nameLocalStorage = window.localStorage.getItem("NAME");
 
-import { profil } from './scriptConnexion'
+  const nomUtilisateur = document.querySelector("#nomUtilisateur");
+  nomUtilisateur.innerHTML = nameLocalStorage;
+
+  const emailLocalStorage = window.localStorage.getItem("EMAIL");
+  const emailUtilisateur = document.querySelector("#emailUtilisateur");
+  emailUtilisateur.innerHTML = emailLocalStorage;
+}
