@@ -20,7 +20,7 @@ exports.postConnection = (req, res) => {
         // console.log(response);
     })
     .catch(err => {
-        // console.log(err);
+        console.log(err);
     });
 
     res.render('creationCompteReussi', {
