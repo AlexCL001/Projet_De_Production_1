@@ -1,26 +1,53 @@
 <main>
-  <h1>Connexion au SKI API</h1>
+  <div class="containerConnexion">
+    <div class="infoConnexion">
+      <table class="tableConnexion">
+        <tbody>
 
-  <table>
-    <tr>
-      <td><label for="email">Email: </label></td>
-      <td>
-        <input type="text" id="email" name="email" placeholder="Email" id="" />
-      </td>
-    </tr>
-    <tr>
-      <td><label for="motDePasse">Mot de passe: </label></td>
-      <td>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          placeholder="Entrer le mot de passe"
-          id=""
-        />
-      </td>
-    </tr>
-    <td><button id="connectBtn" type="submit">Se connecter</button></td>
-  </table>
+          <tr>
+            <td><h1 class="textCenter">Connexion</h1></td>
+          </tr>
+
+          <tr>
+            <td><img src="/img/imageUnSki.png" alt=""></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="marginTop20"><label for="email">Email: </label></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="textCenter"><input type="text" id="email" name="email" placeholder="Email" id="" /></td>
+          </tr>
+
+          <tr>
+            <td >
+              <div class="marginTop20"><label for="motDePasse">Mot de passe: </label></div>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="textCenter"><input type="password" id="password" name="password" placeholder="Entrer le mot de passe" id=""/></td>
+          </tr>
+
+          <tr>
+            <td class="textCenter"><button id="connectBtn" type="submit" class="margin0Auto marginTop20">Se connecter</button></td>
+          </tr>
+
+          <tr>
+            <td><div class="textCenter marginTop20"><a href="">Mot de passe oublié ?</a></div></td>
+          </tr>
+
+          <tr>
+            <td class="textCenter"><a href="">Pas de compte ?</a></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  <div class="imageSkiConnexion"></div>
   <script src="js/scriptConnexion.js"></script>
+</div>
 </main>
