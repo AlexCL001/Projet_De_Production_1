@@ -1,48 +1,74 @@
 <main>
-  <div class="containerProfil">
-    <div class="menuGauche">
-      <nav>
-        <ul>
-          <li>
-            <a href="">Profil</a>
-          </li>
-          <li>
-            <a href="">Mes spots</a>
-          </li>
-          <li>
-            <a href="">Messages</a>
-          </li>
-          <li>
-            <a href="">Amis</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="carteProfil">
-        <!-- <img src="/img/cartePageProfil.png" alt="" srcset=""> -->
+  <form action="/affichageProfil" method="post">
+    <div class="containerProfil">
+      <div class="menuGauche">
+        <nav>
+          <ul>
+            <li>
+              <a href="">Profil</a>
+            </li>
+            <li>
+              <a href="">Mes spots</a>
+            </li>
+            <li>
+              <a href="">Messages</a>
+            </li>
+            <li>
+              <a href="">Amis</a>
+            </li>
+            <div class="carteProfil"></div>
+          </ul>
+        </nav>
+      </div>
+      <div class="menuDroit">
+        <div class="menuDroitSectionPhoto">
+          <div class="champSectionPhoto">
+            <img src="/img/photoDeProfil.png" class="photoDeProfil" alt="Photo de profil" >
+            <button>Photo de profil</button>
+          </div>
+          <div class="champSectionPhoto">
+            <label for="nomUtilisateur">Nom d'utilisateur:</label>
+            <input type="text" id="nomUtilisateur" name="nomUtilisateur" class="margin0Auto">
+          </div>
+          <div class="champSectionPhoto">
+            <label for="">Nouveau mot de passe:</label>
+            <input type="text" id="nouveauMdp" name="nouveauMdp">
+          </div>
+          <div class="champSectionPhoto">
+            <label for="">Confirmer votre nouveau mot de passe:</label>
+            <input type="text" id="confirmationNouveauMdp" name="confirmationNouveauMdp">
+          </div>
+        </div>
+        <img src="/img/plancheLongue.png" class="planche" alt="" srcset="">
+        <div class="menuDroitSectionInfoSuppl">
+          <h2 class="margon0Auto">Information supplémentaire</h2>
+          <div class="champSectionPhoto">
+            <label for="">Ville:</label>
+            <input type="text" id="ville" name="ville">
+          </div>
+          <div class="champSectionPhoto">
+            <label for="">Groupe d'âge:</label>
+            <select name="groupeAge" id="groupeAge">
+              <option value="0-18">0 - 18 ans</option>
+              <option value="18-25">18 - 25 ans</option>
+              <option value="25-40">25 - 40 ans</option>
+              <option value="40-65">40 - 65ans</option>
+              <option value="65plus">65 ans et plus</option>
+            </select>
+          </div>
+          <div class="champSectionPhoto">
+            <label for="">Occupation:</label>
+            <input type="text" id="occupation" name="occupation">
+          </div>
+          <div class="champSectionPhoto">
+            <label for="">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+          </div>
+        </div>
+        <button type="submit" id="sauvegarderProfil">Sauvegarder</button>
       </div>
     </div>
-    <div class="menuDroit">
-      <button id="signOutBtn">Signout</button>
-
-    </div>
-  </div>
-  <!-- <h2>Bienvenu <span id="nomUtilisateur"></span></h2>
-  <h3>Votre email est: <span id="emailUtilisateur"></span></h3> -->
-
-  <!-- <div>
-    <p>Voulez-vous changer votre nom?</p>
-    <table>
-      <tr>
-        <td>
-          <label for="changerNom">Nouveau Nom: </label>
-        </td>
-        <td><input type="text" id="nouveauNom" /></td>
-        <td>
-          <button id="btnSoumettreNouveauNom">Changer Nom</button>
-        </td>
-      </tr>
-    </table>
-  </div> -->
+  </form>
 </main>
 <script src="js/signOut.js"></script>
 <script src="js/scriptAffichageProfil.js"></script>
