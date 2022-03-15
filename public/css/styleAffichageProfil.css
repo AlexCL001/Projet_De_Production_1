@@ -1,0 +1,68 @@
+main {
+    margin: 0;
+    padding: 0;
+}
+
+.containerProfil {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 90vh;
+    background-image: url('/img/backgroundPageProfil.png');
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuGauche {
+    display: flex;
+    height: 35rem;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.menuGauche ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menuGauche li {
+    background-image: url('/img/planchePageProfil.png');
+    width: 18rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.menuGauche li:first-child {
+    width: 20rem;
+}
+
+.menuGauche a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.menuGauche a:active {
+    color: #FFF;
+}
+
+.carteProfil {
+    background-image: url('/img/cartePageProfil.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 40vh;
+    background-position: center;
+}
+
+.menuDroit {
+    width: 60vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, .5);
+    margin-right: 1rem;
+}

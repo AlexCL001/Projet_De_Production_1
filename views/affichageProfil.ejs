@@ -1,10 +1,36 @@
 <main>
-  <h1>Page de profil</h1>
-  <h2>Bienvenu <span id="nomUtilisateur"></span></h2>
-  <h3>Votre email est: <span id="emailUtilisateur"></span></h3>
+  <div class="containerProfil">
+    <div class="menuGauche">
+      <nav>
+        <ul>
+          <li>
+            <a href="">Profil</a>
+          </li>
+          <li>
+            <a href="">Mes spots</a>
+          </li>
+          <li>
+            <a href="">Messages</a>
+          </li>
+          <li>
+            <a href="">Amis</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="carteProfil">
+        <!-- <img src="/img/cartePageProfil.png" alt="" srcset=""> -->
+      </div>
+    </div>
+    <div class="menuDroit">
+      <button id="signOutBtn">Signout</button>
 
-  <div>
-    <p>Aimerais-vous changer votre nom?</p>
+    </div>
+  </div>
+  <!-- <h2>Bienvenu <span id="nomUtilisateur"></span></h2>
+  <h3>Votre email est: <span id="emailUtilisateur"></span></h3> -->
+
+  <!-- <div>
+    <p>Voulez-vous changer votre nom?</p>
     <table>
       <tr>
         <td>
@@ -16,10 +42,8 @@
         </td>
       </tr>
     </table>
-  </div>
-  <button id="signOutBtn">Signout</button>
+  </div> -->
 </main>
-
 <script src="js/signOut.js"></script>
 <script src="js/scriptAffichageProfil.js"></script>
 <script src="js/updateNom.js"></script>
