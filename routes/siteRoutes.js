@@ -16,6 +16,8 @@ router.get('/connexion', homeController.getConnexion);
 
 router.post('/affichageProfil', authentificationController.postSignIn);
 
-router.get('/affichageProfil', authentificationController.getProfil);
+router.get('/profil', authentificationController.getProfil);
+
+router.get('/profil/edit', authentificationController.getEditProfil);
 
 module.exports = router;

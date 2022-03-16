@@ -5,7 +5,7 @@ const getAccesToken = () => localStorage.getItem('TOKEN');
 
 const accesToken = getAccesToken();
 
-    if (!!accesToken) location.replace("/affichageProfil");
+    if (!!accesToken) location.replace("/profil");
 
     const connexion = () => {
         let emailValue = document.querySelector('#email').value;
@@ -28,9 +28,9 @@ const accesToken = getAccesToken();
                 localStorage.setItem('TOKEN', data.token);
                 localStorage.setItem('NAME', data.name);
                 localStorage.setItem('EMAIL', data.email);
-                location.replace('/affichageProfil');
+                location.replace('/profil');
             })
-            .catch(error => console.log('error'));
+            .catch(error => console.log(error));
         }
     };
 
