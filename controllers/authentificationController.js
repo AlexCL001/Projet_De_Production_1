@@ -40,7 +40,7 @@ exports.postSignIn = (req, res) => {
         console.log(response);
     })
     .catch(err => {
-        // console.log(err);
+        console.log(err);
     });
 
     res.render('affichageProfil', {
@@ -50,7 +50,13 @@ exports.postSignIn = (req, res) => {
 };
 
 exports.getProfil = (req, res) => {
-    res.render('affichageProfil', {
+    res.render('profil', {
         pageTitle: 'Profil'
+    });
+};
+
+exports.getEditProfil = (req, res) => {
+    res.render('editProfil', {
+        pageTitle: 'Changer Profil'
     });
 };
