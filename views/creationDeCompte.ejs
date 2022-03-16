@@ -1,20 +1,45 @@
 <main>
-  <h1>Crée une Compte</h1>
-  <table>
-    <form action="/creation-compte-reussi" method="POST">
-      <tr>
-        <td><label for="nom">Nom: </label></td>
-        <td><input type="text" name="nom" /></td>
-      </tr>
-      <tr>
-        <td><label for="email">Email: </label></td>
-        <td><input type="email" name="email" id="" /></td>
-      </tr>
-      <tr>
-        <td><label for="motDePasse">Mot de passe: </label></td>
-        <td><input type="password" name="motDePasse" id="" /></td>
-      </tr>
-      <td><input type="submit" value="Créé un compte" /></td>
-    </form>
-  </table>
+  <div class="containerCreationCompte">
+    <div class="bgTableau">
+      <table class="tableCompte">
+        <form action="/creation-compte-reussi" method="POST">
+
+          <tr>
+            <td><h1>Informations</h1></td>
+          </tr>
+
+          <tr>
+            <td class="textCenter"><img src="/img/imageUnSki.png" alt=""></td>
+          </tr>
+
+          <tr>
+            <td class="textLeft"><label for="nom">Nom: </label></td>
+          </tr>
+
+          <tr>
+            <td><input class="inputFields" type="text" name="nom" /></td>
+          </tr>
+
+          <tr>
+            <td class="textLeft"><label for="email">Email: </label></td>
+          </tr>
+
+          <tr>
+            <td><input class="inputFields" type="email" name="email" id="" /></td>
+          </tr>
+
+          <tr>
+            <td class="textLeft"><label for="motDePasse">Mot de passe: </label></td>
+          </tr>
+
+          <tr>
+            <td><input class="inputFields" type="password" name="motDePasse" id="" /></td>
+          </tr>
+          <tr>
+            <td><input class="btnCreerCompte" type="submit" value="Créé un compte" /></td>
+          </tr>
+        </form>
+      </table>
+    </div>
+  </div>
 </main>
