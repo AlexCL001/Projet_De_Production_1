@@ -1,0 +1,17 @@
+.column {
+    flex-direction: column;
+}
+
+
+
+.profil-h1 {
+    margin-top: 4rem;
+}
+
+#signOutBtn {
+    margin-top: 4rem;
+}
+
+.edit-btn {
+    margin-top: 2rem;
+}
