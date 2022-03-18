@@ -9,3 +9,9 @@ exports.getConnexion = (req, res) => {
         pageTitle: 'Connexion'
     });
 }; 
+
+exports.getFormulaireSpot = (req, res) => {
+    res.render('formulaireSpot', {
+        pageTitle: 'Formulaire spot'
+    })
+}

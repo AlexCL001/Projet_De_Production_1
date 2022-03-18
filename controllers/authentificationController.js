@@ -60,3 +60,4 @@ exports.getEditProfil = (req, res) => {
         pageTitle: 'Changer Profil'
     });
 };
+
