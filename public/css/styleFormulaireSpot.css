@@ -1,0 +1,15 @@
+.containerFormulaireSpot {
+    background-image: url('/img/backgroundFormulaireSpot.png');
+}
+
+.containerFormulaireSpot .backgroundBlanc {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.formulaireSpotGauche i {
+    transform: rotate(135deg);
+    width: 4rem;
+    height: 4rem;
+}

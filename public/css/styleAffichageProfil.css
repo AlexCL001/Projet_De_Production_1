@@ -103,7 +103,7 @@ main {
     display: block;
 }
 
-.champSectionPhoto button, .champSectionPhoto img {
+.champSectionPhoto .boutonPhoto, .champSectionPhoto img {
     display: block;
     margin: auto;
 }
@@ -154,4 +154,12 @@ main {
     resize: none;
     background: transparent;
     border: 2px solid black;
+}
+
+.menuDroitSectionInfoSuppl .boutonSauvegarde {
+    height: 2.5rem;
+    width: 12rem;
+    margin: 0 auto;
+    border: 2px solid black;
+    font-size: 1.3rem;
 }
