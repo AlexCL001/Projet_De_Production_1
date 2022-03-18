@@ -13,5 +13,5 @@ exports.getConnexion = (req, res) => {
 exports.getFormulaireSpot = (req, res) => {
     res.render('formulaireSpot', {
         pageTitle: 'Formulaire spot'
-    })
-}
+    });
+};
