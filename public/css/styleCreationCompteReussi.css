@@ -1,0 +1,36 @@
+.containerCompeReussi{
+    background-image: url("/img/backgroundCompteReussi.png");
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 90vh;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contReussi{
+    background-image: url("/img/bgCompteReussi.png");
+    width: 75vw;
+    height: 90.5vh;
+    font-size: 2rem;
+    background-size: contain;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.aReussi{
+    background-image: url("/img/planchePageProfil.png");
+    width: 25rem;
+    height: 5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
