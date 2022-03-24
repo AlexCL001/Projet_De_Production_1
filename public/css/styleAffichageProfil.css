@@ -159,7 +159,7 @@ main {
 .menuDroitSectionInfoSuppl .boutonSauvegarde {
     height: 2.5rem;
     width: 12rem;
-    margin: 0 auto;
+    margin: 1rem auto 0;
     border: 2px solid black;
     font-size: 1.3rem;
 }

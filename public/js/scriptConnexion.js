@@ -1,6 +1,5 @@
 const connectBtn = document.querySelector('#connectBtn');
 
-
 const getAccesToken = () => localStorage.getItem('TOKEN');
 
 const accesToken = getAccesToken();

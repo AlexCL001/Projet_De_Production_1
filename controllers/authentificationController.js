@@ -17,15 +17,16 @@ exports.postConnection = (req, res) => {
         "password": password
     })
     .then(response => {
-        // console.log(response);
+        console.log(response);
+        res.render('creationCompteReussi', {
+            pageTitle: 'Connecter'
+        });
     })
     .catch(err => {
-        console.log(err);
+        console.log(err.isAxiosError);
     });
 
-    res.render('creationCompteReussi', {
-        pageTitle: 'Connecter'
-    });
+    
 };
 
 exports.postSignIn = (req, res) => {

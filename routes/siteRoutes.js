@@ -22,4 +22,6 @@ router.get('/profil/edit', authentificationController.getEditProfil);
 
 router.get('/formulaireSpot', homeController.getFormulaireSpot)
 
+router.get('/profilSpot', homeController.getProfilSpot)
+
 module.exports = router;

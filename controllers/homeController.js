@@ -15,3 +15,9 @@ exports.getFormulaireSpot = (req, res) => {
         pageTitle: 'Formulaire spot'
     });
 };
+
+exports.getProfilSpot = (req, res) => {
+    res.render('profilSpot', {
+        pageTitle: 'Profil Spot'
+    })
+}
