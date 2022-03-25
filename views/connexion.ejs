@@ -1,53 +1,75 @@
 <main>
   <div class="containerConnexion">
     <div class="infoConnexion">
-      <table class="tableConnexion">
-        <tbody>
-          
-          <tr>
-            <td><h1 class="textCenter">Connexion</h1></td>
-          </tr>
+      <form action="/affichageProfil" method="post">
+        <table class="tableConnexion">
+          <tbody>
+            
+            <tr>
+              <td>
+                <h1 class="textCenter">Connexion</h1>
+              </td>
+            </tr>
 
-          <tr>
-            <td><img src="/img/imageUnSki.png" alt=""></td>
-          </tr>
+            <tr>
+              <td>
+                <img src="/img/imageUnSki.png" alt="">
+              </td>
+            </tr>
 
-          <tr>
-            <td>
-              <div class="marginTop20"><label for="email">Email: </label></div>
-            </td>
-          </tr>
+            <tr>
+              <td>
+                <div class="marginTop20">
+                  <label for="email">Email: </label>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="textCenter"><input type="text" id="email" name="email" placeholder="Email" id="" /></td>
-          </tr>
+            <tr>
+              <td class="textCenter">
+                <input type="text" id="email" name="email" placeholder="Email" id="" />
+              </td>
+            </tr>
 
-          <tr>
-            <td >
-              <div class="marginTop20"><label for="motDePasse">Mot de passe: </label></div>
-            </td>
-          </tr>
+            <tr>
+              <td >
+                <div class="marginTop20">
+                  <label for="motDePasse">Mot de passe: </label>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="textCenter"><input type="password" id="password" name="password" placeholder="Entrer le mot de passe" id=""/></td>
-          </tr>
+            <tr>
+              <td class="textCenter">
+                <input type="password" id="password" name="password" placeholder="Entrer le mot de passe" id=""/>
+              </td>
+            </tr>
 
-          <tr class="marginTop20">
-            <td class="textCenter"><button id="connectBtn" type="submit" class="marginTop20">Se connecter</button></td>
-          </tr>
+            <tr class="marginTop20">
+              <td class="textCenter">
+                <button id="connectBtn" type="submit" class="marginTop20">Se connecter</button>
+              </td>
+            </tr>
 
-          <tr>
-            <td><div class="textCenter marginTop20"><a href="">Mot de passe oublié ?</a></div></td>
-          </tr>
+            <tr>
+              <td>
+                <div class="textCenter marginTop20">
+                  <a href="">Mot de passe oublié ?</a>
+                </div>
+              </td>
+            </tr>
 
-          <tr>
-            <td class="textCenter"><a href="creation-de-compte">Pas de compte ?</a></td>
-          </tr>
+            <tr>
+              <td class="textCenter">
+                <a href="creation-de-compte">Pas de compte ?</a>
+              </td>
+            </tr>
 
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </form>
     </div>
   <div class="imageSkiConnexion"></div>
-  <script src="js/scriptConnexion.js"></script>
+  <!-- <script src="js/scriptConnexion.js"></script> -->
 </div>
 </main>

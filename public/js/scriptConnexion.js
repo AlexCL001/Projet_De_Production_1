@@ -13,7 +13,7 @@ const accesToken = getAccesToken();
             const body = JSON.stringify({
                 email: emailValue,
                 password: passwordValue,
-            });
+            })
             fetch('https://ski-api.herokuapp.com/login', {
                 method: "POST",
                 body,

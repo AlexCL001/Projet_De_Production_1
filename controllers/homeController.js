@@ -1,4 +1,5 @@
 exports.getIndex = (req, res) => {
+    console.log(res.app.locals)
     res.render('connexion', {
         pageTitle: 'Connexion'
     });
