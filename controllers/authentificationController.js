@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { response } = require('express');
+let token = ''
 
 exports.getCreationDeCompte = (req, res) => {
     res.render('creationDeCompte', {
@@ -18,7 +18,7 @@ exports.postConnection = (req, res) => {
         "password": password
     })
     .then(response => {
-        console.log(response);
+        // console.log(response);
         res.render('creationCompteReussi', {
             pageTitle: 'Connecter'
         });
@@ -43,10 +43,14 @@ exports.postSignIn = (req, res) => {
             'password': password
         })
         .then(response => {
+            // req.session.isAuth = true
+
             res.app.locals.nomUtilisateur = response.data.name
             res.app.locals.email = response.data.email
             res.app.locals.token = response.data.token
-
+            token = response.data.token
+            // module.exports = token
+            console.log(token)
             res.render('profil', {
                 pageTitle: 'Profil',
                 nomUtilisateur: res.app.locals.nomUtilisateur,
@@ -55,7 +59,7 @@ exports.postSignIn = (req, res) => {
             })
         })
         .catch(error => {
-            res.send('mauvaises informations')
+            res.send('mauvaises email ou password')
         });
     }
 };
@@ -71,6 +75,5 @@ exports.getEditProfil = (req, res) => {
         pageTitle: 'Changer Profil'
     });
 };
-
 
 
