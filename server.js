@@ -27,7 +27,6 @@ app.use(expressLayouts);
 app.use(siteRoutes);
 app.use(express.static('public'));
 
-app.listen(port);
-
-
-
+app.listen(port,()=>{
+ console.log(`Votre serveur démarre sur le port ${port}`);
+});
