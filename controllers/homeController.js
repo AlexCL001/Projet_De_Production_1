@@ -52,3 +52,9 @@ exports.getAjoutSpot = (req, res) => {
         pageTitle: 'Ajout spot'
     })
 }
+
+exports.getFeed = (req, res) => {
+    res.render('feed', {
+        pageTitle: 'Feed'
+    })
+}
