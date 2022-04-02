@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: white;
+  height: 10vh;
+  width: 100%;
+  font-size: 4rem;
+  background-image: url(../img/plancheHeader.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header a {
+  padding: 0 20px 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  width: 140px;
+}
+
+.imgUser {
+  width: 100px;
+}
+
+.containerConnexion {
+  height: 90vh;
+  background-image: url(../img/backgroundConnexion.png);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woodConnexion {
+  height: 600px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.woodConnexion form {
+  font-size: 2rem;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woodConnexion form input {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+}
+
+.woodConnexion form button {
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  font-size: 2rem;
+  margin: 20px;
+  padding: 10px;
+}
+
+.woodConnexion form img {
+  width: 300px;
+}
+
+.skisConnexion {
+  width: 300px;
+}
+
+.containerCreationCompte {
+  height: 90vh;
+  background-image: url(../img/backgroundCreationCompte.png);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woodCreationCompte {
+  height: 600px;
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.woodCreationCompte form {
+  font-size: 2rem;
+  height: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.woodCreationCompte form input {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+}
+
+.woodCreationCompte form button {
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  font-size: 2rem;
+  margin: 20px;
+  padding: 10px;
+}
+
+.woodCreationCompte form img {
+  width: 400px;
+}
+
+.menu {
+  width: 430px;
+}
+
+.menu button {
+  width: 260px;
+  text-align: left;
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  font-size: 2.5rem;
+  margin: 30px 0 0 0;
+  padding: 10px 0 10px 30px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.menu button:hover {
+  cursor: pointer;
+  width: 380px;
+}
+
+.menu img {
+  width: 320px;
+  margin: 25px 0 0 25px;
+}
+
+.navProfil, .navFeed, .navMessages, .navAmis {
+  width: 380px !important;
+}
+
+.containerProfil {
+  height: 90vh;
+  width: 100%;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: url(../img/backgroundNeige.png);
+}
+
+.profilPage {
+  height: 100%;
+  width: 1450px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.topPartProfil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.imgEtIcone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icone3 {
+  width: 240px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.textZoneProfil {
+  width: 100%;
+}
+
+.textZoneProfil p {
+  width: 700px;
+}
+
+.profilNameBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  font-size: 3rem;
+}
+
+.profilNameBar button {
+  background: none;
+  border: none;
+}
+
+.profilNameBar button:hover {
+  cursor: pointer;
+}
+
+.woodSeparation {
+  height: 15px;
+  width: 700px;
+  margin: 15px 0 15px 0;
+}
+
+.navSpotDansProfil {
+  width: 100%;
+  margin-top: 30px;
+  font-size: 3rem;
+}
+
+.navSpotDansProfil ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.navSpotDansProfil li {
+  margin-left: 40px;
+  border: 2px solid black;
+  padding: 5px 10px 5px 10px;
+}
+
+.navSpotDansProfil li:hover {
+  background-color: white;
+}
+
+.profilListeSpots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.spotCourtModifiable {
+  color: white;
+  font-size: 3rem;
+  width: 90%;
+  background-image: url(../img/plancheHeader.png);
+  padding: 0 20px 0 0;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.formProfil {
+  margin-top: 20px;
+}
+
+.formProfil input, .formProfil select {
+  font-size: 1rem;
+  padding: 6px;
+  width: 300px;
+}
+
+.formProfil .descriptionProfil {
+  width: 700px;
+  height: 100px;
+  font-size: 1rem;
+}
+
+.validFormProfil {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.validFormProfil button {
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  font-size: 2.5rem;
+  padding: 10px 20px 10px 20px;
+}
+
+.validFormProfil button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,251 @@
+$woodTxt: white;
+$woodImg: url(../img/planche.png);
+$woodHeadImg: url(../img/plancheHeader.png);
+$seethroughWhite: rgba(255, 255, 255, 0.5);
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+//css du header
+header{
+    color: $woodTxt;
+    height: 10vh;
+    width: 100%;
+    font-size: 4rem;
+    background-image: $woodHeadImg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        padding: 0 20px 0 20px;
+        @include flexCenter();
+    }
+}
+.logo{
+    width: 140px;
+}
+.imgUser{
+    width: 100px;
+}
+
+//css de la page connexion.ejs
+.containerConnexion{
+    height: 90vh;
+    background-image: url(../img/backgroundConnexion.png);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.woodConnexion{
+    height: 600px;
+    width: 500px;
+    background-color: $seethroughWhite;
+    form{
+        font-size: 2rem;
+        height: 100%;
+        text-align: center;
+        @include flexCenter();
+        input{
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+        button{
+            color: $woodTxt;
+            border: none;
+            background-image: $woodImg;
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+        }
+        img{
+            width: 300px;
+        }
+    }
+}
+.skisConnexion{
+    width: 300px;
+}
+
+//css de la page creationDeCompte.ejs
+.containerCreationCompte{
+    height: 90vh;
+    background-image: url(../img/backgroundCreationCompte.png);
+    background-size: cover;
+    @include flexCenter();
+}
+.woodCreationCompte{
+    height: 600px;
+    width: 500px;
+    background-color: $seethroughWhite;
+    form{
+        font-size: 2rem;
+        height: 100%;
+        text-align: center;
+        @include flexCenter();
+        input{
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+        button{
+            color: $woodTxt;
+            border: none;
+            background-image: $woodImg;
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+        }
+        img{
+            width: 400px;
+        }
+    }
+}
+
+//css du menu de gauche commun 
+.menu{
+    width: 430px;
+    button{
+        width: 260px;
+        text-align: left;
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 2.5rem;
+        margin: 30px 0 0 0;
+        padding: 10px 0 10px 30px;
+        transition: width 0.5s;
+        &:hover{
+            cursor: pointer;
+            width: 380px;
+        }
+    }
+    img{
+        width: 320px;
+        margin: 25px 0 0 25px;
+    }
+}
+.navProfil, .navFeed, .navMessages, .navAmis{
+    width: 380px !important;
+}
+
+//css de la page profil.ejs
+.containerProfil{
+    height: 90vh;
+    width: 100%;
+    float: left;
+    display: flex;
+    background-image: url(../img/backgroundNeige.png);
+}
+.profilPage{
+    height: 100%;
+    width: 1450px;
+    background-color: $seethroughWhite;
+}
+.topPartProfil{
+    display: flex;
+    font-size: 1.5rem;
+}
+.imgEtIcone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icone3{
+    width: 240px;
+    display: flex;
+    justify-content: space-around;
+}
+.textZoneProfil{
+    width: 100%;
+    p{
+        width: 700px
+    }
+}
+.profilNameBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 3rem;
+    button{
+        background: none;
+        border: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.woodSeparation{
+    height: 15px;
+    width: 700px;
+    margin: 15px 0 15px 0;
+}
+.navSpotDansProfil{
+    width: 100%;
+    margin-top: 30px;
+    font-size: 3rem;
+    ul{
+        display: flex;
+        list-style: none;
+    }
+    li{
+        margin-left: 40px;
+        border: 2px solid black;
+        padding: 5px 10px 5px 10px;
+       &:hover{
+           background-color: white;
+       }
+    }
+}
+.profilListeSpots{
+    display: flex;
+    justify-content: center;
+}
+.spotCourtModifiable{
+    color: $woodTxt;
+    font-size: 3rem;
+    width: 90%;
+    background-image: $woodHeadImg;
+    padding: 0 20px 0 0;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//css de la page editProfil.ejs en continuité avec profil.ejs
+.formProfil{
+    margin-top: 20px;
+    input, select{
+        font-size: 1rem;
+        padding: 6px;
+        width: 300px;
+    }
+    .descriptionProfil{
+        width: 700px;
+        height: 100px;
+        font-size: 1rem;
+    }
+}
+.validFormProfil{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    button{
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 2.5rem;
+        padding: 10px 20px 10px 20px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
