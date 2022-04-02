@@ -1,7 +1,6 @@
 main {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .containerProfil {
@@ -30,11 +29,12 @@ main {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+    width: 20rem;
 }
 
 .menuGauche li {
     background-image: url('/img/planchePageProfil.png');
-    width: 14rem;
+    width: 15rem;
     height: 3rem;
     margin-bottom: 1rem;
     display: flex;
@@ -43,7 +43,7 @@ main {
     font-size: 2rem;
 }
 
-.menuGauche li:first-child {
+.menuGauche li:hover{
     width: 20rem;
 }
 

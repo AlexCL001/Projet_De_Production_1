@@ -28,8 +28,14 @@ main {
     align-items: center;
 }
 
+.infoConnexion form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .tableConnexion {
-    font-family: Arial, Helvetica, sans-serif;
     width: 80%;
     font-size: 1.2rem;
     margin-right: 1.8rem;
@@ -55,11 +61,18 @@ main {
 }
 
 .tableConnexion button {
-    width: 80%;
+    width: 60%;
     height: 2.5rem;
-    background-color: black;
+    background-image: url('/img/planchePageProfil.png');
     color: white;
     font-size: large;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.tableConnexion button:hover{
+    border: none;
+    box-shadow: 5px 5px black;
 }
 
 .tableConnexion a {
