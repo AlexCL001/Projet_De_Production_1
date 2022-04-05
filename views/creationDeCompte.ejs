@@ -1,45 +1,37 @@
 <main>
   <div class="containerCreationCompte">
-    <div class="bgTableau">
-      <table class="tableCompte">
-        <form action="/creation-compte-reussi" method="POST">
-
+    <div class="woodCreationCompte">
+      <form action="/creation-compte-reussi" method="POST">
+        <table>
           <tr>
             <td><h1>Informations</h1></td>
           </tr>
-
           <tr>
-            <td class="textCenter"><img src="/img/imageUnSki.png" alt=""></td>
-          </tr>
-
-          <tr>
-            <td class="textLeft"><label for="nom">Nom: </label></td>
-          </tr>
-
-          <tr>
-            <td><input class="inputFields" type="text" name="nom" required/></td>
-          </tr>
-
-          <tr>
-            <td class="textLeft"><label for="email">Email: </label></td>
-          </tr>
-
-          <tr>
-            <td><input class="inputFields" type="email" name="email" id="" required/></td>
-          </tr>
-
-          <tr>
-            <td class="textLeft"><label for="motDePasse">Mot de passe: </label></td>
-          </tr>
-
-          <tr>
-            <td><input class="inputFields" type="password" name="motDePasse" id="" required/></td>
+            <td><img src="/img/UnSki.png" alt="ski"></td>
           </tr>
           <tr>
-            <td><input class="btnCreerCompte" type="submit" value="Créé un compte"/></td>
+            <td><label for="nom">Nom: </label></td>
           </tr>
-        </form>
-      </table>
+          <tr>
+            <td><input type="text" name="nom" required/></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email: </label></td>
+          </tr>
+          <tr>
+            <td><input type="email" name="email" id="" required/></td>
+          </tr>
+          <tr>
+            <td><label for="motDePasse">Mot de passe: </label></td>
+          </tr>
+          <tr>
+            <td><input type="password" name="motDePasse" id="" required/></td>
+          </tr>
+          <tr>
+            <td><button type="submit">Créé un compte</button></td>
+          </tr>
+        </table>
+      </form>
     </div>
   </div>
 </main>

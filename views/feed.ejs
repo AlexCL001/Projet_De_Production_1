@@ -1,5 +1,69 @@
 <main>
     <div class="containerFeed">
-        
+        <div class="menu">
+            <nav>
+                <form action="/profil" method="get">
+                    <button type="submit">Profil</button>
+                </form>
+                <form action="/feed" method="get">
+                    <button class="navFeed" type="submit">Feed</button>
+                </form>
+                <form action="" method="get">
+                    <button type="submit">Messages</button>
+                </form>
+                <form action="" method="get">
+                    <button type="submit">Amis</button>
+                </form>
+            </nav>
+            <img src="/img/carte.png" alt="Carte de mes amis">
+        </div>
+        <div class="feedPage">
+            <div class="headFeedPage">
+                <h1>Bienvenue dans le Feed!</h1>
+                <form action="/formulaireSpot" method="get">
+                    <button type="submit">
+                        <img src="/img/plusButton.png" alt="symbole ajouter: +">
+                    </button>
+                </form>
+            </div>
+            <div class="feedListeDesSpots">
+                <div class="spotModifiable">
+                    <img class="imgUtilisateurSpotModifiable" src="/img/imageUtilisateur.png" alt="img utilisateur">
+                    <p>Alexandre Cloutier-Lemay</p>
+                    <img src="/img/troisPoints.png" alt="trois points">
+                </div>
+                <div class="feedInfoSpot">
+                    <div class="partOneInfoSpotFeed">
+                        <div class="elegantInfoFeed">
+                            <p class="pBold">Nom du Spot:</p>
+                            <p></p>
+                        </div>
+                        <div class="elegantInfoFeed">
+                            <p class="pBold">Emplacement:</p>
+                            <p>Mont Albert</p>
+                        </div>
+                        <div>
+                            <p class="pBold">Description:</p>
+                            <p class="fontSizeDescriptionSpotFeed">
+                                Lorem ipsum dolor sit amet, 
+                                consectetur adipiscing elit. 
+                                Ornare tincidunt faucibus ipsum arcu.
+                                Lorem ipsum dolor sit amet, 
+                                consectetur adipiscing elit. 
+                                Ornare tincidunt faucibus ipsum arcu.
+                            </p>
+                        </div>
+                    </div>
+                    <img src="/img/lineSeparator.png" alt="ligne séparatrice">
+                    <div class="partTwoInfoSpotFeed">
+                        <h2>Niveau de difficulté</h2>
+                        <p class="bigNum">3</p>
+                        <form action="" method="get">
+                            <button type="submit">Plus d'info --></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>

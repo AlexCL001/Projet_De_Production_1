@@ -24,8 +24,6 @@ router.get('/formulaireSpot', homeController.getFormulaireSpot)
 
 router.post('/ProfilSpot', homeController.postProfilSpot)
 
-router.get('/ajoutSpot', homeController.getAjoutSpot)
-
 router.get ('/feed', homeController.getFeed)
 
 module.exports = router;

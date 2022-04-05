@@ -1,0 +1,332 @@
+$woodTxt: white;
+$woodImg: url(../img/planche.png);
+$woodHeadImg: url(../img/plancheHeader.png);
+$seethroughWhite: rgba(255, 255, 255, 0.5);
+
+@mixin flex($dir, $justify, $align) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+//css du header
+header{
+    @include flex(row, space-between, center);
+    color: $woodTxt;
+    height: 10vh;
+    width: 100%;
+    font-size: 4rem;
+    background-image: $woodHeadImg;
+    a{
+        @include flex(row, center, center);
+        padding: 0 20px 0 20px;
+    }
+}
+.logo{
+    width: 140px;
+}
+.imgUser{
+    width: 100px;
+}
+
+//css de la page connexion.ejs
+.containerConnexion{
+    @include flex(row, space-between, center);
+    height: 90vh;
+    background-image: url(../img/backgroundConnexion.png);
+}
+.woodConnexion{
+    height: 600px;
+    width: 500px;
+    background-color: $seethroughWhite;
+    form{
+        @include flex(row, center, center);
+        font-size: 2rem;
+        height: 100%;
+        text-align: center;
+        input{
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+        button{
+            color: $woodTxt;
+            border: none;
+            background-image: $woodImg;
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        img{
+            width: 300px;
+        }
+    }
+}
+.skisConnexion{
+    width: 300px;
+}
+
+//css de la page creationDeCompte.ejs
+.containerCreationCompte{
+    @include flex(row, center, center);
+    height: 90vh;
+    background-image: url(../img/backgroundCreationCompte.png);
+    background-size: cover;
+}
+.woodCreationCompte{
+    height: 600px;
+    width: 500px;
+    background-color: $seethroughWhite;
+    form{
+        @include flex(row, center, center);
+        font-size: 2rem;
+        height: 100%;
+        text-align: center;
+        input{
+            font-size: 2rem;
+            margin: 0 0 10px 0;
+        }
+        button{
+            color: $woodTxt;
+            border: none;
+            background-image: $woodImg;
+            font-size: 2rem;
+            margin: 20px;
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        img{
+            width: 400px;
+        }
+    }
+}
+
+//css du menu de gauche commun 
+.menu{
+    width: 430px;
+    button{
+        width: 260px;
+        text-align: left;
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 2.5rem;
+        margin: 30px 0 0 0;
+        padding: 10px 0 10px 30px;
+        transition: width 0.5s;
+        &:hover{
+            cursor: pointer;
+            width: 380px;
+        }
+    }
+    img{
+        width: 320px;
+        margin: 25px 0 0 25px;
+    }
+}
+.navProfil, .navFeed, .navMessages, .navAmis{
+    width: 380px !important;
+}
+
+//css de la page profil.ejs
+.containerProfil{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    float: left;
+    background-image: url(../img/backgroundNeige.png);
+}
+.profilPage{
+    height: 100%;
+    width: 1450px;
+    background-color: $seethroughWhite;
+}
+.topPartProfil{
+    display: flex;
+    font-size: 1.5rem;
+}
+.imgEtIcone{
+    @include flex(column, flex-start, center);
+}
+.icone3{
+    @include flex(row, space-around, flex-start);
+    width: 240px;
+}
+.textZoneProfil{
+    width: 100%;
+    p{
+        width: 700px
+    }
+}
+.profilNameBar{
+    @include flex(row, space-between, flex-end);
+    font-size: 3rem;
+    button{
+        background: none;
+        border: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.woodSeparation{
+    height: 15px;
+    width: 700px;
+    margin: 15px 0 15px 0;
+}
+.navSpotDansProfil{
+    width: 100%;
+    margin-top: 30px;
+    font-size: 3rem;
+    ul{
+        display: flex;
+        list-style: none;
+    }
+    li{
+        margin-left: 40px;
+        border: 2px solid black;
+        padding: 5px 10px 5px 10px;
+       &:hover{
+           background-color: white;
+       }
+    }
+}
+.profilListeSpots{
+    @include flex(row, center, flex-start);
+}
+.spotCourtModifiable{
+    @include flex(row, space-between, center);
+    color: $woodTxt;
+    font-size: 3rem;
+    width: 90%;
+    background-image: $woodHeadImg;
+    padding: 0 20px 0 0;
+    border-radius: 40px;
+}
+.imgUtilisateurSpotCourt{
+    width: 80px;
+}
+
+//css de la page editProfil.ejs en continuité avec profil.ejs
+.formProfil{
+    margin-top: 20px;
+    input, select{
+        font-size: 1rem;
+        padding: 6px;
+        width: 300px;
+    }
+    .descriptionProfil{
+        width: 700px;
+        height: 100px;
+        font-size: 1rem;
+    }
+}
+.validFormProfil{
+    @include flex(row, center, flex-end);
+    width: 100%;
+    button{
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 2.5rem;
+        padding: 10px 20px 10px 20px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+//css pour la page feed.ejs
+.containerFeed{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    float: left;
+    background-image: url(../img/backgroundNeige.png);
+}
+.feedPage{
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+    width: 1450px;
+    background-color: $seethroughWhite;  
+}
+.headFeedPage{
+    @include flex(row, space-between, center);
+    width: 1410px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    button{
+        background: none;
+        border: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.feedListeDesSpots{
+    @include flex(column, flex-start, center);
+}
+.spotModifiable{
+    @include flex(row, space-between, center);
+    color: $woodTxt;
+    font-size: 3rem;
+    width: 90%;
+    background-image: $woodHeadImg;
+    padding: 0 20px 0 0;
+}
+.imgUtilisateurSpotModifiable{
+    width: 80px;
+}
+.feedInfoSpot{
+    display: flex;
+    width: 90.8%;
+    border: 4px solid black;
+    img{
+        margin: 10px 0 10px 0;
+    }
+}
+.partOneInfoSpotFeed{
+    @include flex(column, space-evenly, flex-start);
+    font-size: 2.5rem;
+    width: 60%;
+    padding: 0px 40px 0 40px;
+    .pBold{
+        font-weight: bold;
+        margin-right: 20px;
+    }
+}
+.elegantInfoFeed{
+    @include flex(row, space-between, center);
+}
+.fontSizeDescriptionSpotFeed{
+    font-size: 2rem;
+}
+.partTwoInfoSpotFeed{
+    @include flex(column, space-evenly, center);
+    width: 40%;
+    font-size: 2rem;
+    .bigNum{
+        font-size: 14rem;
+    }
+    button{
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 2.5rem;
+        padding: 10px 20px 10px 20px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

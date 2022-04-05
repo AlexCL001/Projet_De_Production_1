@@ -1,19 +1,88 @@
 <main>
-  <div class="containerProfil column">
-    
-      <h1 class="profil-h1">Page de profil</h1>
-      <h2>Bienvenue <%= nomUtilisateur %></span></h2>
-      <h3>Votre email est : <%= email %></span></h3>
-      <a class="edit-btn" href="/profil/edit">Modifier mon Profil</a>
-      <div id="token" hidden ><%= token %> </div>
-
-      <!-- <h2>Bienvenue <span id="nomUtilisateur"></span></h2>
-      <h3>Votre email est : <span id="emailUtilisateur"></span></h3>
-      <a class="edit-btn" href="/profil/edit">Modifier mon Profil</a> -->
-      <button id="signOutBtn">Déconnexion</button>
-    
+  <div class="containerProfil">
+    <div class="menu">
+      <nav>
+        <form action="/profil" method="get">
+          <button class="navProfil" type="submit">Profil</button>
+        </form>
+        <form action="/feed" method="get">
+          <button type="submit">Feed</button>
+        </form>
+        <form action="" method="get">
+          <button type="submit">Messages</button>
+        </form>
+        <form action="" method="get">
+          <button type="submit">Amis</button>
+        </form>
+      </nav>
+      <img src="/img/carte.png" alt="Carte de mes amis">
+    </div>
+    <div class="profilPage">
+      <div class="topPartProfil">
+        <div class="imgEtIcone">
+          <img width="300px" src="/img/imageUtilisateur.png" alt="img utilisateur">
+          <div class="icone3">
+            <img src="/img/iconeSkis.png" alt="skis">
+            <img src="/img/iconeBiere.png" alt="bière">
+            <img src="/img/iconeMaison.png" alt="maison">
+          </div>
+        </div>
+        <div class="textZoneProfil">
+          <div class="profilNameBar">
+            <p>Stéphanie Denis (18-25 ans)</p>
+            <form action="/profil/edit" method="get">
+              <button type="submit">
+                <img src="/img/crayonModifier.png" alt="modifier">
+              </button>
+            </form>
+          </div>
+          <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
+          <p>Québec, Développeur Web</p>
+          <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
+          <p>stephden@hotmail.com</p>
+          <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
+          <p>
+            Passionnée de ski , j’adore découvrir 
+            de nouveaux endroits et les partager avec
+            mes amis. j'enmène souvent mon chien avec 
+            moi. Il adore ca!!!! 
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="navSpotDansProfil">
+          <ul>
+            <li>Mes spots</li>
+            <li>Spots favoris</li>
+          </ul>
+          <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
+        </div>
+        <div class="profilListeSpots">
+          <div class="spotCourtModifiable">
+            <img class="imgUtilisateurSpotCourt" src="/img/imageUtilisateur.png" alt="img utilisateur">
+            <p>Name of the spot</p>
+            <img src="/img/troisPoints.png" alt="trois points">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
+
+<!-- ancienne version en dessous -->
+
+<!-- <div class="containerProfil column">
+    <h1 class="profil-h1">Page de profil</h1>
+    <h2>Bienvenue %= nomUtilisateur %></span></h2>
+    <h3>Votre email est : %= email %></span></h3>
+    <a class="edit-btn" href="/profil/edit">Modifier mon Profil</a>
+    <div id="token" hidden >%= token %> </div>
+
+    <h2>Bienvenue <span id="nomUtilisateur"></span></h2>
+    <h3>Votre email est : <span id="emailUtilisateur"></span></h3>
+    <a class="edit-btn" href="/profil/edit">Modifier mon Profil</a>
+    <button id="signOutBtn">Déconnexion</button>
+</div> -->
 
 <script src="js/signOut.js"></script>
 <!-- <script src="js/scriptAffichageProfil.js"></script> -->
