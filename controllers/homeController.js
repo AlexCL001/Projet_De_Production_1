@@ -47,12 +47,6 @@ exports.postProfilSpot = (req, res) => {
     })
 }
 
-exports.getAjoutSpot = (req, res) => {
-    res.render('ajoutSpot', {
-        pageTitle: 'Ajout spot'
-    })
-}
-
 exports.getFeed = (req, res) => {
     res.render('feed', {
         pageTitle: 'Feed'
