@@ -1,45 +1,52 @@
-<main>
-    <form class="containerFormulaireSpot">
-        <div class="backgroundBlanc">
-            <img src="/img/plancheFormulaireSpot.png" alt="image de planche">
-            <div class="formulaireSpotGauche">
-                <div class="titreSpot">
-                    <h1>Nom du spot</h1>
-                    <img src="/img/crayonBois.png" alt="image de crayon">
+<main class="containerFormulaireSpot">
+    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
+    <div class="spotForm">
+        <form action="#">
+            <div class="spotFormLeft">
+                <div>
+                    <input type="text" placeholder="Nom du spot ici">
                 </div>
-                <div class="photoDifficulte">
-                    <div class="photoSpot">
-                        <img src="/img/photoSpot.png" alt="photo du spot">
+                <div class="containerImgNivDiff">
+                    <div>
+                        <img src="/img/imgSpot.jpg" alt="image du spot">
                     </div>
-                    <div class="difficulte">
-                        <h2>Niveau de difficulté:</h2>
-                        <p>Facile - 1</p>
-                        <p>Moyen - 2</p>
-                        <p>Difficile - 3</p>
+                    <div class="nivDiff">
+                        <p>Niveau de difficulté:</p>
+                        <div class="nivDiffRadio">
+                            <div>
+                                <input type="radio" id="html" name="nivDiff" value="1">
+                                <input type="radio" id="css" name="nivDiff" value="2">
+                                <input type="radio" id="javascript" name="nivDiff" value="3">
+                            </div>
+                            <div>
+                                <label for="Facile - 1">Facile - 1</label>
+                                <label for="Moyen - 2">Moyen - 2</label>
+                                <label for="Difficile - 3">Difficile - 3</label> 
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="description">
-                    <div class="descriptionTitle">
-                        <h2>Description:</h2>
-                        <img src="/img/crayonBois.png" alt="image de crayon">
-                    </div>
-                    <p>Superbe montagne avec des paysage époustouflant. Avec une monté de 12 km en 2 heures 35 
-                        min et une bonne descente de 20 minutes, ca vaut vraiment la peine d’aller l’essayer!</p>
+                <div>
+                    <p>Description:</p>
+                    <textarea type="text" placeholder="Description"></textarea>
                 </div>
             </div>
-            <div class="formulaireSpotDroite">
-                <div class="emplacementTitre">
-                    <h2>Emplacement:</h2>
-                    <img src="/img/crayonBois.png" alt="image de crayon">
+            <div class="spotFormRight">
+                <div class="spotFormMap">
+                    <p>Emplacement:</p>
+                    <img src="/img/carteVide.png" alt="image de la carte">
+                    <textarea type="text" placeholder="Adresse"></textarea>
+                    <!-- <input type="text" placeholder="Adresse"> -->
                 </div>
-                <img src="/img/carteEmplacementSpot.png" alt="carte emplacement spot">
-                <p>Mont Albert, Parc de la Gaspésie, Saint-anne-des-Monts, Québec</p>
-                <div class="boutonsFormulaireSpot">
-                    <button type="submit">VALIDER</button>
-                    <button type="reset">ANNULER</button>
+                <div>
+                    <button type="submit">Valider</button>
+                    <button type="reset">Annuler</button>
                 </div>
             </div>
-            <img src="/img/plancheFormulaireSpot.png" alt="image de planche">
-        </div>
+        </form>
+    </div>
+    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
+    <form class="spotFormQuit" action="/feed">
+        <button><img src="/img/plusButton.png" alt="X"></button>
     </form>
 </main>
