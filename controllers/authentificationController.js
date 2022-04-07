@@ -1,5 +1,6 @@
 const axios = require('axios');
-let token = ''
+const express = require('express');
+const app = express();
 
 exports.getCreationDeCompte = (req, res) => {
     res.render('creationDeCompte', {
@@ -45,12 +46,12 @@ exports.postSignIn = (req, res) => {
         .then(response => {
             // req.session.isAuth = true
 
-            res.app.locals.nomUtilisateur = response.data.name
-            res.app.locals.email = response.data.email
-            res.app.locals.token = response.data.token
-            token = response.data.token
+            app.locals.nomUtilisateur = response.data.name;
+            app.locals.email = response.data.email;
+            app.locals.token = response.data.token;
+            let token = response.data.token;
             // module.exports = token
-            console.log(token)
+            console.log('app.locals.token', app.locals.token);
             res.render('profil', {
                 pageTitle: 'Profil',
                 nomUtilisateur: res.app.locals.nomUtilisateur,

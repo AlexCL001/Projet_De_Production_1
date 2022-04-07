@@ -1,7 +1,7 @@
 const express = require('express');
 
-const homeController = require('../controllers/homeController');
-const authentificationController = require('../controllers/authentificationController');
+const homeController = require('../homeController');
+const authentificationController = require('../authentificationController');
 
 
 const router = express.Router();
@@ -24,6 +24,6 @@ router.get('/formulaireSpot', homeController.getFormulaireSpot)
 
 router.post('/ProfilSpot', homeController.postProfilSpot)
 
-router.get ('/feed', homeController.getFeed)
+router.get ('/feed', homeController.getFeed);
 
 module.exports = router;

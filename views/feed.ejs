@@ -26,44 +26,46 @@
                     </button>
                 </form>
             </div>
+            <% if (!data) {%> 
+                <h2>No spots to show</h2>
+                <% } else { %> 
+                    <% data.forEach(element =>{ %> 
+
             <div class="feedListeDesSpots">
                 <div class="spotModifiable">
                     <img class="imgUtilisateurSpotModifiable" src="/img/imageUtilisateur.png" alt="img utilisateur">
-                    <p>Alexandre Cloutier-Lemay</p>
-                    <img src="/img/troisPoints.png" alt="trois points">
+                    <img src="" alt="trois points">
                 </div>
                 <div class="feedInfoSpot">
                     <div class="partOneInfoSpotFeed">
                         <div class="elegantInfoFeed">
                             <p class="pBold">Nom du Spot:</p>
-                            <p></p>
+                            <p><%= element.name %></p>
                         </div>
                         <div class="elegantInfoFeed">
                             <p class="pBold">Emplacement:</p>
-                            <p>Mont Albert</p>
+                            <p><%= element.address %> </p>
                         </div>
                         <div>
                             <p class="pBold">Description:</p>
                             <p class="fontSizeDescriptionSpotFeed">
-                                Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit. 
-                                Ornare tincidunt faucibus ipsum arcu.
-                                Lorem ipsum dolor sit amet, 
-                                consectetur adipiscing elit. 
-                                Ornare tincidunt faucibus ipsum arcu.
+                                <%= element.description %>  
                             </p>
                         </div>
                     </div>
                     <img src="/img/lineSeparator.png" alt="ligne séparatrice">
                     <div class="partTwoInfoSpotFeed">
                         <h2>Niveau de difficulté</h2>
-                        <p class="bigNum">3</p>
+                        <p class="bigNum"><%= element.difficulty %> </p>
                         <form action="" method="get">
                             <button type="submit">Plus d'info --></button>
                         </form>
                     </div>
                 </div>
             </div>
+
+            <% }); %> 
+            <% } %> 
         </div>
     </div>
 </main>
