@@ -478,6 +478,18 @@ header a {
   cursor: pointer;
 }
 
+.headFeedPage select {
+  background-image: url(../img/planche.png);
+  color: white;
+  border: none;
+  padding: 10px 20px 10px 20px;
+  font-size: 2rem;
+}
+
+.headFeedPage select:hover {
+  cursor: pointer;
+}
+
 .feedListeDesSpots {
   display: -webkit-box;
   display: -ms-flexbox;
