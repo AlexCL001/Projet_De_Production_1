@@ -836,4 +836,224 @@ header a {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
+
+.containerProfilSpot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 90vh;
+  width: 100%;
+  float: left;
+  background-image: url(/img/backgroundNeige.png);
+}
+
+.containerProfilSpot .imgWoodV {
+  height: 100%;
+}
+
+.containerProfilSpot h1 {
+  font-size: 4rem;
+}
+
+.spotAff {
+  height: 90vh;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.spotAff input {
+  font-size: 2rem;
+}
+
+.spotAff textarea {
+  margin-top: 20px;
+  font-size: 2rem;
+  width: 100%;
+  height: 200px;
+}
+
+.spotAffLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  width: 80%;
+  padding: 20px;
+}
+
+.spotAffLeft input {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  border: none;
+  background-image: url(../img/plancheHeader.png);
+}
+
+.containerAffImgDiff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.containerAffImgDiff p {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.imgSpot {
+  width: 500px;
+}
+
+.imgUserSpot {
+  width: 80px;
+}
+
+.nivDiff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.affDiffSpot {
+  text-align: center;
+  background-image: url(../img/planche.png);
+  color: white;
+  padding: 10px 20px 10px 20px;
+}
+
+.affAuteurSpot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.affAuteurSpot div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.descriptionSpot {
+  font-size: 2rem;
+}
+
+.spotAffRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+}
+
+.spotAffRight img {
+  width: 400px;
+}
+
+.spotAffMap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+}
+
+.spotAffQuit {
+  position: absolute;
+  right: 40px;
+  margin-top: 20px;
+}
+
+.spotAffQuit button {
+  border: none;
+  background: none;
+}
+
+.spotAffQuit button:hover {
+  cursor: pointer;
+}
+
+.spotAffQuit img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 /*# sourceMappingURL=styles.css.map */
