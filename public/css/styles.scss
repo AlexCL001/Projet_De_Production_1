@@ -429,11 +429,111 @@ header{
     }
 }
 .spotFormMap{
-    // background-color: red;
     @include flex(column, space-around, center);
     height: 80%;
 }
 .spotFormQuit{
+    position: absolute;
+    right: 40px;
+    margin-top: 20px;
+    button{
+        border: none;
+        background: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    img{
+        transform: rotate(45deg);
+    }
+}
+
+//page profilSpot
+.containerProfilSpot{
+    @include flex(row, center, flex-start);
+    height: 90vh;
+    width: 100%;
+    float: left;
+    background-image: url(/img/backgroundNeige.png);
+    .imgWoodV{
+        height: 100%;
+    }
+    h1{
+        font-size: 4rem;
+    }
+}
+.spotAff{
+    height: 90vh;
+    width: 80%;
+    background-color: $seethroughWhite;
+    font-size: 3rem;
+    display: flex;
+    input{
+        font-size: 2rem;
+    }
+    textarea{
+        margin-top: 20px;
+        font-size: 2rem;
+        width: 100%;
+        height: 200px;
+    }
+}
+.spotAffLeft{
+    @include flex(column, space-evenly, space-between);
+    width: 80%;
+    padding: 20px;
+    input{
+        width: 100%;
+        padding: 15px;
+        color: $woodTxt;
+        border: none;
+        background-image: $woodHeadImg;
+    }
+}
+.containerAffImgDiff{
+    @include flex(row, space-between, flex-start);
+    p{
+        font-size: 2rem;
+        margin-bottom: 20px
+    }
+}
+.imgSpot{
+    width: 500px
+}
+.imgUserSpot{
+    width: 80px;
+}
+.nivDiff{
+    @include flex(column, center, center);
+}
+.affDiffSpot{
+    text-align: center;
+    background-image: $woodImg;
+    color: $woodTxt;
+    padding: 10px 20px 10px 20px;
+
+}
+.affAuteurSpot{
+    @include flex(column, center, center);
+    div{
+        @include flex(column, center, center);
+    }
+}
+.descriptionSpot{
+    font-size: 2rem;
+}
+.spotAffRight{
+    @include flex(column, space-evenly, center);
+    width: 60%;
+    img{
+        width: 400px
+    }
+}
+.spotAffMap{
+    @include flex(column, space-around, center);
+    height: 80%;
+}
+.spotAffQuit{
     position: absolute;
     right: 40px;
     margin-top: 20px;
