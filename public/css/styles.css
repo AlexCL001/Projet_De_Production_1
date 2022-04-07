@@ -608,4 +608,232 @@ header a {
 .partTwoInfoSpotFeed button:hover {
   cursor: pointer;
 }
+
+.containerFormulaireSpot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 90vh;
+  width: 100%;
+  float: left;
+  background-image: url(../img/backgroundNeige.png);
+}
+
+.containerFormulaireSpot .imgWoodV {
+  height: 100%;
+}
+
+.spotForm {
+  height: 90vh;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 3rem;
+}
+
+.spotForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+}
+
+.spotForm input {
+  font-size: 2rem;
+}
+
+.spotForm textarea {
+  margin-top: 20px;
+  font-size: 2rem;
+  width: 100%;
+  height: 200px;
+}
+
+.spotFormLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  width: 80%;
+  padding: 20px;
+}
+
+.spotFormLeft input {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  border: none;
+  background-image: url(../img/plancheHeader.png);
+}
+
+.containerImgNivDiff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.containerImgNivDiff img {
+  width: 500px;
+}
+
+.containerImgNivDiff p {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.nivDiff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nivDiffRadio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nivDiffRadio input {
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+  margin: 30px 0 30px 0;
+}
+
+.nivDiffRadio input:hover {
+  cursor: pointer;
+}
+
+.nivDiffRadio label {
+  display: block;
+  background: #000;
+  margin: 15px;
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 10px 20px 10px 20px;
+}
+
+.spotFormRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+}
+
+.spotFormRight button {
+  color: white;
+  border: none;
+  background-image: url(../img/planche.png);
+  font-size: 2.5rem;
+  padding: 10px 20px 10px 20px;
+}
+
+.spotFormRight button:hover {
+  cursor: pointer;
+}
+
+.spotFormRight img {
+  width: 400px;
+}
+
+.spotFormRight textarea {
+  width: 100%;
+  height: 150px;
+}
+
+.spotFormMap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+}
+
+.spotFormQuit {
+  position: absolute;
+  right: 40px;
+  margin-top: 20px;
+}
+
+.spotFormQuit button {
+  border: none;
+  background: none;
+}
+
+.spotFormQuit button:hover {
+  cursor: pointer;
+}
+
+.spotFormQuit img {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
 /*# sourceMappingURL=styles.css.map */
