@@ -6,7 +6,7 @@ const expressSession = require('express-session')
 
 const app = express();
 
-const siteRoutes = require('./routes/siteRoutes');
+const siteRoutes = require('./controllers/routes/siteRoutes');
 
 dotenv.config({ path: './.env', });
 const port = process.env.PORT || 3000;
