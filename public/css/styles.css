@@ -20,7 +20,7 @@ header {
   color: white;
   height: 10vh;
   width: 100%;
-  font-size: 4rem;
+  font-size: 8vh;
   background-image: url(../img/plancheHeader.png);
 }
 
@@ -42,11 +42,11 @@ header a {
 }
 
 .logo {
-  width: 140px;
+  height: 9vh;
 }
 
 .imgUser {
-  width: 100px;
+  height: 9vh;
 }
 
 .containerConnexion {
@@ -65,11 +65,13 @@ header a {
           align-items: center;
   height: 90vh;
   background-image: url(../img/backgroundConnexion.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .woodConnexion {
-  height: 600px;
-  width: 500px;
+  height: 75vh;
+  width: 30vw;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -87,23 +89,24 @@ header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
+  font-size: 4vh;
   height: 100%;
   text-align: center;
 }
 
 .woodConnexion form input {
-  font-size: 2rem;
-  margin: 0 0 10px 0;
+  font-size: 4vh;
+  width: 80%;
+  margin-bottom: 1vh;
 }
 
 .woodConnexion form button {
   color: white;
   border: none;
   background-image: url(../img/planche.png);
-  font-size: 2rem;
-  margin: 20px;
-  padding: 10px;
+  font-size: 4vh;
+  margin: 3vh;
+  padding: 2vh;
 }
 
 .woodConnexion form button:hover {
@@ -111,11 +114,11 @@ header a {
 }
 
 .woodConnexion form img {
-  width: 300px;
+  width: 70%;
 }
 
 .skisConnexion {
-  width: 300px;
+  height: 80vh;
 }
 
 .containerCreationCompte {
@@ -135,11 +138,12 @@ header a {
   height: 90vh;
   background-image: url(../img/backgroundCreationCompte.png);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .woodCreationCompte {
-  height: 600px;
-  width: 500px;
+  height: 70vh;
+  width: 30vw;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -157,13 +161,13 @@ header a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
+  font-size: 3vh;
   height: 100%;
   text-align: center;
 }
 
 .woodCreationCompte form input {
-  font-size: 2rem;
+  font-size: 3vh;
   margin: 0 0 10px 0;
 }
 
@@ -171,9 +175,9 @@ header a {
   color: white;
   border: none;
   background-image: url(../img/planche.png);
-  font-size: 2rem;
-  margin: 20px;
-  padding: 10px;
+  font-size: 4vh;
+  margin: 3vh;
+  padding: 2vh;
 }
 
 .woodCreationCompte form button:hover {
@@ -181,38 +185,38 @@ header a {
 }
 
 .woodCreationCompte form img {
-  width: 400px;
+  height: 4vh;
 }
 
 .menu {
-  width: 430px;
+  width: 22.4vw;
 }
 
 .menu button {
-  width: 260px;
+  width: 14vw;
   text-align: left;
   color: white;
   border: none;
   background-image: url(../img/planche.png);
-  font-size: 2.5rem;
-  margin: 30px 0 0 0;
-  padding: 10px 0 10px 30px;
+  font-size: 4vh;
+  margin-top: 4vh;
+  padding: 10px 0 10px 2vw;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
 
 .menu button:hover {
   cursor: pointer;
-  width: 380px;
+  width: 20vw;
 }
 
 .menu img {
-  width: 320px;
-  margin: 25px 0 0 25px;
+  width: 16vw;
+  margin: 2vh 0 0 1vw;
 }
 
 .navProfil, .navFeed, .navMessages, .navAmis {
-  width: 380px !important;
+  width: 20vw !important;
 }
 
 .containerProfil {
@@ -223,11 +227,13 @@ header a {
   width: 100%;
   float: left;
   background-image: url(../img/backgroundNeige.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .profilPage {
-  height: 100%;
-  width: 1450px;
+  height: 90vh;
+  width: 75vw;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -235,7 +241,7 @@ header a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 2.6vh;
 }
 
 .imgEtIcone {
@@ -254,6 +260,11 @@ header a {
           align-items: center;
 }
 
+.imgEtIcone .bigImgUtilisateur {
+  height: 40vh;
+  width: 40vh;
+}
+
 .icone3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -267,7 +278,11 @@ header a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  width: 240px;
+  width: 12vw;
+}
+
+.icone3 img {
+  height: 6vh;
 }
 
 .textZoneProfil {
@@ -275,7 +290,7 @@ header a {
 }
 
 .textZoneProfil p {
-  width: 700px;
+  width: 36vw;
 }
 
 .profilNameBar {
@@ -292,7 +307,7 @@ header a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  font-size: 3rem;
+  font-size: 5vh;
 }
 
 .profilNameBar button {
@@ -304,16 +319,20 @@ header a {
   cursor: pointer;
 }
 
+.profilNameBar button img {
+  height: 8vh;
+}
+
 .woodSeparation {
-  height: 15px;
-  width: 700px;
-  margin: 15px 0 15px 0;
+  height: 1.5vh;
+  width: 36vw;
+  margin: 2vh 0 2vh 0;
 }
 
 .navSpotDansProfil {
   width: 100%;
-  margin-top: 30px;
-  font-size: 3rem;
+  margin-top: 4vh;
+  font-size: 6vh;
 }
 
 .navSpotDansProfil ul {
@@ -324,9 +343,9 @@ header a {
 }
 
 .navSpotDansProfil li {
-  margin-left: 40px;
+  margin-left: 2vw;
   border: 2px solid black;
-  padding: 5px 10px 5px 10px;
+  padding: 1vh 1vw 1vh 1vw;
 }
 
 .navSpotDansProfil li:hover {
@@ -364,15 +383,16 @@ header a {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  font-size: 3rem;
+  font-size: 6vh;
   width: 90%;
   background-image: url(../img/plancheHeader.png);
-  padding: 0 20px 0 0;
-  border-radius: 40px;
+  padding-right: 1vw;
+  border-radius: 5vh;
 }
 
 .imgUtilisateurSpotCourt {
-  width: 80px;
+  width: 8vh;
+  height: 8vh;
 }
 
 .formProfil {
