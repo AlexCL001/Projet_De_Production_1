@@ -42,8 +42,7 @@ exports.postProfilSpot = (req, res) => {
       },
       {
         headers: {
-          Authorization:
-            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI2MjJhNDBiYjQ4YTc5ZTAwMDQwYzk4OWEiLCJleHAiOjE2NDgzMTc2MzU2NTJ9.UlGQ1PDGywM_Lf3C92xZZJioqMuSxjdprSpe3_Pjra8",
+          Authorization: req.app.locals.token,
         },
       }
     )
@@ -56,6 +55,7 @@ exports.postProfilSpot = (req, res) => {
 };
 
 exports.getFeed = (req, res) => {
+  let accessToken = req.app.locals.token;
   axios({
     method: "get",
     url: "http://ski-api.herokuapp.com/ski-spot",
@@ -63,8 +63,7 @@ exports.getFeed = (req, res) => {
             page: 2
     },
     headers: {
-      Authorization:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI2MjJiNmE0MzA4MWMxYzAwMDRiMTBkYjUiLCJleHAiOjE2NDk0MzE1MDkyMTJ9.yh3frHvRxxC99CG-VXTDXXLumHPFUGWqw6iJhAmO5dw",
+      Authorization: accessToken,
     },
   })
     .then((result) => {  

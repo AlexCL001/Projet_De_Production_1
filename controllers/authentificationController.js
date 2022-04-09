@@ -45,13 +45,13 @@ exports.postSignIn = (req, res) => {
         })
         .then(response => {
             // req.session.isAuth = true
-
-            app.locals.nomUtilisateur = response.data.name;
-            app.locals.email = response.data.email;
-            app.locals.token = response.data.token;
+console.log('response',response.data.token);
+            res.app.locals.nomUtilisateur = response.data.name;
+            res.app.locals.email = response.data.email;
+            res.app.locals.token = response.data.token;
             let token = response.data.token;
             // module.exports = token
-            console.log('app.locals.token', app.locals.token);
+            console.log('app.locals.token', res.app.locals.token);
             res.render('profil', {
                 pageTitle: 'Profil',
                 nomUtilisateur: res.app.locals.nomUtilisateur,
@@ -60,7 +60,8 @@ exports.postSignIn = (req, res) => {
             })
         })
         .catch(error => {
-            res.send('mauvaises email ou password')
+            res.send(error);
+            
         });
     }
 };
