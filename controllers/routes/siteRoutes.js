@@ -14,11 +14,13 @@ router.post('/creation-compte-reussi', authentificationController.postConnection
 
 router.get('/connexion', homeController.getConnexion);
 
+router.get('/logout', authentificationController.getLogout);
+
 router.post('/affichageProfil', authentificationController.postSignIn);
 
 router.get('/profil', authentificationController.getProfil);
 
-router.get('/profil/edit', authentificationController.getEditProfil);
+router.get('/profil/:id', authentificationController.getEditProfil);
 
 router.get('/formulaireSpot', homeController.getFormulaireSpot)
 
