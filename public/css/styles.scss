@@ -329,7 +329,6 @@ header{
 }
 .feedInfoSpot{
     @include flex(row, space-between, space-around);
-    background-color: red;
     width: 90.8%;
     height: 40vh;
     border: 0.25vw solid black;

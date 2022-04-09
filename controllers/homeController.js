@@ -59,7 +59,7 @@ exports.getFeed = (req, res) => {
   axios({
     method: "get",
     url: "http://ski-api.herokuapp.com/ski-spot",
-    params: {limit: 2,
+    params: {limit: 5,
             page: 2
     },
     headers: {

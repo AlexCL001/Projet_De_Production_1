@@ -580,7 +580,6 @@ header a {
   -webkit-box-align: space-around;
       -ms-flex-align: space-around;
           align-items: space-around;
-  background-color: red;
   width: 90.8%;
   height: 40vh;
   border: 0.25vw solid black;
