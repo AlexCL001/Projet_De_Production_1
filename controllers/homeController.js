@@ -70,7 +70,6 @@ exports.getFeed = (req, res) => {
     },
   })
     .then((result) => {  
-      console.log(result.data.skiSpots);
       res.render("feed", {
         pageTitle: "Feed",
         data: result.data.skiSpots,
@@ -93,7 +92,6 @@ exports.getSkiSpotById = (req,res) =>{
     
   })
   .then(result =>{
-    console.log( result.data.skiSpot)
     res.render("feedDescription",{
       pageTitle: "Feed Description",
       name: result.data.skiSpot.name,
