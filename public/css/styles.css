@@ -395,20 +395,24 @@ header a {
   height: 8vh;
 }
 
+.threeDots {
+  height: 2vh;
+}
+
 .formProfil {
-  margin-top: 20px;
+  margin-top: 4vh;
 }
 
 .formProfil input, .formProfil select {
-  font-size: 1rem;
-  padding: 6px;
-  width: 300px;
+  font-size: 2vh;
+  padding: 0.6vh;
+  width: 15vw;
 }
 
 .formProfil .descriptionProfil {
-  width: 700px;
-  height: 100px;
-  font-size: 1rem;
+  width: 35vw;
+  height: 15vh;
+  font-size: 2vh;
 }
 
 .validFormProfil {
@@ -432,8 +436,8 @@ header a {
   color: white;
   border: none;
   background-image: url(../img/planche.png);
-  font-size: 2.5rem;
-  padding: 10px 20px 10px 20px;
+  font-size: 5vh;
+  padding: 1.5vh;
 }
 
 .validFormProfil button:hover {
@@ -659,6 +663,8 @@ header a {
   width: 100%;
   float: left;
   background-image: url(../img/backgroundNeige.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .containerFormulaireSpot .imgWoodV {
@@ -669,7 +675,7 @@ header a {
   height: 90vh;
   width: 80%;
   background-color: rgba(255, 255, 255, 0.5);
-  font-size: 3rem;
+  font-size: 5vh;
 }
 
 .spotForm form {
@@ -680,14 +686,14 @@ header a {
 }
 
 .spotForm input {
-  font-size: 2rem;
+  font-size: 4vh;
 }
 
 .spotForm textarea {
-  margin-top: 20px;
-  font-size: 2rem;
+  margin-top: 2vh;
+  font-size: 4vh;
   width: 100%;
-  height: 200px;
+  height: 20vh;
 }
 
 .spotFormLeft {
@@ -705,12 +711,12 @@ header a {
       -ms-flex-align: space-between;
           align-items: space-between;
   width: 80%;
-  padding: 20px;
+  padding: 1.2vw;
 }
 
 .spotFormLeft input {
   width: 100%;
-  padding: 15px;
+  padding: 1.5vh;
   color: white;
   border: none;
   background-image: url(../img/plancheHeader.png);
@@ -733,12 +739,12 @@ header a {
 }
 
 .containerImgNivDiff img {
-  width: 500px;
+  width: 26vw;
 }
 
 .containerImgNivDiff p {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 4vh;
+  margin-bottom: 2vh;
 }
 
 .nivDiff {
@@ -774,9 +780,10 @@ header a {
 }
 
 .nivDiffRadio input {
-  -webkit-transform: scale(2.5);
-          transform: scale(2.5);
-  margin: 30px 0 30px 0;
+  border: 0px;
+  width: 100%;
+  height: 3vh;
+  margin: 3vh 0 3vh 0;
 }
 
 .nivDiffRadio input:hover {
@@ -786,13 +793,13 @@ header a {
 .nivDiffRadio label {
   display: block;
   background: #000;
-  margin: 15px;
+  margin: 1.5vh;
   color: white;
   border: none;
   background-image: url(../img/planche.png);
   text-align: center;
-  font-size: 2.5rem;
-  padding: 10px 20px 10px 20px;
+  font-size: 4.5vh;
+  padding: 1vh 2vw 1vh 2vw;
 }
 
 .spotFormRight {
@@ -816,8 +823,8 @@ header a {
   color: white;
   border: none;
   background-image: url(../img/planche.png);
-  font-size: 2.5rem;
-  padding: 10px 20px 10px 20px;
+  font-size: 4.5vh;
+  padding: 1vh 2vw 1vh 2vw;
 }
 
 .spotFormRight button:hover {
@@ -825,7 +832,7 @@ header a {
 }
 
 .spotFormRight img {
-  width: 400px;
+  width: 22vw;
 }
 
 .spotFormRight textarea {
@@ -851,8 +858,8 @@ header a {
 
 .spotFormQuit {
   position: absolute;
-  right: 40px;
-  margin-top: 20px;
+  right: 2.5vw;
+  margin-top: 2vh;
 }
 
 .spotFormQuit button {
@@ -867,6 +874,7 @@ header a {
 .spotFormQuit img {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  width: 3.5vw;
 }
 
 .containerProfilSpot {
