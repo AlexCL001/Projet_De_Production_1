@@ -26,4 +26,6 @@ router.post('/ProfilSpot', homeController.postProfilSpot)
 
 router.get ('/feed', homeController.getFeed);
 
+router.get ('/feed/:id', homeController.getSkiSpotById);
+
 module.exports = router;

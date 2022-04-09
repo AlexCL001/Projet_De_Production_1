@@ -20,23 +20,14 @@
         <div class="feedPage">
             <div class="headFeedPage">
                 <h1>Bienvenue dans le Feed!</h1>
-                <select name="pagination" id="pagination">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                </select>
+             
                 <form action="/formulaireSpot" method="get">
                     <button type="submit">
                         <img src="/img/plusButton.png" alt="symbole ajouter: +">
                     </button>
                 </form>
             </div>
-            <% if (!data) {%> 
-                <h2>No spots to show</h2>
-                <% } else { %> 
-                    <% data.forEach(element =>{ %> 
+          
 
             <div class="feedListeDesSpots">
                 <div class="spotModifiable">
@@ -48,32 +39,29 @@
                     <div class="partOneInfoSpotFeed">
                         <div class="elegantInfoFeed">
                             <p class="pBold">Nom du Spot:</p>
-                            <p><%= element.name %></p>
+                            <p><%= name %></p>
                         </div>
                         <div class="elegantInfoFeed">
                             <p class="pBold">Emplacement:</p>
-                            <p><%= element.address %> </p>
+                            <p><%= address %> </p>
                         </div>
                         <div>
                             <p class="pBold">Description:</p>
                             <p class="fontSizeDescriptionSpotFeed">
-                                <%= element.description %>  
+                                <%= description %>  
                             </p>
                         </div>
                     </div>
                     <!-- <img src="/img/lineSeparator.png" alt="ligne séparatrice"> -->
                     <div class="partTwoInfoSpotFeed">
                         <h2>Niveau de difficulté:</h2>
-                        <p class="bigNum"><%= element.difficulty %> </p>
-                        <form action="/feed/<%= element._id %> " method="get">
-                            <button type="submit">Plus d'info --></button>
-                        </form>
+                        <p class="bigNum"><%= difficulty %> </p>
+                       
                     </div>
                 </div>
             </div>
 
-            <% }); %> 
-            <% } %> 
+            
         </div>
     </div>
 </main>
