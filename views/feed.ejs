@@ -20,7 +20,7 @@
         <div class="feedPage">
             <div class="headFeedPage">
                 <h1>Bienvenue dans le Feed!</h1>
-                <select name="" id="">
+                <select name="pagination" id="pagination">
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
@@ -65,7 +65,7 @@
                     <div class="partTwoInfoSpotFeed">
                         <h2>Niveau de difficulté:</h2>
                         <p class="bigNum"><%= element.difficulty %> </p>
-                        <form action="" method="get">
+                        <form action="/feed/<%= element._id %> " method="get">
                             <button type="submit">Plus d'info --></button>
                         </form>
                     </div>

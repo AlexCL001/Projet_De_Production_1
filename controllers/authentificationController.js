@@ -1,81 +1,121 @@
-const axios = require('axios');
-const express = require('express');
+const axios = require("axios");
+const express = require("express");
 const app = express();
 
 exports.getCreationDeCompte = (req, res) => {
-    res.render('creationDeCompte', {
-        pageTitle: 'Crée une Compte'
-    });
+  res.render("creationDeCompte", {
+    pageTitle: "Crée une Compte",
+  });
 };
 
 exports.postConnection = (req, res) => {
-    const name = req.body.nom;
-    const email = req.body.email;
-    const password = req.body.motDePasse;
-    
-    axios.post('https://ski-api.herokuapp.com/signup', {
-        "name": name,
-        "email": email,
-        "password": password
+  const name = req.body.nom;
+  const email = req.body.email;
+  const password = req.body.motDePasse;
+
+  axios
+    .post("https://ski-api.herokuapp.com/signup", {
+      name: name,
+      email: email,
+      password: password,
     })
-    .then(response => {
-        // console.log(response);
-        res.render('creationCompteReussi', {
-            pageTitle: 'Connecter'
-        });
+    .then((response) => {
+      console.log(response);
+      res.render("creationCompteReussi", {
+        pageTitle: "Connecter",
+      });
     })
-    .catch(err => {
-        
-        console.log(err.isAxiosError);
+    .catch((err) => {
+      console.log(err.isAxiosError);
     });
 };
 
 exports.postSignIn = (req, res) => {
-    const email = req.body.email;
-    const password = req.body.password;
-    
-    if (!!email && !!password) {
-        const body = JSON.stringify({
-            email: email,
-            password: password,
+  const email = req.body.email;
+  const password = req.body.password;
+
+  if (!!email && !!password) {
+    const body = JSON.stringify({
+      email: email,
+      password: password,
+    });
+    axios
+      .post("https://ski-api.herokuapp.com/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
+        // req.session.isAuth = true
+
+        res.app.locals.nomUtilisateur = response.data.name;
+        res.app.locals.email = response.data.email;
+        res.app.locals.token = response.data.token;
+
+        console.log("app.locals.token", res.app.locals.token);
+        res.render("profil", {
+          pageTitle: "Profil",
+          nomUtilisateur: res.app.locals.nomUtilisateur,
+          email: res.app.locals.email,
+          token: res.app.locals.token,
         });
-        axios.post('https://ski-api.herokuapp.com/login', {
-            'email': email,
-            'password': password
-        })
-        .then(response => {
-            // req.session.isAuth = true
-console.log('response',response.data.token);
-            res.app.locals.nomUtilisateur = response.data.name;
-            res.app.locals.email = response.data.email;
-            res.app.locals.token = response.data.token;
-            let token = response.data.token;
-            // module.exports = token
-            console.log('app.locals.token', res.app.locals.token);
-            res.render('profil', {
-                pageTitle: 'Profil',
-                nomUtilisateur: res.app.locals.nomUtilisateur,
-                email: res.app.locals.email,
-                token: res.app.locals.token
-            })
-        })
-        .catch(error => {
-            res.send(error);
-            
-        });
-    }
+      })
+      .catch((error) => {
+        res.send(error);
+      });
+  }
 };
 
 exports.getProfil = (req, res) => {
-    res.render('profil', {
-        pageTitle: 'Profil'
-    });
+  res.render("profil", {
+    pageTitle: "Profil",
+    nomUtilisateur: req.app.locals.nomUtilisateur,
+    email: req.app.locals.email,
+  });
 };
 
 exports.getEditProfil = (req, res) => {
-    res.render('editProfil', {
-        pageTitle: 'Changer Profil'
-    });
+  res.render("editProfil", {
+    pageTitle: "Changer Profil",
+    nomUtilisateur: req.app.locals.nomUtilisateur,
+    email: req.app.locals.email,
+  });
 };
 
+exports.getLogout = (req, res) => {
+  res.app.locals = {};
+  res.redirect("connexion");
+};
 
+exports.updateUser = (req, res) => {
+  console.log('update');
+  // let accessToken = req.app.locals.token;
+  // let nomUtilisateur = req.body.nomUtilisateur;
+  // let email = req.body.email;
+  
+  // axios({
+  //   method: "put",
+  //   url: "https://ski-api.herokuapp.com/user",
+  //   headers: {
+  //     'Authorization': accessToken,
+  //     'Content-type': 'application/json',
+  //   },
+  //   data: {
+  //     nomUtilisateur: nomUtilisateur,
+  //     email: email,
+  //   }
+  // })
+  //   .then((result) => {
+  //     res.app.locals.nomUtilisateur = result.data.name;
+  //     res.app.locals.email = result.data.email;
+  //     res.app.locals.token = result.data.token;
+
+  //     res.redirect("profile", {
+  //       nomUtilisateur: req.app.locals.nomUtilisateur,
+  //       email:res.app.locals.email,
+  //       token: res.app.locals.token
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+};

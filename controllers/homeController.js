@@ -42,7 +42,7 @@ exports.postProfilSpot = (req, res) => {
       },
       {
         headers: {
-          Authorization: req.app.locals.token,
+          'Authorization': req.app.locals.token,
         },
       }
     )
@@ -56,14 +56,17 @@ exports.postProfilSpot = (req, res) => {
 
 exports.getFeed = (req, res) => {
   let accessToken = req.app.locals.token;
+  let spotsParPage = req.body.pagination;
+  console.log(spotsParPage);
+  // get number of spots per page and pass to params
   axios({
     method: "get",
     url: "http://ski-api.herokuapp.com/ski-spot",
-    params: {limit: 5,
+    params: {limit: 2,
             page: 2
     },
     headers: {
-      Authorization: accessToken,
+      'Authorization': accessToken,
     },
   })
     .then((result) => {  
@@ -75,4 +78,31 @@ exports.getFeed = (req, res) => {
     .catch((error) => {
       console.log(error);
     });
+};
+
+exports.getSkiSpotById = (req,res) =>{
+  let id=req.params.id;
+  let accessToken = req.app.locals.token;
+  axios({
+    method: 'get',
+    url:`http://ski-api.herokuapp.com/ski-spot/${id}`,
+    headers:{
+      'Authorization': accessToken
+    }
+    
+    
+  })
+  .then(result =>{
+    res.render("feedDescription",{
+      pageTitle: "Feed Description",
+      name: result.data.skiSpot.name,
+      address: result.data.skiSpot.address,
+      description: result.data.skiSpot.description,
+      difficulty: result.data.skiSpot.difficulty,
+    });
+  })
+  .catch(error =>{
+    console.log(error);
+    res.redirect('feed');
+  });
 };

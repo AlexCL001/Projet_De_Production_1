@@ -29,17 +29,17 @@
         </div>
         <div class="textZoneProfil">
           <div class="profilNameBar">
-            <p>Stéphanie Denis (18-25 ans)</p>
-            <form action="/profil/edit" method="get">
+            <p><%= nomUtilisateur %> </p>
+            <a href="/profil/edit">
               <button type="submit">
                 <img src="/img/crayonModifier.png" alt="modifier">
               </button>
-            </form>
+            </>
           </div>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
           <p>Québec, Développeur Web</p>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
-          <p>stephden@hotmail.com</p>
+          <p><%= email %> </p>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
           <p>
             Passionnée de ski , j’adore découvrir 
