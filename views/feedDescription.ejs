@@ -1,5 +1,5 @@
-<main class="containerProfilSpot">
-    <img class="imgWoodV" src="img/plancheVertical.png" alt="Wood">
+<main class="containerFeedDescription">
+    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
     <div class="spotAff">
         <div class="spotAffLeft">
             <div>
@@ -7,7 +7,7 @@
             </div>
             <div class="containerAffImgDiff">
                 <div>
-                    <img class="imgSpot" src="img/imgSpot.jpg" alt="image du spot">
+                    <img class="imgSpot" src="/img/imgSpot.jpg" alt="image du spot">
                 </div>
                 <div>
                     <div class="nivDiff">
@@ -17,7 +17,7 @@
                     <div class="affAuteurSpot">
                         <p><b>Auteur du Spot:</b></p>
                         <div>
-                            <img class="imgUserSpot" src="img\imageUtilisateur.png" alt="Icône de profil">
+                            <img class="imgUserSpot" src="/img/imageUtilisateur.png" alt="Icône de profil">
                             <p>Auteur du Spot ejs ici</p>
                         </div>
                     </div>
@@ -25,21 +25,19 @@
             </div>
             <div>
                 <p>Description:</p>
-                <p class="descriptionSpot">données de la description ejs ici
-                    Lorem ipsum dolor, soluta non mollitia quo consequatur, deserunt facere eveniet consequuntur blanditiis ipsum numquam.
-                </p>
+                <p class="descriptionSpot"><%= description %></p>
             </div>
         </div>
         <div class="spotAffRight">
             <div class="spotAffMap">
                 <p>Emplacement:</p>
-                <img src="img/carteVide.png" alt="image de la carte">
-                <p><%= address %></p>
+                <img src="/img/carteVide.png" alt="image de la carte">
+                <p class="descriptionAddress"><%= address %></p>
             </div>
         </div>
     </div>
-    <img class="imgWoodV" src="img/plancheVertical.png" alt="Wood">
+    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
     <form class="spotAffQuit" action="/feed">
-        <button><img src="img/plusButton.png" alt="X"></button>
+        <button><img src="/img/plusButton.png" alt="X"></button>
     </form>
 </main>
