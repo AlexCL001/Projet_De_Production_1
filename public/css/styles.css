@@ -41,6 +41,51 @@ header a {
   padding: 0 20px 0 20px;
 }
 
+header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+header div form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+}
+
+header div form button {
+  border: none;
+  border-radius: 2vw;
+  background-color: white;
+  font-size: 2vh;
+  padding: 1vh 2vw 1vh 2vw;
+}
+
+header div form button:hover {
+  cursor: pointer;
+}
+
 .logo {
   height: 9vh;
 }
@@ -200,7 +245,7 @@ header a {
   background-image: url(../img/planche.png);
   font-size: 4vh;
   margin-top: 4vh;
-  padding: 10px 0 10px 2vw;
+  padding: 1vh 0 1vh 2vw;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
@@ -580,7 +625,6 @@ header a {
   -webkit-box-align: space-around;
       -ms-flex-align: space-around;
           align-items: space-around;
-  background-color: red;
   width: 90.8%;
   height: 40vh;
   border: 0.25vw solid black;
@@ -898,7 +942,7 @@ header a {
   width: 3.5vw;
 }
 
-.containerProfilSpot {
+.containerFeedDescription {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -914,37 +958,27 @@ header a {
           align-items: flex-start;
   height: 90vh;
   width: 100%;
-  float: left;
   background-image: url(/img/backgroundNeige.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.containerProfilSpot .imgWoodV {
+.containerFeedDescription .imgWoodV {
   height: 100%;
 }
 
-.containerProfilSpot h1 {
-  font-size: 4rem;
+.containerFeedDescription h1 {
+  font-size: 7vh;
 }
 
 .spotAff {
-  height: 90vh;
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.5);
-  font-size: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.spotAff input {
-  font-size: 2rem;
-}
-
-.spotAff textarea {
-  margin-top: 20px;
-  font-size: 2rem;
-  width: 100%;
-  height: 200px;
+  height: 90vh;
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 6vh;
 }
 
 .spotAffLeft {
@@ -962,15 +996,7 @@ header a {
       -ms-flex-align: space-between;
           align-items: space-between;
   width: 80%;
-  padding: 20px;
-}
-
-.spotAffLeft input {
-  width: 100%;
-  padding: 15px;
-  color: white;
-  border: none;
-  background-image: url(../img/plancheHeader.png);
+  padding: 2vw;
 }
 
 .containerAffImgDiff {
@@ -990,16 +1016,16 @@ header a {
 }
 
 .containerAffImgDiff p {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 3.5vh;
+  margin-bottom: 2vh;
 }
 
 .imgSpot {
-  width: 500px;
+  width: 26vw;
 }
 
 .imgUserSpot {
-  width: 80px;
+  height: 9vh;
 }
 
 .nivDiff {
@@ -1022,7 +1048,7 @@ header a {
   text-align: center;
   background-image: url(../img/planche.png);
   color: white;
-  padding: 10px 20px 10px 20px;
+  padding: 1vh 2vw 1vh 2vw;
 }
 
 .affAuteurSpot {
@@ -1058,7 +1084,7 @@ header a {
 }
 
 .descriptionSpot {
-  font-size: 2rem;
+  font-size: 4vh;
 }
 
 .spotAffRight {
@@ -1079,7 +1105,7 @@ header a {
 }
 
 .spotAffRight img {
-  width: 400px;
+  width: 22vw;
 }
 
 .spotAffMap {
@@ -1098,10 +1124,16 @@ header a {
   height: 80%;
 }
 
+.descriptionAddress {
+  font-size: 4vh;
+  text-align: center;
+  width: 100%;
+}
+
 .spotAffQuit {
   position: absolute;
-  right: 40px;
-  margin-top: 20px;
+  right: 2.5vw;
+  margin-top: 2vh;
 }
 
 .spotAffQuit button {
@@ -1116,5 +1148,6 @@ header a {
 .spotAffQuit img {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
+  width: 3.5vw;
 }
 /*# sourceMappingURL=styles.css.map */
