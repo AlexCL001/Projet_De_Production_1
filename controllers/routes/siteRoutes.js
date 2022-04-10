@@ -22,9 +22,11 @@ router.get('/profil', authentificationController.getProfil);
 
 router.get('/profil/:id', authentificationController.getEditProfil);
 
-router.get('/formulaireSpot', homeController.getFormulaireSpot)
+router.put('/updateUser', authentificationController.updateUser);
 
-router.post('/ProfilSpot', homeController.postProfilSpot)
+router.get('/formulaireSpot', homeController.getFormulaireSpot);
+
+router.post('/ProfilSpot', homeController.postProfilSpot);
 
 router.get ('/feed', homeController.getFeed);
 

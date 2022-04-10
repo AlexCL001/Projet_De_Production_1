@@ -42,7 +42,7 @@ exports.postProfilSpot = (req, res) => {
       },
       {
         headers: {
-          Authorization: req.app.locals.token,
+          'Authorization': req.app.locals.token,
         },
       }
     )
@@ -79,6 +79,7 @@ exports.getFeed = (req, res) => {
       console.log(error);
     });
 };
+
 exports.getSkiSpotById = (req,res) =>{
   let id=req.params.id;
   let accessToken = req.app.locals.token;
