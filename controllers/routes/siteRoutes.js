@@ -26,6 +26,8 @@ router.put('/updateUser', authentificationController.updateUser);
 
 router.get('/formulaireSpot', homeController.getFormulaireSpot);
 
+router.post('/formulaireSpot', homeController.postNouveauSpot);
+
 router.post('/ProfilSpot', homeController.postProfilSpot);
 
 router.get ('/feed', homeController.getFeed);
