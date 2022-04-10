@@ -82,6 +82,40 @@ exports.getEditProfil = (req, res) => {
 };
 
 exports.getLogout = (req, res) => {
-    res.app.locals = {};
-    res.redirect('connexion');
+  res.app.locals = {};
+  res.redirect("connexion");
+};
+
+exports.updateUser = (req, res) => {
+  console.log('update');
+  // let accessToken = req.app.locals.token;
+  // let nomUtilisateur = req.body.nomUtilisateur;
+  // let email = req.body.email;
+  
+  // axios({
+  //   method: "put",
+  //   url: "https://ski-api.herokuapp.com/user",
+  //   headers: {
+  //     'Authorization': accessToken,
+  //     'Content-type': 'application/json',
+  //   },
+  //   data: {
+  //     nomUtilisateur: nomUtilisateur,
+  //     email: email,
+  //   }
+  // })
+  //   .then((result) => {
+  //     res.app.locals.nomUtilisateur = result.data.name;
+  //     res.app.locals.email = result.data.email;
+  //     res.app.locals.token = result.data.token;
+
+  //     res.redirect("profile", {
+  //       nomUtilisateur: req.app.locals.nomUtilisateur,
+  //       email:res.app.locals.email,
+  //       token: res.app.locals.token
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
 };
