@@ -20,7 +20,7 @@ exports.postConnection = (req, res) => {
       password: password,
     })
     .then((response) => {
-      // console.log(response);
+      console.log(response);
       res.render("creationCompteReussi", {
         pageTitle: "Connecter",
       });
