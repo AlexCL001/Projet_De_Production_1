@@ -20,7 +20,7 @@ router.post('/affichageProfil', authentificationController.postSignIn);
 
 router.get('/profil', authentificationController.getProfil);
 
-router.get('/profil/:id', authentificationController.getEditProfil);
+router.get('/profil/edit', authentificationController.getEditProfil);
 
 router.put('/updateUser', authentificationController.updateUser);
 
