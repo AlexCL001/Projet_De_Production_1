@@ -1,10 +1,10 @@
 <main class="containerFormulaireSpot">
     <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
     <div class="spotForm">
-        <form action="#">
+        <form action="/formulaireSpot" method="post">
             <div class="spotFormLeft">
                 <div>
-                    <input type="text" placeholder="Nom du spot ici">
+                    <input type="text" name="nomDuSpot" placeholder="Nom du spot ici">
                 </div>
                 <div class="containerImgNivDiff">
                     <div>
@@ -14,9 +14,9 @@
                         <p>Niveau de difficulté:</p>
                         <div class="nivDiffRadio">
                             <div>
-                                <input type="radio" id="html" name="nivDiff" value="1">
-                                <input type="radio" id="css" name="nivDiff" value="2">
-                                <input type="radio" id="javascript" name="nivDiff" value="3">
+                                <input type="radio" id="html" name="nivDiff" value="facile">
+                                <input type="radio" id="css" name="nivDiff" value="intermédiaire">
+                                <input type="radio" id="javascript" name="nivDiff" value="difficile">
                             </div>
                             <div>
                                 <label for="Facile - 1">Facile</label>
@@ -28,14 +28,15 @@
                 </div>
                 <div>
                     <p>Description:</p>
-                    <textarea type="text" placeholder="Description"></textarea>
+                    <textarea type="text" name="description" placeholder="Description"></textarea>
                 </div>
             </div>
             <div class="spotFormRight">
                 <div class="spotFormMap">
                     <p>Emplacement:</p>
                     <img src="/img/carteVide.png" alt="image de la carte">
-                    <textarea type="text" placeholder="Adresse"></textarea>
+                    <input type="text" name="address" placeholder="Adresse">
+                    <input type="text" name="coordinates" placeholder="Coordinates">
                     <!-- <input type="text" placeholder="Adresse"> -->
                 </div>
                 <div>

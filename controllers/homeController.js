@@ -2,6 +2,7 @@ const axios = require("axios");
 const { response } = require("express");
 const { token } = require("./authentificationController");
 const express = require("express");
+const { redirect } = require("express/lib/response");
 const app = express();
 
 exports.getIndex = (req, res) => {
@@ -18,8 +19,11 @@ exports.getConnexion = (req, res) => {
 };
 
 exports.getFormulaireSpot = (req, res) => {
+  let accessToken = req.app.locals.token;
+  console.log('getFormulaireSpot', accessToken);
   res.render("formulaireSpot", {
     pageTitle: "Formulaire spot",
+    accessToken: accessToken,
   });
 };
 
@@ -69,7 +73,7 @@ exports.getFeed = (req, res) => {
       'Authorization': accessToken,
     },
   })
-    .then((result) => {  
+    .then((result) => {
       res.render("feed", {
         pageTitle: "Feed",
         data: result.data.skiSpots,
@@ -80,29 +84,66 @@ exports.getFeed = (req, res) => {
     });
 };
 
-exports.getSkiSpotById = (req,res) =>{
-  let id=req.params.id;
+exports.getSkiSpotById = (req, res) => {
+  let id = req.params.id;
   let accessToken = req.app.locals.token;
   axios({
-    method: 'get',
-    url:`http://ski-api.herokuapp.com/ski-spot/${id}`,
-    headers:{
-      'Authorization': accessToken
-    }
-    
-    
+    method: "get",
+    url: `http://ski-api.herokuapp.com/ski-spot/${id}`,
+    headers: {
+      'Authorization': accessToken,
+    },
   })
-  .then(result =>{
-    res.render("feedDescription",{
-      pageTitle: "Feed Description",
-      name: result.data.skiSpot.name,
-      address: result.data.skiSpot.address,
-      description: result.data.skiSpot.description,
-      difficulty: result.data.skiSpot.difficulty,
+    .then((result) => {
+      res.render("feedDescription", {
+        pageTitle: "Feed Description",
+        name: result.data.skiSpot.name,
+        address: result.data.skiSpot.address,
+        description: result.data.skiSpot.description,
+        difficulty: result.data.skiSpot.difficulty,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("feed");
     });
+};
+
+exports.postNouveauSpot = (req, res) => {
+  let name = req.body.nomDuSpot;
+  let description = req.body.description;
+  let address = req.body.address;
+  let difficulty = req.body.nivDiff;
+  let coordinates = Array.from(req.body.coordinates.split(','));
+  let accessToken = req.app.locals.token;
+  const url = "https://ski-api.herokuapp.com/ski-spot";
+  console.log('accessToken', accessToken); 
+  console.log('req.app.locals.token', req.app.locals.token); 
+  console.log('coordinates data type: ',typeof(coordinates));
+  let data = {
+    'name': name,
+    'description': description,
+    'address': address,
+    'difficulty': difficulty,
+    'coordinates': coordinates
+  };
+
+
+
+  let headers = {
+    'Authorization': accessToken,
+  };
+
+  axios.post(url, data, {
+    headers: headers
   })
-  .catch(error =>{
+  .then(result => {
+    console.log(result);
+    res.redirect('/formulaireSpot');
+
+  })
+  .catch(error => {
     console.log(error);
-    res.redirect('feed');
+    res.redirect('/formulaireSpot');
   });
 };
