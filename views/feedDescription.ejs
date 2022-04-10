@@ -1,67 +1,45 @@
-<main>
-    <div class="containerFeed">
-        <div class="menu">
-            <nav>
-                <form action="/profil" method="get">
-                    <button type="submit">Profil</button>
-                </form>
-                <form action="/feed" method="get">
-                    <button class="navFeed" type="submit">Feed</button>
-                </form>
-                <form action="" method="get">
-                    <button type="submit">Messages</button>
-                </form>
-                <form action="" method="get">
-                    <button type="submit">Amis</button>
-                </form>
-            </nav>
-            <img src="/img/carte.png" alt="Carte de mes amis">
-        </div>
-        <div class="feedPage">
-            <div class="headFeedPage">
-                <h1>Bienvenue dans le Feed!</h1>
-             
-                <form action="/formulaireSpot" method="get">
-                    <button type="submit">
-                        <img src="/img/plusButton.png" alt="symbole ajouter: +">
-                    </button>
-                </form>
+<main class="containerProfilSpot">
+    <img class="imgWoodV" src="img/plancheVertical.png" alt="Wood">
+    <div class="spotAff">
+        <div class="spotAffLeft">
+            <div>
+                <h1><%= name %></h1>
             </div>
-          
-
-            <div class="feedListeDesSpots">
-                <div class="spotModifiable">
-                    <img class="imgUtilisateurSpotModifiable" src="/img/imageUtilisateur.png" alt="img utilisateur">
-                    <p>Nom de l'auteur en ejs</p>
-                    <img class="dotFeed" src="/img/troisPoints.png" alt="trois points">
+            <div class="containerAffImgDiff">
+                <div>
+                    <img class="imgSpot" src="img/imgSpot.jpg" alt="image du spot">
                 </div>
-                <div class="feedInfoSpot">
-                    <div class="partOneInfoSpotFeed">
-                        <div class="elegantInfoFeed">
-                            <p class="pBold">Nom du Spot:</p>
-                            <p><%= name %></p>
-                        </div>
-                        <div class="elegantInfoFeed">
-                            <p class="pBold">Emplacement:</p>
-                            <p><%= address %> </p>
-                        </div>
+                <div>
+                    <div class="nivDiff">
+                        <p><b>Niveau de difficulté:</b></p>
+                        <p class="affDiffSpot"><%= difficulty %></p>
+                    </div>
+                    <div class="affAuteurSpot">
+                        <p><b>Auteur du Spot:</b></p>
                         <div>
-                            <p class="pBold">Description:</p>
-                            <p class="fontSizeDescriptionSpotFeed">
-                                <%= description %>  
-                            </p>
+                            <img class="imgUserSpot" src="img\imageUtilisateur.png" alt="Icône de profil">
+                            <p>Auteur du Spot ejs ici</p>
                         </div>
-                    </div>
-                    <!-- <img src="/img/lineSeparator.png" alt="ligne séparatrice"> -->
-                    <div class="partTwoInfoSpotFeed">
-                        <h2>Niveau de difficulté:</h2>
-                        <p class="bigNum"><%= difficulty %> </p>
-                       
                     </div>
                 </div>
             </div>
-
-            
+            <div>
+                <p>Description:</p>
+                <p class="descriptionSpot">données de la description ejs ici
+                    Lorem ipsum dolor, soluta non mollitia quo consequatur, deserunt facere eveniet consequuntur blanditiis ipsum numquam.
+                </p>
+            </div>
+        </div>
+        <div class="spotAffRight">
+            <div class="spotAffMap">
+                <p>Emplacement:</p>
+                <img src="img/carteVide.png" alt="image de la carte">
+                <p><%= address %></p>
+            </div>
         </div>
     </div>
+    <img class="imgWoodV" src="img/plancheVertical.png" alt="Wood">
+    <form class="spotAffQuit" action="/feed">
+        <button><img src="img/plusButton.png" alt="X"></button>
+    </form>
 </main>
