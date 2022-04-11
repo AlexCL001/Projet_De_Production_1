@@ -86,7 +86,7 @@ header{
             background-image: $woodImg;
             font-size: 4vh;
             margin: 3vh;
-            padding: 2vh;
+            padding: 1vh 2vw 1vh 2vw;
             &:hover{
                 cursor: pointer;
             }
@@ -127,7 +127,7 @@ header{
             background-image: $woodImg;
             font-size: 4vh;
             margin: 3vh;
-            padding: 2vh;
+            padding: 1vh 2vw 1vh 2vw;
             &:hover{
                 cursor: pointer;
             }
@@ -136,6 +136,31 @@ header{
             height: 4vh;
         }
     }
+}
+
+//page creationCompteReussi.ejs
+.containerCreationCompteReussi{
+    @include flex(column, space-around, center);
+    height: 75vh;
+    width: 30vw;
+    font-size: 2vh;
+    background-color: $seethroughWhite;
+    button{
+        color: $woodTxt;
+        border: none;
+        background-image: $woodImg;
+        font-size: 4vh;
+        margin: 3vh;
+        padding: 1vh 2vw 1vh 2vw;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.creationReussi{
+    text-align: center;
+    font-size: 4vh;
+    padding: 2vh;
 }
 
 //css du menu de gauche commun 
