@@ -6,7 +6,6 @@ const { redirect } = require("express/lib/response");
 const app = express();
 
 exports.getIndex = (req, res) => {
-  // console.log(res.app.locals)
   res.render("connexion", {
     pageTitle: "Connexion",
   });
@@ -20,7 +19,6 @@ exports.getConnexion = (req, res) => {
 
 exports.getFormulaireSpot = (req, res) => {
   let accessToken = req.app.locals.token;
-  console.log('getFormulaireSpot', accessToken);
   res.render("formulaireSpot", {
     pageTitle: "Formulaire spot",
     accessToken: accessToken,
@@ -52,7 +50,7 @@ exports.postProfilSpot = (req, res) => {
     )
     .then((response) => console.log(response.data));
 
-  console.log(token, "token");
+  
   res.render("profilSpot", {
     pageTitle: "Profil spot",
   });
@@ -61,14 +59,14 @@ exports.postProfilSpot = (req, res) => {
 exports.getFeed = (req, res) => {
   let accessToken = req.app.locals.token;
   let spotsParPage = req.body.pagination;
-  console.log(spotsParPage);
+  
   // get number of spots per page and pass to params
   axios({
     method: "get",
     url: "http://ski-api.herokuapp.com/ski-spot",
-    params: {limit: 2,
-            page: 2
-    },
+    // params: {limit: 2,
+    //         page: 2
+    // },
     headers: {
       'Authorization': accessToken,
     },
@@ -117,9 +115,6 @@ exports.postNouveauSpot = (req, res) => {
   let coordinates = Array.from(req.body.coordinates.split(','));
   let accessToken = req.app.locals.token;
   const url = "https://ski-api.herokuapp.com/ski-spot";
-  console.log('accessToken', accessToken); 
-  console.log('req.app.locals.token', req.app.locals.token); 
-  console.log('coordinates data type: ',typeof(coordinates));
   let data = {
     'name': name,
     'description': description,

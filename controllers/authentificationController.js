@@ -51,7 +51,7 @@ exports.postSignIn = (req, res) => {
         res.app.locals.email = response.data.email;
         res.app.locals.token = response.data.token;
 
-        console.log("app.locals.token", res.app.locals.token);
+        
         res.render("profil", {
           pageTitle: "Profil",
           nomUtilisateur: res.app.locals.nomUtilisateur,
