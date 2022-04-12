@@ -34,4 +34,8 @@ router.get ('/feed', homeController.getFeed);
 
 router.get ('/feed/:id', homeController.getSkiSpotById);
 
+// router.get('/editSpot/:id', homeController.editSpot);
+
+// router.delete('/deleteSpot/:id', homeController.deleteSpot);
+
 module.exports = router;

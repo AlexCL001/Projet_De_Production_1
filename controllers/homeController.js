@@ -141,3 +141,35 @@ exports.postNouveauSpot = (req, res) => {
     res.redirect('/formulaireSpot');
   });
 };
+
+
+exports.editSpot = (req, res) => {
+  let accessToken = req.app.locals.token;
+  let spotId = { _id: req.params.id };
+
+  const url = `http://ski-api.herokuapp.com/ski-spot/${spotId}`;
+  let data = {
+  };
+  let headers = {
+    'Authorization': accessToken,
+    "Content-type": "application/json",
+  };
+
+  axios
+    .get(url, data, {
+      headers: headers,
+    })
+    .then((result) => {
+      res.render("editSpot", {
+        pageTitle: "Edit Spot",
+        name: result.skiSpot.name,
+        description: result.skiSpot.description,
+        address: result.skiSpot.address,
+        difficulty: result.skiSpot.difficulty,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/profil");
+    });
+};
