@@ -110,11 +110,15 @@ exports.updateUser = (req, res) => {
     })
     .then((result) => {
       console.log("UPDATE RESULTS:", result);
-      res.app.locals.nomUtilisateur = result.data.name;
-      res.app.locals.email = result.data.email;
-      res.app.locals.token = result.data.token;
+      res.app.locals.nomUtilisateur = result.data.user.name;
+      res.app.locals.email = result.data.user.email;
+      res.app.locals.token = result.data.user.token;
 
-      res.redirect("/profile");
+      res.render("profil", {
+        pageTitle: "Profil",
+        nomUtilisateur: req.app.locals.nomUtilisateur,
+        email: req.app.locals.email,
+      });
     })
     .catch((error) => {
       console.log(error);
