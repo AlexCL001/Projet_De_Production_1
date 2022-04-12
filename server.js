@@ -2,7 +2,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
-const expressSession = require('express-session')
+const expressSession = require('express-session');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -14,6 +15,8 @@ const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.set('layout', './layouts/mainLayout.ejs');
 
+app.use(methodOverride('_method'));
+
 app.use(expressSession({
     cookie: {
         maxAge: 4000000
@@ -21,7 +24,7 @@ app.use(expressSession({
     secret: 'secretKeyToMoveInDotEnv',
     saveUninitialized: false,
     resave: false
-}))
+}));
 app.use(bodyParser.urlencoded({ extended:false }));
 app.use(expressLayouts);
 app.use(siteRoutes);
