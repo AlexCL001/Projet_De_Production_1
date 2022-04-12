@@ -51,7 +51,6 @@ exports.postSignIn = (req, res) => {
         res.app.locals.email = response.data.email;
         res.app.locals.token = response.data.token;
 
-        
         res.render("profil", {
           pageTitle: "Profil",
           nomUtilisateur: res.app.locals.nomUtilisateur,
@@ -83,39 +82,44 @@ exports.getEditProfil = (req, res) => {
 
 exports.getLogout = (req, res) => {
   res.app.locals = {};
-  res.redirect("connexion");
+  res.redirect("/connexion");
 };
 
 exports.updateUser = (req, res) => {
-  console.log('update');
-  // let accessToken = req.app.locals.token;
-  // let nomUtilisateur = req.body.nomUtilisateur;
-  // let email = req.body.email;
-  
-  // axios({
-  //   method: "put",
-  //   url: "https://ski-api.herokuapp.com/user",
-  //   headers: {
-  //     'Authorization': accessToken,
-  //     'Content-type': 'application/json',
-  //   },
-  //   data: {
-  //     nomUtilisateur: nomUtilisateur,
-  //     email: email,
-  //   }
-  // })
-  //   .then((result) => {
-  //     res.app.locals.nomUtilisateur = result.data.name;
-  //     res.app.locals.email = result.data.email;
-  //     res.app.locals.token = result.data.token;
+  let accessToken = req.app.locals.token;
+  let nomUtilisateur = req.body.nomUtilisateur;
+  let email = req.body.email;
 
-  //     res.redirect("profile", {
-  //       nomUtilisateur: req.app.locals.nomUtilisateur,
-  //       email:res.app.locals.email,
-  //       token: res.app.locals.token
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+
+  console.log('nomUtilisateur', nomUtilisateur);
+  console.log('email', email);
+  console.log('accessToken', accessToken);
+
+  const url = "https://ski-api.herokuapp.com/user";
+  let data = {
+    name: nomUtilisateur,
+    email: email,
+  };
+  let headers = {
+    'Authorization': accessToken,
+    "Content-type": "application/json",
+  };
+
+  axios
+    .put(url, data, {
+      headers: headers,
+      
+    })
+    .then((result) => {
+      console.log("UPDATE RESULTS:", result);
+      res.app.locals.nomUtilisateur = result.data.name;
+      res.app.locals.email = result.data.email;
+      res.app.locals.token = result.data.token;
+
+      res.redirect("/profile");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/profil");
+    });
 };

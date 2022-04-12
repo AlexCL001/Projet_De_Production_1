@@ -18,7 +18,7 @@
       <img src="/img/carte.png" alt="Carte de mes amis" />
     </div>
     <div class="profilPage">
-      <form class="topPartProfil" action="/affichageProfil" method="post">
+      <form class="topPartProfil" action="/updateUser?_method=put " method="post">
         <div class="imgEtIcone">
           <img
             class="bigImgUtilisateur"
@@ -34,7 +34,11 @@
         <div>
           <div class="formProfil">
             <div>
-              <input type="text" name="nomUtilisateur" value="<%= nomUtilisateur %> " />
+              <input
+                type="text"
+                name="nomUtilisateur"
+                value="<%= nomUtilisateur %> "
+              />
               <select name="groupeAge" id="groupeAge">
                 <option value="0-18">0 - 18 ans</option>
                 <option value="18-25">18 - 25 ans</option>
@@ -75,9 +79,7 @@
           </div>
         </div>
         <div class="validFormProfil">
-          <form action="/connexion" method="get">
-            <button type="submit">Update</button>
-          </form>
+          <button type="submit">Update</button>
         </div>
       </form>
       <div>
