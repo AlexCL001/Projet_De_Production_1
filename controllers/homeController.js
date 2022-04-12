@@ -133,7 +133,6 @@ exports.postNouveauSpot = (req, res) => {
     headers: headers
   })
   .then(result => {
-    console.log(result);
     res.redirect('/formulaireSpot');
 
   })

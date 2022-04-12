@@ -90,10 +90,9 @@ exports.updateUser = (req, res) => {
   let nomUtilisateur = req.body.nomUtilisateur;
   let email = req.body.email;
 
-
-  console.log('nomUtilisateur', nomUtilisateur);
-  console.log('email', email);
-  console.log('accessToken', accessToken);
+  console.log("nomUtilisateur", nomUtilisateur);
+  console.log("email", email);
+  console.log("accessToken", accessToken);
 
   const url = "https://ski-api.herokuapp.com/user";
   let data = {
@@ -101,14 +100,13 @@ exports.updateUser = (req, res) => {
     email: email,
   };
   let headers = {
-    'Authorization': accessToken,
+    Authorization: accessToken,
     "Content-type": "application/json",
   };
 
   axios
     .put(url, data, {
       headers: headers,
-      
     })
     .then((result) => {
       console.log("UPDATE RESULTS:", result);
