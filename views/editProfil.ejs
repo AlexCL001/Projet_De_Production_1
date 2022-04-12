@@ -34,18 +34,13 @@
         <div>
           <div class="formProfil">
             <div>
+              <label for="nomUtilisateur">Nom : </label>
               <input
                 type="text"
                 name="nomUtilisateur"
                 value="<%= nomUtilisateur %> "
               />
-              <select name="groupeAge" id="groupeAge">
-                <option value="0-18">0 - 18 ans</option>
-                <option value="18-25">18 - 25 ans</option>
-                <option value="25-40">25 - 40 ans</option>
-                <option value="40-65">40 - 65ans</option>
-                <option value="65plus">65 ans et plus</option>
-              </select>
+              
             </div>
             <img
               class="woodSeparation"
@@ -53,8 +48,11 @@
               alt="wood"
             />
             <div>
-              <input type="text" value="ville en ejs" />
-              <input type="text" value="profession en ejs" />
+              <label for="address">Address : </label>
+              <input type="text" name="address" value="<%= address %> "/>
+              <br>
+              <label for="phone">Numéro de Téléphone : </label>
+              <input type="text" name="phone" value="<%= phone %> "/>
             </div>
             <img
               class="woodSeparation"
@@ -62,6 +60,7 @@
               alt="wood"
             />
             <div>
+              <label for="email">Email : </label>
               <input type="text" name="email" value="<%= email %> " />
             </div>
             <img

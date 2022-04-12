@@ -50,12 +50,16 @@ exports.postSignIn = (req, res) => {
         res.app.locals.nomUtilisateur = response.data.name;
         res.app.locals.email = response.data.email;
         res.app.locals.token = response.data.token;
+        res.app.locals.address = response.data.address;
+        res.app.locals.phone = response.data.phone;
 
         res.render("profil", {
           pageTitle: "Profil",
           nomUtilisateur: res.app.locals.nomUtilisateur,
           email: res.app.locals.email,
           token: res.app.locals.token,
+          address: res.app.locals.address,
+          phone: res.app.locals.phone,
         });
       })
       .catch((error) => {
@@ -69,6 +73,8 @@ exports.getProfil = (req, res) => {
     pageTitle: "Profil",
     nomUtilisateur: req.app.locals.nomUtilisateur,
     email: req.app.locals.email,
+    address: req.app.locals.address,
+    phone: req.app.locals.phone,
   });
 };
 
@@ -77,6 +83,8 @@ exports.getEditProfil = (req, res) => {
     pageTitle: "Changer Profil",
     nomUtilisateur: req.app.locals.nomUtilisateur,
     email: req.app.locals.email,
+    address: req.app.locals.address,
+    phone: req.app.locals.phone,
   });
 };
 
@@ -89,6 +97,8 @@ exports.updateUser = (req, res) => {
   let accessToken = req.app.locals.token;
   let nomUtilisateur = req.body.nomUtilisateur;
   let email = req.body.email.trim();
+  let address = req.body.address;
+  let phone = req.body.phone;
 
   console.log("nomUtilisateur", nomUtilisateur);
   console.log("email", email);
@@ -98,6 +108,8 @@ exports.updateUser = (req, res) => {
   let data = {
     name: nomUtilisateur,
     email: email,
+    address: address,
+    phone: phone
   };
   let headers = {
     Authorization: accessToken,
@@ -113,11 +125,15 @@ exports.updateUser = (req, res) => {
       res.app.locals.nomUtilisateur = result.data.user.name;
       res.app.locals.email = result.data.user.email;
       res.app.locals.token = result.data.user.token;
+      res.app.locals.address = result.data.user.address;
+      res.app.locals.phone = result.data.user.phone;
 
       res.render("profil", {
         pageTitle: "Profil",
         nomUtilisateur: req.app.locals.nomUtilisateur,
         email: req.app.locals.email,
+        address: req.app.locals.address,
+        phone: req.app.locals.phone,
       });
     })
     .catch((error) => {
