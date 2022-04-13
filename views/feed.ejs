@@ -42,7 +42,14 @@
                 <div class="spotModifiable">
                     <img class="imgUtilisateurSpotModifiable" src="/img/imageUtilisateur.png" alt="img utilisateur">
                     <p>Nom de l'auteur en ejs</p>
-                    <img class="dotFeed" src="/img/troisPoints.png" alt="trois points">
+                    <div class="boutonEdit">
+                    <form action="/editSpot/<%= element._id %> " method="get">
+                        <button type="submit">Éditer</button>
+                    </form>
+                    <form action="/deleteSpot/<%= element._id %>?_method=delete " method="post">
+                        <button type="submit">Supprimer</button>
+                    </form>
+                </div>
                 </div>
                 <div class="feedInfoSpot">
                     <div class="partOneInfoSpotFeed">
@@ -68,12 +75,7 @@
                             <button type="submit">Plus d'info --></button>
                         </form>
 
-                        <form action="/editSpot/<%= element._id %> " method="get">
-                            <button type="submit">Edit</button>
-                        </form>
-                        <form action="/deleteSpot/<%= element._id %>?_method=delete " method="post">
-                            <button type="submit">Delete</button>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
