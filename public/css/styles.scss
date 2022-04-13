@@ -370,9 +370,13 @@ header{
     padding-right: 1vw;
 
     button{
-        @include flex(row,space-between ,center );
-        background: none;
-        color: white;
+        // @include flex(column, center, center );
+        background-color: white;
+        border: none;
+        border-radius: 2vw;
+        margin: 0.5vw;
+        padding: 1vh 1vw 1vh 1vw;
+        //alllllllooooooooooooooooooooooooooooooooooooooooooooooooooo
         font-size: 3vh;
         &:hover{
             cursor: pointer;
@@ -383,8 +387,8 @@ header{
 .imgUtilisateurSpotModifiable{
     width: 4.5vw;
 }
-.dotFeed{
-    width: 8vh;
+.buttonEditDelete{
+    @include flex(row, space-evenly, center );
 }
 .feedInfoSpot{
     @include flex(row, space-between, space-around);
