@@ -28,8 +28,6 @@ router.get('/formulaireSpot', homeController.getFormulaireSpot);
 
 router.post('/formulaireSpot', homeController.postNouveauSpot);
 
-router.post('/ProfilSpot', homeController.postProfilSpot);
-
 router.get('/feed', homeController.getFeed);
 
 router.get('/feed/:id', homeController.getSkiSpotById);

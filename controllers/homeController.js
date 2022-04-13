@@ -25,37 +25,6 @@ exports.getFormulaireSpot = (req, res) => {
   });
 };
 
-exports.postProfilSpot = (req, res) => {
-  const name = req.body.name;
-  const description = req.body.description;
-  const address = req.body.address;
-  const difficulty = req.body.difficulty;
-  const coordinates = req.body.coordinates;
-
-  axios
-    .post(
-      "https://ski-api.herokuapp.com/ski-spot",
-      {
-        name: "Vallée des fantômes",
-        description: "Un méchant beau spot",
-        address: "12345 Monts Valins, Saguenay, Québec",
-        difficulty: "facile",
-        coordinates: [123, 456],
-      },
-      {
-        headers: {
-          'Authorization': req.app.locals.token,
-        },
-      }
-    )
-    .then((response) => console.log(response.data));
-
-  
-  res.render("profilSpot", {
-    pageTitle: "Profil spot",
-  });
-};
-
 exports.getFeed = (req, res) => {
   let accessToken = req.app.locals.token;
   let spotsParPage = req.body.pagination;
@@ -122,8 +91,6 @@ exports.postNouveauSpot = (req, res) => {
     'difficulty': difficulty,
     'coordinates': coordinates
   };
-
-
 
   let headers = {
     'Authorization': accessToken,
