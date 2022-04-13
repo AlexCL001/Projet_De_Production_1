@@ -206,3 +206,27 @@ exports.updateSpot = (req, res) => {
       res.redirect("/feed");
     });
 };
+
+exports.deleteSpot = (req, res) => {
+  let accessToken = req.app.locals.token;
+  let spotId = req.params.id ;
+  const url = `http://ski-api.herokuapp.com/ski-spot/${spotId}`;
+  
+  let headers = {
+    'Authorization': accessToken,
+    "Content-type": "application/json",
+  };
+
+  axios
+    .delete(url, {
+      headers: headers,
+    })
+    .then((result) => {
+      res.redirect('/feed');
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/feed");
+    });
+
+};

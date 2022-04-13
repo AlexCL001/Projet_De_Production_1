@@ -38,6 +38,6 @@ router.get('/editSpot/:id', homeController.editSpot);
 
 router.put('/updateSpot/:id', homeController.updateSpot);
 
-// router.delete('/deleteSpot/:id', homeController.deleteSpot);
+router.delete('/deleteSpot/:id', homeController.deleteSpot);
 
 module.exports = router;
