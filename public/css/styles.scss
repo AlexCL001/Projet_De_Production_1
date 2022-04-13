@@ -368,6 +368,17 @@ header{
     width: 90%;
     background-image: $woodHeadImg;
     padding-right: 1vw;
+
+    button{
+        @include flex(row,space-between ,center );
+        background: none;
+        color: white;
+        font-size: 3vh;
+        &:hover{
+            cursor: pointer;
+        }
+
+    }
 }
 .imgUtilisateurSpotModifiable{
     width: 4.5vw;
