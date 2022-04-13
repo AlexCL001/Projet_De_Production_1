@@ -145,10 +145,49 @@ exports.postNouveauSpot = (req, res) => {
 
 exports.editSpot = (req, res) => {
   let accessToken = req.app.locals.token;
-  let spotId = { _id: req.params.id };
+  let spotId = req.params.id ;
+ 
+  const url = `http://ski-api.herokuapp.com/ski-spot/${spotId}`;
+  
+  let headers = {
+    'Authorization': accessToken,
+    "Content-type": "application/json",
+  };
+
+  axios
+    .get(url, {
+      headers: headers,
+    })
+    .then((result) => {
+      res.render("editSpot", {
+        pageTitle: "Edit Spot",
+        id: spotId,
+        name: result.data.skiSpot.name,
+        description: result.data.skiSpot.description,
+        address: result.data.skiSpot.address,
+        difficulty: result.data.skiSpot.difficulty,
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.redirect("/profil");
+    });
+};
+
+exports.updateSpot = (req, res) => {
+  let accessToken = req.app.locals.token;
+  let spotId = req.params.id ;
+  let name = req.body.name;
+  let description = req.body.description;
+  let address = req.body.address;
+  let difficulty = req.body.difficulty;
 
   const url = `http://ski-api.herokuapp.com/ski-spot/${spotId}`;
   let data = {
+    name: name,
+    description: description,
+    address: address,
+    difficulty: difficulty,
   };
   let headers = {
     'Authorization': accessToken,
@@ -156,20 +195,14 @@ exports.editSpot = (req, res) => {
   };
 
   axios
-    .get(url, data, {
+    .put(url, data, {
       headers: headers,
     })
     .then((result) => {
-      res.render("editSpot", {
-        pageTitle: "Edit Spot",
-        name: result.skiSpot.name,
-        description: result.skiSpot.description,
-        address: result.skiSpot.address,
-        difficulty: result.skiSpot.difficulty,
-      });
+      res.redirect('/feed');
     })
     .catch((error) => {
       console.log(error);
-      res.redirect("/profil");
+      res.redirect("/feed");
     });
 };

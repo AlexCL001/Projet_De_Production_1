@@ -1,44 +1,68 @@
 <main class="containerFeedDescription">
-    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
-    <div class="spotAff">
-        <div class="spotAffLeft">
-            <div>
-                <label for="name">Name</label>
-                <h1><input name="name" type="text" value="<%= name %>"></h1>
-            </div>
-            <div class="containerAffImgDiff">
-                <div>
-                    <img class="imgSpot" src="/img/imgSpot.jpg" alt="image du spot">
-                </div>
-                <div>
-                    <div class="nivDiff">
-                        <label for="difficulté">Niveau de difficulté:</label>
-                        <input type="text" name="difficulté" value="<%= difficulty %>" class="affDiffSpot">
-                    </div>
-                    <div class="affAuteurSpot">
-                        <p><b>Auteur du Spot:</b></p>
-                        <div>
-                            <img class="imgUserSpot" src="/img/imageUtilisateur.png" alt="Icône de profil">
-                            <p>Auteur du Spot ejs ici</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <label for="description">Description:</label>
-                <input type="text" name="description" value="<%= description %>" class="descriptionSpot">
-            </div>
+  <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood" />
+  <div class="spotAff">
+    <div class="spotAffLeft">
+      <form action="/updateSpot/<%= id %>?_method=put" method="post">
+        <div>
+          <label for="name">Name</label>
+          <h1><input name="name" type="text" value="<%= name %>" /></h1>
         </div>
-        <div class="spotAffRight">
-            <div class="spotAffMap">
-                <label for="address">Emplacement:</label>
-                <img src="/img/carteVide.png" alt="image de la carte">
-                <input type="text" value="<%= address %>" class="descriptionAddress">
+        <div class="containerAffImgDiff">
+          <div>
+            <img class="imgSpot" src="/img/imgSpot.jpg" alt="image du spot" />
+          </div>
+          <div>
+            <div class="nivDiff">
+              <label for="difficulté">Niveau de difficulté:</label>
+              <input
+                type="text"
+                name="difficulty"
+                value="<%= difficulty %>"
+                class="affDiffSpot"
+              />
             </div>
+            <div class="affAuteurSpot">
+              <p><b>Auteur du Spot:</b></p>
+              <div>
+                <img
+                  class="imgUserSpot"
+                  src="/img/imageUtilisateur.png"
+                  alt="Icône de profil"
+                />
+                <p>Auteur du Spot ejs ici</p>
+              </div>
+            </div>
+          </div>
         </div>
+        <div>
+          <label for="description">Description:</label>
+          <input
+            type="text"
+            name="description"
+            value="<%= description %>"
+            class="descriptionSpot"
+          />
+        </div>
+       
     </div>
-    <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
-    <form class="spotAffQuit" action="/feed">
-        <button><img src="/img/plusButton.png" alt="X"></button>
-    </form>
+    <div class="spotAffRight">
+      <div class="spotAffMap">
+        <label for="address">Emplacement:</label>
+        <img src="/img/carteVide.png" alt="image de la carte" />
+        <input
+          type="text"
+          name="address"
+          value="<%= address %>"
+          class="descriptionAddress"
+        />
+      </div>
+      <button type="submit">Update Spot</button>
+    </div>
+    
+</form>
+  </div>
+  <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood" />
+  <form class="spotAffQuit" action="/feed">
+    <button><img src="/img/plusButton.png" alt="X" /></button>
+  </form>
 </main>

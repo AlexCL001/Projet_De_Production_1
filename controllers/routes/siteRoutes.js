@@ -30,11 +30,13 @@ router.post('/formulaireSpot', homeController.postNouveauSpot);
 
 router.post('/ProfilSpot', homeController.postProfilSpot);
 
-router.get ('/feed', homeController.getFeed);
+router.get('/feed', homeController.getFeed);
 
-router.get ('/feed/:id', homeController.getSkiSpotById);
+router.get('/feed/:id', homeController.getSkiSpotById);
 
-// router.get('/editSpot/:id', homeController.editSpot);
+router.get('/editSpot/:id', homeController.editSpot);
+
+router.put('/updateSpot/:id', homeController.updateSpot);
 
 // router.delete('/deleteSpot/:id', homeController.deleteSpot);
 
