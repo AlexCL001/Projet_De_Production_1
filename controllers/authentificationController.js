@@ -100,10 +100,6 @@ exports.updateUser = (req, res) => {
   let address = req.body.address;
   let phone = req.body.phone;
 
-  console.log("nomUtilisateur", nomUtilisateur);
-  console.log("email", email);
-  console.log("accessToken", accessToken);
-
   const url = "https://ski-api.herokuapp.com/user";
   let data = {
     name: nomUtilisateur,
@@ -112,7 +108,7 @@ exports.updateUser = (req, res) => {
     phone: phone
   };
   let headers = {
-    Authorization: accessToken,
+    'Authorization': accessToken,
     "Content-type": "application/json",
   };
 
@@ -141,3 +137,4 @@ exports.updateUser = (req, res) => {
       res.redirect("/profil");
     });
 };
+
