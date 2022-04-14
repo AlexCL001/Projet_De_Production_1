@@ -794,7 +794,7 @@ header div form button:hover {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background-color: red;
+  color: white;
   font-size: 6vh;
   margin-bottom: 4vh;
 }
