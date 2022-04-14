@@ -45,7 +45,7 @@ exports.getFeed = (req, res) => {
     })
     .then((result) => {
       totalSpots = Object.keys(result.data.skiSpots).length;
-      console.log('Total Spots', totalSpots);
+      
     })
     .catch((error) => {
       console.log(error);
@@ -56,7 +56,7 @@ exports.getFeed = (req, res) => {
       headers: headers,
     })
     .then((result) => {
-      console.log('Total Spots', totalSpots);
+      
       res.render("feed", {
         totalSpots: totalSpots,
         pageTitle: "Feed",
