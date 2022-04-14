@@ -1,92 +1,93 @@
 <main>
-    <div class="containerFeed">
-        <div class="menu">
-            <nav>
-                <form action="/profil" method="get">
-                    <button type="submit">Profil</button>
-                </form>
-                <form action="/feed" method="get">
-                    <button class="navFeed" type="submit">Feed</button>
-                </form>
-                <form action="" method="get">
-                    <button type="submit">Messages</button>
-                </form>
-                <form action="" method="get">
-                    <button type="submit">Amis</button>
-                </form>
-            </nav>
-            <img src="/img/carte.png" alt="Carte de mes amis">
-        </div>
-        <div class="feedPage">
-            <div class="headFeedPage">
-                <h1>Bienvenue dans le Feed!</h1>
-                <select name="pagination" id="pagination">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                </select>
-                <form action="/formulaireSpot" method="get">
-                    <button type="submit">
-                        <img src="/img/plusButton.png" alt="symbole ajouter: +">
-                    </button>
-                </form>
-            </div>
-            <% if (!data) {%> 
-                <h2>Aucun spot à afficher.</h2>
-                <% } else { %> 
-                    <% data.forEach(element =>{ %> 
-
-            <div class="feedListeDesSpots">
-                <div class="spotModifiable">
-                    <img class="imgUtilisateurSpotModifiable" src="/img/imageUtilisateur.png" alt="img utilisateur">
-                    <p>Nom de l'auteur en ejs</p>
-                    <div class="buttonEditDelete">
-                        <form action="/editSpot/<%= element._id %> " method="get">
-                            <button type="submit">Éditer</button>
-                        </form>
-                        <form action="/deleteSpot/<%= element._id %>?_method=delete " method="post">
-                            <button type="submit">Supprimer</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="feedInfoSpot">
-                    <div class="partOneInfoSpotFeed">
-                        <div class="elegantInfoFeed">
-                            <p class="pBold">Nom du Spot:</p>
-                            <p><%= element.name %></p>
-                        </div>
-                        <div class="elegantInfoFeed">
-                            <p class="pBold">Emplacement:</p>
-                            <p><%= element.address %> </p>
-                        </div>
-                        <div>
-                            <p class="pBold">Description:</p>
-                            <p class="fontSizeDescriptionSpotFeed">
-                                <%= element.description %>  
-                            </p>
-                        </div>
-                    </div>
-                    <div class="partTwoInfoSpotFeed">
-                        <h2>Niveau de difficulté:</h2>
-                        <p class="bigNum"><%= element.difficulty %> </p>
-                        <form action="/feed/<%= element._id %> " method="get">
-                            <button type="submit">Plus d'info --></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <% }); %> 
-            <% } %> 
-            <div class="pagination">
-                <div>
-                    <% data.forEach(element =>{ %> 
-                        <p><%= element.name %></p>
-                    <% }); %>
-                </div>
-            </div>
-        </div>
+  <div class="containerFeed">
+    <div class="menu">
+      <nav>
+        <form action="/profil" method="get">
+          <button type="submit">Profil</button>
+        </form>
+        <form action="/feed" method="get">
+          <button class="navFeed" type="submit">Feed</button>
+        </form>
+        <form action="" method="get">
+          <button type="submit">Messages</button>
+        </form>
+        <form action="" method="get">
+          <button type="submit">Amis</button>
+        </form>
+      </nav>
+      <img src="/img/carte.png" alt="Carte de mes amis" />
     </div>
+    <div class="feedPage">
+      <section class="">
+          
+        <a href="?page=1">1</a>
+        <a href="?page=2">2</a>
+        <a href="?page=3">3</a>
+        <a href="?page=4">4</a>
+        <a href="?page=5">5</a>
+        <a href="?page=6">6</a>
+
+      </section>
+      <div class="headFeedPage">
+        <h1>Bienvenue dans le Feed!</h1>
+        <form action="/formulaireSpot" method="get">
+          <button type="submit">
+            <img src="/img/plusButton.png" alt="symbole ajouter: +" />
+          </button>
+        </form>
+      </div>
+      <% if (!data) {%>
+      <h2>Aucun spot à afficher.</h2>
+      <% } else { %> <% data.forEach(element =>{ %>
+
+      <div class="feedListeDesSpots">
+        <div class="spotModifiable">
+          <img
+            class="imgUtilisateurSpotModifiable"
+            src="/img/imageUtilisateur.png"
+            alt="img utilisateur"
+          />
+          <p>Nom de l'auteur en ejs</p>
+          <div class="buttonEditDelete">
+            <form action="/editSpot/<%= element._id %> " method="get">
+              <button type="submit">Éditer</button>
+            </form>
+            <form
+              action="/deleteSpot/<%= element._id %>?_method=delete "
+              method="post"
+            >
+              <button type="submit">Supprimer</button>
+            </form>
+          </div>
+        </div>
+        <div class="feedInfoSpot">
+          <div class="partOneInfoSpotFeed">
+            <div class="elegantInfoFeed">
+              <p class="pBold">Nom du Spot:</p>
+              <p><%= element.name %></p>
+            </div>
+            <div class="elegantInfoFeed">
+              <p class="pBold">Emplacement:</p>
+              <p><%= element.address %></p>
+            </div>
+            <div>
+              <p class="pBold">Description:</p>
+              <p class="fontSizeDescriptionSpotFeed">
+                <%= element.description %>
+              </p>
+            </div>
+          </div>
+          <div class="partTwoInfoSpotFeed">
+            <h2>Niveau de difficulté:</h2>
+            <p class="bigNum"><%= element.difficulty %></p>
+            <form action="/feed/description/<%= element._id %> " method="get">
+              <button type="submit">Plus d'info --></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <% }); %> <% } %>
+    </div>
+  </div>
 </main>
