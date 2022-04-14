@@ -96,7 +96,7 @@ exports.getLogout = (req, res) => {
 exports.updateUser = (req, res) => {
   let accessToken = req.app.locals.token;
   let nomUtilisateur = req.body.nomUtilisateur;
-  let email = req.body.email.trim();
+  let email = req.body.email;
   let address = req.body.address;
   let phone = req.body.phone;
 

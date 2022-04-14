@@ -27,14 +27,43 @@ exports.getFormulaireSpot = (req, res) => {
 
 exports.getFeed = (req, res) => {
   let accessToken = req.app.locals.token;
-  let spotsParPage = req.body.pagination;
+
+  // let page = parseInt(req.query.page);
+  // let limit = parseInt(req.query.limit);
+  // const spotLength = req.results.data.length;
+  // let spotsParPage = req.body.pagination;
+  // console.log(spotLength);
+
+  // const startIndex = (page - 1) * limit;
+  // const endIndex = page * limit;
+  // const results = {};
+
+  // if (endIndex < spotLength) {
+  //   results.next ={
+  //     page: page + 1,
+  //     limit: limit,
+  //   }
+  // }
+
+  // if (startIndex > 0) {
+  //   results.previous = {
+  //     page: page - 1,
+  //     limit: limit,
+  //   };
+  // }
+  
+  // results.result = spotLength.slice(startIndex, endIndex);
+
+  // res.json(results);
+
   
   // get number of spots per page and pass to params
   axios({
     method: "get",
     url: "http://ski-api.herokuapp.com/ski-spot",
-    // params: {limit: 2,
-    //         page: 2
+    // params: {
+    //   page: page,
+    //   limit: limit,
     // },
     headers: {
       'Authorization': accessToken,

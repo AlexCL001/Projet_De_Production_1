@@ -22,6 +22,7 @@ header {
   width: 100%;
   font-size: 8vh;
   background-image: url(../img/plancheHeader.png);
+  background-size: cover;
 }
 
 header a {
@@ -281,6 +282,7 @@ header div form button:hover {
   color: white;
   border: none;
   background-image: url(../img/planche.png);
+  background-size: cover;
   font-size: 4vh;
   margin-top: 4vh;
   padding: 1vh 0 1vh 2vw;
@@ -590,6 +592,10 @@ header div form button:hover {
   cursor: pointer;
 }
 
+.headFeedPage select option {
+  color: black;
+}
+
 .headFeedPage button {
   background: none;
   border: none;
@@ -771,6 +777,26 @@ header div form button:hover {
 
 .partTwoInfoSpotFeed button:hover {
   cursor: pointer;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  background-color: red;
+  font-size: 6vh;
+  margin-bottom: 4vh;
 }
 
 .containerFormulaireSpot {

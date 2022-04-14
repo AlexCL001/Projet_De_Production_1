@@ -23,21 +23,18 @@ header{
     width: 100%;
     font-size: 8vh;
     background-image: $woodHeadImg;
+    background-size: cover;
     a{
         @include flex(row, center, center);
         padding: 0 20px 0 20px;
     }
     div{
         @include flex(row, space-around, center);
-        // width: 12%;
         height: 10vh;
-        // background-color: red;
         form{
             @include flex(row, center, center);
-            // background-color: blue;
             height: 10vh;
             button{
-                // color: $woodTxt;
                 border: none;
                 border-radius: 2vw;
                 background-color: white;
@@ -46,8 +43,7 @@ header{
                 &:hover{
                     cursor: pointer;
                 }
-        }
-
+            }
         }
     }
 }
@@ -172,6 +168,7 @@ header{
         color: $woodTxt;
         border: none;
         background-image: $woodImg;
+        background-size: cover;
         font-size: 4vh;
         margin-top: 4vh;
         padding: 1vh 0 1vh 2vw;
@@ -345,6 +342,9 @@ header{
         &:hover{
             cursor: pointer;
         }
+        option{
+            color: black;
+        }
     }
     button{
         background: none;
@@ -370,13 +370,11 @@ header{
     padding-right: 1vw;
 
     button{
-        // @include flex(column, center, center );
         background-color: white;
         border: none;
         border-radius: 2vw;
         margin: 0.5vw;
         padding: 1vh 1vw 1vh 1vw;
-        //alllllllooooooooooooooooooooooooooooooooooooooooooooooooooo
         font-size: 3vh;
         &:hover{
             cursor: pointer;
@@ -431,6 +429,13 @@ header{
             cursor: pointer;
         }
     }
+}
+.pagination{
+    @include flex(row, center, center);
+    width: 100%;
+    background-color: red;
+    font-size: 6vh;
+    margin-bottom: 4vh;
 }
 
 //css pour la page formulaireSpot.ejs
