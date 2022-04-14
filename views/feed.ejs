@@ -74,14 +74,19 @@
                         <form action="/feed/<%= element._id %> " method="get">
                             <button type="submit">Plus d'info --></button>
                         </form>
-
-                       
                     </div>
                 </div>
             </div>
 
             <% }); %> 
             <% } %> 
+            <div class="pagination">
+                <div>
+                    <% data.forEach(element =>{ %> 
+                        <p><%= element.name %></p>
+                    <% }); %>
+                </div>
+            </div>
         </div>
     </div>
 </main>
