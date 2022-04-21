@@ -45,7 +45,7 @@ exports.postSignIn = (req, res) => {
       })
       .then((response) => {
         // req.session.isAuth = true
-
+        
         res.app.locals.nomUtilisateur = response.data.name;
         res.app.locals.email = response.data.email;
         res.app.locals.token = response.data.token;

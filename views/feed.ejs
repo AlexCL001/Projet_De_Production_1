@@ -18,6 +18,17 @@
       <img src="/img/carte.png" alt="Carte de mes amis" />
     </div>
     <div class="feedPage">
+
+      <div class="">
+        <ul>
+          <% for (let i = 1; i <= totalSpots; i++) { %> 
+           
+              <a href="/feed?page=<%= i %> "><%= i %> </a>
+            
+            <% } %> 
+        </ul>
+      </div>
+
       <div class="headFeedPage">
         <h1>Bienvenue dans le Feed!</h1>
         <form action="/formulaireSpot" method="get">

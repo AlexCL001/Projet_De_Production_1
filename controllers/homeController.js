@@ -29,9 +29,7 @@ exports.getFormulaireSpot = (req, res) => {
 exports.getFeed = (req, res) => {
   const accessToken = req.app.locals.token;
   let page = parseInt(req.query.page);
-  let totalSpots;
 
-  const urlAllSpots = "https://ski-api.herokuapp.com/ski-spot";
   const url = `https://ski-api.herokuapp.com/ski-spot?limit=${SPOTS_PER_PAGE}&page=${page}`;
   
   let headers = {
@@ -39,34 +37,16 @@ exports.getFeed = (req, res) => {
     "Content-type": "application/json",
   };
 
-  axios
-    .get(urlAllSpots, {
-      headers: headers,
-    })
-    .then((result) => {
-      totalSpots = Object.keys(result.data.skiSpots).length;
-      
-    })
-    .catch((error) => {
-      console.log(error);
-    });
 
   axios
     .get(url, {
       headers: headers,
     })
     .then((result) => {
-      
       res.render("feed", {
-        totalSpots: totalSpots,
+        totalSpots: result.data.totalPages,
         pageTitle: "Feed",
         data: result.data.skiSpots,
-        currentPage: page,
-        hasNextPage: SPOTS_PER_PAGE * page < totalSpots,
-        hasPreviousPage: page > 1,
-        nextPage: page + 1,
-        previousPage: page - 1,
-        lastPage: Math.ceil(totalSpots / SPOTS_PER_PAGE)
       });
     })
     .catch((error) => {
