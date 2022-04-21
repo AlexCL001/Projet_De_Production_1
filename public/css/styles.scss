@@ -433,7 +433,7 @@ header{
 .pagination{
     @include flex(row, center, center);
     width: 100%;
-    background-color: red;
+    color: $woodTxt;
     font-size: 6vh;
     margin-bottom: 4vh;
 }

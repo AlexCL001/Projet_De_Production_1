@@ -20,7 +20,6 @@ exports.postConnection = (req, res) => {
       password: password,
     })
     .then((response) => {
-      console.log(response);
       res.render("creationCompteReussi", {
         pageTitle: "Connecter",
       });
@@ -117,7 +116,6 @@ exports.updateUser = (req, res) => {
       headers: headers,
     })
     .then((result) => {
-      console.log("UPDATE RESULTS:", result);
       res.app.locals.nomUtilisateur = result.data.user.name;
       res.app.locals.email = result.data.user.email;
       res.app.locals.token = result.data.user.token;
