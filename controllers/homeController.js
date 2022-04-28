@@ -205,15 +205,12 @@ exports.getAmi = (req , res)=>{
 
 exports.getRechercheAmi = (req, res)=>{
   let rechercheAmi = req.body.rechercheAmi;
-  //let name = req.app
+  let name = req.params.name;
   let accessToken = req.app.locals.token;
-  let data ={
-    name: name
-  }
+  console.log(rechercheAmi)
   axios({
     method: "get",
-    url: `http://ski-api.herokuapp.com/users/search/${rechercheAmi}`,
-    
+    url: `http://ski-api.herokuapp.com/users/search/alex`,
     headers: {
       Authorization: accessToken,
     },
@@ -221,10 +218,12 @@ exports.getRechercheAmi = (req, res)=>{
 .then((result)=>{
   console.log(result);
   res.render('ami', {
-    name: result.data.users.name
+    name: result.data.users.name,
+    pageTitle: "Ami"
   })
 
 })
-
-.catch()
+.catch((error)=>{
+  res.redirect('/ami');
+});
 }
