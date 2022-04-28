@@ -198,3 +198,7 @@ exports.deleteSpot = (req, res) => {
       res.redirect("/feed");
     });
 };
+
+exports.getAmi = (req , res)=>{
+  res.render("ami", {pageTitle: "Ami"});
+}; 
