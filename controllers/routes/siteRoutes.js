@@ -40,6 +40,8 @@ router.put('/updateSpot/:id', homeController.updateSpot);
 
 router.delete('/deleteSpot/:id', homeController.deleteSpot);
 
-router.get('/ami',homeController.getAmi );
+router.get('/ami', homeController.getAmi );
+
+router.get('/rechecheAmi', homeController.getRechercheAmi);
 
 module.exports = router;
