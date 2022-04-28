@@ -42,6 +42,6 @@ router.delete('/deleteSpot/:id', homeController.deleteSpot);
 
 router.get('/ami', homeController.getAmi );
 
-router.get('/rechecheAmi', homeController.getRechercheAmi);
+router.get('/rechercheAmi', homeController.getRechercheAmi);
 
 module.exports = router;
