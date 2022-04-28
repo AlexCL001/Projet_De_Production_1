@@ -202,3 +202,29 @@ exports.deleteSpot = (req, res) => {
 exports.getAmi = (req , res)=>{
   res.render("ami", {pageTitle: "Ami"});
 }; 
+
+exports.getRechercheAmi = (req, res)=>{
+  let rechercheAmi = req.body.rechercheAmi;
+  //let name = req.app
+  let accessToken = req.app.locals.token;
+  let data ={
+    name: name
+  }
+  axios({
+    method: "get",
+    url: `http://ski-api.herokuapp.com/users/search/${rechercheAmi}`,
+    
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+.then((result)=>{
+  console.log(result);
+  res.render('ami', {
+    name: result.data.users.name
+  })
+
+})
+
+.catch()
+}
