@@ -42,6 +42,11 @@
           <p>Email : <%= email %></p>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
           <p>Numéro de téléphone : <%= phone %></p>
+          <form action="/ajouterAmi/<%= id %>" method="post">
+            <button type="submit">
+              ajouter un ami
+            </button>
+          </form>
         </div>
       </div>
       <div>

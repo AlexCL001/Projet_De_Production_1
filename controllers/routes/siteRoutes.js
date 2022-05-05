@@ -46,4 +46,6 @@ router.get('/rechercheAmi', homeController.getRechercheAmi);
 
 router.get("/getAmiProfil/:id", homeController.getAmiProfil);
 
+router.post("/ajouterAmi/:id", homeController.ajouterAmi);
+
 module.exports = router;
