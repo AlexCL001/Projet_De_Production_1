@@ -2,7 +2,7 @@ const axios = require("axios");
 const { response } = require("express");
 const { token } = require("./authentificationController");
 const express = require("express");
-const { redirect } = require("express/lib/response");
+const { redirect, type } = require("express/lib/response");
 const app = express();
 const SPOTS_PER_PAGE = 2;
 
@@ -200,15 +200,15 @@ exports.deleteSpot = (req, res) => {
 };
 
 exports.getAmi = (req , res)=>{
-  res.render("ami", {pageTitle: "Ami"});
+  res.render("ami", {pageTitle: "Ami", users: undefined});
 }; 
 
 exports.getRechercheAmi = (req, res)=>{
   let rechercheAmi = req.query.rechercheAmi;
-  let name = req.params.name;
+  // let name = req.params.name;
   let accessToken = req.app.locals.token;
-  console.log(req);
-  console.log(rechercheAmi)
+  // console.log(req);
+  // console.log(rechercheAmi)
   axios({
     method: "get",
     url: `http://ski-api.herokuapp.com/users/search/${rechercheAmi}`,
@@ -216,13 +216,19 @@ exports.getRechercheAmi = (req, res)=>{
       Authorization: accessToken,
     },
   })
-.then((result)=>{
-  console.log(result.data.users);
-  res.render('ami', {
-    users: result.data.users,
-    pageTitle: "Ami"
+  .then((result)=>{
+    console.log(result.data.users);
+    res.render('ami', {
+      users: result.data.users,
+      pageTitle: "Ami"
+    });
   })
+  .catch((error)=>{
+    res.redirect('/ami');
+  });
+}
 
+<<<<<<< HEAD
 })
 .catch((error)=>{
   res.redirect('/ami');
@@ -234,3 +240,30 @@ exports.getError = (req, res) => {
     pageTitle: '404 Error'
   });
 };
+=======
+exports.getAmiProfil = (req, res)=>{
+  let accessToken = req.app.locals.token;
+  let id = req.params.id;
+  console.log("id ici :");
+  console.log(id);
+  axios({
+    method: "get",
+    url: `http://ski-api.herokuapp.com/user/${id}`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    res.render('profil', {
+      pageTitle: "Profil ami",
+      nomUtilisateur: result.data.user.name,
+      email: result.data.user.email,
+      address: result.data.user.address,
+      phone: result.data.user.phone,
+    })
+  })
+  .catch((error)=>{
+    res.redirect('/ami');
+  });
+}
+>>>>>>> origin

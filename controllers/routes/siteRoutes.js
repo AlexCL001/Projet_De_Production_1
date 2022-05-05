@@ -44,6 +44,10 @@ router.get('/ami', homeController.getAmi );
 
 router.get('/rechercheAmi', homeController.getRechercheAmi);
 
+<<<<<<< HEAD
 // router.get('/*', homeController.getError);
+=======
+router.get("/getAmiProfil/:id", homeController.getAmiProfil);
+>>>>>>> origin
 
 module.exports = router;
