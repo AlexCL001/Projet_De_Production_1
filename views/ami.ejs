@@ -3,4 +3,12 @@
         <input type="text" name="rechercheAmi" placeholder="recherche d'amis">
         <button type="submit">Recherche</button>
     </form>
+    <ul>
+        <% if(users){ %> 
+        <% users.forEach(function(user){ %> 
+            <a href="/getAmiProfil/<%= user.id %>"><li><%= user.name %></li></a>
+        <% }); %>
+        <% } %>
+    </ul>
+
 </main>
