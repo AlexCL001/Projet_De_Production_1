@@ -227,4 +227,10 @@ exports.getRechercheAmi = (req, res)=>{
 .catch((error)=>{
   res.redirect('/ami');
 });
-}
+};
+
+exports.getError = (req, res) => {
+  res.render('404', {
+    pageTitle: '404 Error'
+  });
+};

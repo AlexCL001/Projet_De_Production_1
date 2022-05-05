@@ -1,4 +1,42 @@
-<main>
+<main class="container text-center">
+  <div class="img__container--profil m-auto mt-50">
+    <img
+      src="/img/profile-photo-sqr.png"
+      alt="Photo de Profil"
+      class="img-fluid img-profil"
+    />
+  </div>
+  <h1 class="mt-20"><%= nomUtilisateur %></h1>
+  <% if (address != '') {%>
+  <div><%= address %></div>
+  <% } %>
+  <div><%= email %></div>
+  <% if (phone != '') { %>
+  <div><%= phone %></div>
+  <% } %>
+  <h2 class="title__amis mt-90">Amis</h2>
+  <div class="amis row gx-80">
+    <% for (let i = 0; i < 12; i++) { %>
+    <div class="card__border mt-80" style="width: 33%">
+      <div class="img__container--ami">
+        <a href="#">
+          <img src="/img/friend-1.png" class="card-img-top" alt="Friend" />
+        </a>
+      </div>
+      <div class="card-body">
+        <p class="card-text my-50">Jeremie</p>
+        <button type="button" class="btn__submit">Delete</button>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div class="my-80"></div>
+</main>
+
+<script src="js/signOut.js"></script>
+<script src="js/updateNom.js"></script>
+
+<!-- <main>
   <div class="containerProfil">
     <div class="menu">
       <nav>
@@ -62,12 +100,4 @@
       </div>
     </div>
   </div>
-</main>
-
-<script src="js/signOut.js"></script>
-<script src="js/updateNom.js"></script>
-
-          
-          
-       
-           
+</main> -->
