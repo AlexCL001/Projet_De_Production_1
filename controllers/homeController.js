@@ -228,19 +228,6 @@ exports.getRechercheAmi = (req, res)=>{
   });
 }
 
-<<<<<<< HEAD
-})
-.catch((error)=>{
-  res.redirect('/ami');
-});
-};
-
-exports.getError = (req, res) => {
-  res.render('404', {
-    pageTitle: '404 Error'
-  });
-};
-=======
 exports.getAmiProfil = (req, res)=>{
   let accessToken = req.app.locals.token;
   let id = req.params.id;
@@ -266,4 +253,3 @@ exports.getAmiProfil = (req, res)=>{
     res.redirect('/ami');
   });
 }
->>>>>>> origin

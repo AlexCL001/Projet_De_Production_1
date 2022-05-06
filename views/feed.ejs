@@ -1,28 +1,26 @@
 <main class="container text-center">
-  <h1>Spots</h1>
-  <div class="amis row">
-      <% if (!data) {%>
-        <h2>Aucun spot à afficher</h2>
-      <% } else { %> <% data.forEach(spot =>{ %>
 
+<h1>Spots</h1>
+<div class="amis row">
+  <% if (!data) {%>
+  <h2>Aucun spot à afficher</h2>
+  <% } else { %> <% data.forEach(spot =>{ %>
 
-    <div class="card__border mt-80  card__background--blue col">
-      <div class="img__container--ami">
-        <a href="#">
-          <img src="/img/mountain.png" class="card-img-top" alt="Friend" />
-         </a>
-      </div>
-      <div class="card-body">
+  <div class="card__border mt-80 card__background--blue col">
+    <div class="img__container--ami">
+      <a href="#">
+        <img src="/img/mountain.png" class="card-img-top" alt="Mountain" />
+      </a>
+    </div>
+    <div class="card-body">
       <p class="card-text my-50"><%= spot.name %></p>
       <p class="card-text my-50"><%= spot.address %></p>
       <p class="card-text my-50"><%= spot.description %></p>
       <p class="card-text my-50"><%= spot.difficulty %></p>
       <form action="/editSpot/<%= spot._id %> " method="get">
-      <button type="submit" class="btn__submit">Éditer</button>
+        <button type="submit" class="btn__submit">Éditer</button>
       </form>
-      <form action="/deleteSpot/<%= spot._id %>?_method=delete "
-              method="post"
-            >
+      <form action="/deleteSpot/<%= spot._id %>?_method=delete " method="post">
         <button type="submit" class="btn__submit">Supprimer</button>
       </form>
       <form action="/feed/description/<%= spot._id %> " method="get">
@@ -30,27 +28,29 @@
       </form>
     </div>
   </div>
-    <% }); %> 
-    <% } %>
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <% for (let i = 1; i <= totalSpots; i++) { %>
-          <li class="page-item"><a class="page-link" href="/feed?page=<%= i %>"><%= i %></a></li>
-          <% } %>
-       
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-</main>
+  <% }); %> <% } %>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <% for (let i = 1; i <= totalSpots; i++) { %>
+      <li class="page-item">
+        <a class="page-link" href="/feed?page=<%= i %>"><%= i %></a>
+      </li>
+      <% } %>
 
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+</main>
+.DS_Store
