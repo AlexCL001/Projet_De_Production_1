@@ -62,6 +62,7 @@ exports.postSignIn = (req, res) => {
           phone: res.app.locals.phone,
           friends: req.app.locals.friends,
           id: res.app.locals.id,
+          myProfile: true,
         });
       })
       .catch((error) => {
@@ -79,6 +80,7 @@ exports.getProfil = (req, res) => {
     phone: req.app.locals.phone,
     friends: req.app.locals.friends,
     id: res.app.locals.id,
+    myProfile: true,
   });
 };
 
@@ -133,6 +135,9 @@ exports.updateUser = (req, res) => {
         email: req.app.locals.email,
         address: req.app.locals.address,
         phone: req.app.locals.phone,
+        friends: req.app.locals.friends,
+        id: res.app.locals.id,
+        myProfile: true,
       });
     })
     .catch((error) => {

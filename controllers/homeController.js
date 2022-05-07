@@ -250,6 +250,7 @@ exports.getAmiProfil = (req, res)=>{
       phone: result.data.user.phone,
       friends: result.data.user.friends,
       id: result.data.user.id,
+      myProfile: false,
     })
   })
   .catch((error)=>{
@@ -297,6 +298,7 @@ exports.getMyFriends = (req, res)=>{
       pageTitle: "Profil",
       friends: result.data.friends,
       id:undefined,
+      myProfile: true,
     });
   })
   .catch((error)=>{
