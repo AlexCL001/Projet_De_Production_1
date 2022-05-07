@@ -248,6 +248,7 @@ exports.getAmiProfil = (req, res)=>{
       email: result.data.user.email,
       address: result.data.user.address,
       phone: result.data.user.phone,
+      friends: result.data.user.friends,
       id: result.data.user.id,
     })
   })
@@ -275,9 +276,77 @@ exports.ajouterAmi = (req, res)=>{
   })
   .then((result)=>{
     console.log(result.data);
-    res.redirect(`/getAmiProfil/${id}`);
+    res.redirect(`/rechercheAmi`);
   })
   .catch((error)=>{
     res.redirect('/rechercheAmi');
   });
 }
+
+exports.getMyFriends = (req, res)=>{
+  let accessToken = req.app.locals.token;
+  axios({
+    method: "get",
+    url: `http://ski-api.herokuapp.com/friend`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    res.render('profil', {
+      pageTitle: "Profil",
+      friends: result.data.friends,
+      id:undefined,
+    });
+  })
+  .catch((error)=>{
+    res.redirect('/profil');
+  });
+}
+
+exports.supprimerAmi = (req, res)=>{  
+  let accessToken = req.app.locals.token;
+  let id = req.params.id;
+
+  axios({
+    method: "delete",
+    url: `http://ski-api.herokuapp.com/friend/${id}`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    res.redirect('/profil');
+  })
+  .catch((error)=>{
+    res.redirect('/profil');
+  });
+}
+
+// exports.amiAmi = (req, res)=>{
+//   let accessToken = req.app.locals.token;
+//   let id = req.params.id;
+//   axios({
+//     method: "get",
+//     url: `http://ski-api.herokuapp.com/friend/${id}`,
+//     headers: {
+//       Authorization: accessToken,
+//     },
+//   })
+//   .then((result)=>{
+//     console.log("result.data.friends :");
+//     console.log(result.data.friends);
+//     res.render('profil', {
+//       pageTitle: "Profil ami",
+//       nomUtilisateur: result.data.user.name,
+//       email: result.data.user.email,
+//       address: result.data.user.address,
+//       phone: result.data.user.phone,
+//       friends: result.data.friends,
+//       id: result.data.user.id,
+//     })
+//   })
+//   .catch((error)=>{
+//     res.redirect('/ami');
+//   });
+// }

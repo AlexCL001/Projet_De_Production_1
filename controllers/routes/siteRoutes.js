@@ -18,7 +18,7 @@ router.get('/logout', authentificationController.getLogout);
 
 router.post('/affichageProfil', authentificationController.postSignIn);
 
-router.get('/profil', authentificationController.getProfil);
+router.get('/profil', authentificationController.getProfil, homeController.getMyFriends);
 
 router.get('/profil/edit', authentificationController.getEditProfil);
 
@@ -43,9 +43,15 @@ router.delete('/deleteSpot/:id', homeController.deleteSpot);
 router.get('/ami', homeController.getAmi );
 
 router.get('/rechercheAmi', homeController.getRechercheAmi);
-
+// ici
 router.get("/getAmiProfil/:id", homeController.getAmiProfil);
 
+// router.get("/amiAmi/:id", homeController.amiAmi);
+
 router.post("/ajouterAmi/:id", homeController.ajouterAmi);
+
+router.get("/voirAmi", homeController.getMyFriends);
+
+router.delete("/supprimerAmi/:id", homeController.supprimerAmi);
 
 module.exports = router;
