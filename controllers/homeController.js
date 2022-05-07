@@ -209,6 +209,20 @@ exports.getRechercheAmi = (req, res)=>{
 
   axios({
     method: "get",
+    url: `http://ski-api.herokuapp.com/friend`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    friendsCompare = result.data.friends;
+  })
+  .catch((error)=>{
+    res.redirect('/ami');
+  });
+  
+  axios({
+    method: "get",
     url: `http://ski-api.herokuapp.com/users/search/${rechercheAmi}`,
     headers: {
       Authorization: accessToken,
@@ -224,6 +238,7 @@ exports.getRechercheAmi = (req, res)=>{
   .catch((error)=>{
     res.redirect('/ami');
   });
+
 }
 
 exports.getAmiProfil = (req, res)=>{
@@ -232,6 +247,20 @@ exports.getAmiProfil = (req, res)=>{
   // console.log("id ici :");
   // console.log(id);
 
+  axios({
+    method: "get",
+    url: `http://ski-api.herokuapp.com/friend`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    friendsCompare = result.data.friends;
+  })
+  .catch((error)=>{
+    res.redirect('/ami');
+  });
+  
   axios({
     method: "get",
     url: `http://ski-api.herokuapp.com/user/${id}`,
@@ -256,6 +285,7 @@ exports.getAmiProfil = (req, res)=>{
   .catch((error)=>{
     res.redirect('/ami');
   });
+
 }
 
 exports.ajouterAmi = (req, res)=>{
@@ -322,6 +352,24 @@ exports.supprimerAmi = (req, res)=>{
   })
   .catch((error)=>{
     res.redirect('/profil');
+  });
+}
+
+exports.testFriends = (req, res)=>{
+  let accessToken = req.app.locals.token;
+  
+  axios({
+    method: "get",
+    url: `http://ski-api.herokuapp.com/friend`,
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    friendsCompare = result.data.friends;
+  })
+  .catch((error)=>{
+    res.redirect('/ami');
   });
 }
 
