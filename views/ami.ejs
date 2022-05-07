@@ -7,6 +7,9 @@
         <% if(users){ %> 
         <% users.forEach(function(user){ %> 
             <a href="/getAmiProfil/<%= user.id %>"><li><%= user.name %></li></a>
+            <form action="/ajouterAmi/<%= user.id %>" method="post">
+                <button>Ajouter comme ami</button>
+            </form>
         <% }); %>
         <% } %>
     </ul>

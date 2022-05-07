@@ -50,13 +50,11 @@
           />
           <p>Nom de l'auteur en ejs</p>
           <div class="buttonEditDelete">
-            <form action="/editSpot/<%= element._id %> " method="get">
+            <form action="/editSpot/<%= element._id %>" method="get">
               <button type="submit">Éditer</button>
             </form>
             <form
-              action="/deleteSpot/<%= element._id %>?_method=delete "
-              method="post"
-            >
+              action="/deleteSpot/<%= element._id %>?_method=delete" method="post">
               <button type="submit">Supprimer</button>
             </form>
           </div>
@@ -81,7 +79,7 @@
           <div class="partTwoInfoSpotFeed">
             <h2>Niveau de difficulté:</h2>
             <p class="bigNum"><%= element.difficulty %></p>
-            <form action="/feed/description/<%= element._id %> " method="get">
+            <form action="/feed/description/<%= element._id %>" method="get">
               <button type="submit">Plus d'info --></button>
             </form>
           </div>
