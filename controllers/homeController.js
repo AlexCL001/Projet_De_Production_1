@@ -205,10 +205,8 @@ exports.getAmi = (req , res)=>{
 
 exports.getRechercheAmi = (req, res)=>{
   let rechercheAmi = req.query.rechercheAmi;
-  // let name = req.params.name;
   let accessToken = req.app.locals.token;
-  // console.log(req);
-  // console.log(rechercheAmi)
+
   axios({
     method: "get",
     url: `http://ski-api.herokuapp.com/users/search/${rechercheAmi}`,
@@ -217,7 +215,7 @@ exports.getRechercheAmi = (req, res)=>{
     },
   })
   .then((result)=>{
-    console.log(result.data.users);
+    // console.log(result.data.users);
     res.render('ami', {
       users: result.data.users,
       pageTitle: "Ami"
@@ -231,8 +229,9 @@ exports.getRechercheAmi = (req, res)=>{
 exports.getAmiProfil = (req, res)=>{
   let accessToken = req.app.locals.token;
   let id = req.params.id;
-  console.log("id ici :");
-  console.log(id);
+  // console.log("id ici :");
+  // console.log(id);
+
   axios({
     method: "get",
     url: `http://ski-api.herokuapp.com/user/${id}`,
@@ -241,15 +240,44 @@ exports.getAmiProfil = (req, res)=>{
     },
   })
   .then((result)=>{
+    // console.log("result.data.user.id :");
+    // console.log(result.data.user.id);
     res.render('profil', {
       pageTitle: "Profil ami",
       nomUtilisateur: result.data.user.name,
       email: result.data.user.email,
       address: result.data.user.address,
       phone: result.data.user.phone,
+      id: result.data.user.id,
     })
   })
   .catch((error)=>{
     res.redirect('/ami');
+  });
+};
+
+exports.ajouterAmi = (req, res)=>{
+  let accessToken = req.app.locals.token;
+  id = req.params.id;
+  // console.log("req.params.id :");
+  // console.log(req.params.id);
+  // console.log("req.app.locals.friends :");
+  // console.log(req.app.locals.friends);
+  axios({
+    method: "post",
+    url: `http://ski-api.herokuapp.com/friend`,
+    data: {
+      friendId: id,
+    },
+    headers: {
+      Authorization: accessToken,
+    },
+  })
+  .then((result)=>{
+    console.log(result.data);
+    res.redirect(`/getAmiProfil/${id}`);
+  })
+  .catch((error)=>{
+    res.redirect('/rechercheAmi');
   });
 }

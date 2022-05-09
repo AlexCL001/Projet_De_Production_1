@@ -12,11 +12,19 @@
  </head>
  <body>
      <header>
-         <nav></nav>
-        <div>
-            <!-- <form action="/logout">
-                <button type="submit">Déconnexion</button>
-            </form> -->
-        </div>
+         <% let hideNav =  pageTitle != 'Connexion' && pageTitle != 'Crée une Compte' && pageTitle != '404' %> 
+         <% if (hideNav) {%> 
+         <nav>
+             <ul class="row mt-30 text-center" >
+                 <li class="col"><a href="/profil">profil</a></li>
+                 <li class="col"><a href="/feed/">spots</a></li>
+                 <li class="col"><a href="/ami">trouver amis</a></li>
+                 <li class="col"><a href="/logout">déconnexion</a></li>
+             </ul>
+             
+            
+         </nav>
+         <% } %> 
+        
      </header>
      

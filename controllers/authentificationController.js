@@ -59,6 +59,7 @@ exports.postSignIn = (req, res) => {
           token: res.app.locals.token,
           address: res.app.locals.address,
           phone: res.app.locals.phone,
+          id: res.app.locals.id,
         });
       })
       .catch((error) => {
