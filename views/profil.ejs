@@ -68,11 +68,13 @@
         <div class="textZoneProfil">
           <div class="profilNameBar">
             <p><%= nomUtilisateur %></p>
+            <% if(myProfile){ %> 
             <a href="/profil/edit">
               <button type="submit">
                 <img src="/img/crayonModifier.png" alt="modifier">
               </button>
             </a>
+            <% } %>
           </div>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
           <p>Adresse : <%= address %></p>
@@ -80,12 +82,42 @@
           <p>Email : <%= email %></p>
           <img class="woodSeparation" src="/img/plancheHeader.png" alt="wood">
           <p>Numéro de téléphone : <%= phone %></p>
+          <% if(!myProfile){ %>
           <form action="/ajouterAmi/<%= id %>" method="post">
-            <button type="submit">
-              ajouter un ami
-            </button>
+            <% let ami = false; %>
+            <% friendsCompare.forEach(function(friend){ %>
+              <% if(id == friend.id && ami == false){ %>
+                <% ami = true; %> 
+              <% } %> 
+            <% }); %>
+            <% if(ami == true){ %>
+              <button disabled>Ajouter comme ami</button>
+            <% } else if (ami == false) { %>
+              <button>Ajouter comme ami</button>
+            <% } %>
           </form>
+          <% } %>
         </div>
+      </div>
+      <div>
+        <% if(myProfile){ %> 
+        <form action="/voirAmi" method="get">
+          <button>
+            Mes amis
+          </button>
+        </form>
+        <% } %>
+        <ul>
+          <% if(friends){ %> 
+          <% friends.forEach(function(friend){ %> 
+          <li><%= friend.name %> </li>
+          <% if(myProfile){ %> 
+          <form action="/supprimerAmi/<%= friend.id %>?_method=delete" method="post">
+            <button>Supprimer</button>
+          </form>
+          <% } %>
+          <% });} %> 
+        </ul>
       </div>
       <div>
         <div class="navSpotDansProfil">

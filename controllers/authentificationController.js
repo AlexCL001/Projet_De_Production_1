@@ -51,6 +51,7 @@ exports.postSignIn = (req, res) => {
         res.app.locals.token = response.data.token;
         res.app.locals.address = response.data.address;
         res.app.locals.phone = response.data.phone;
+        // res.app.locals.friends = response.data.friends;
 
         res.render("profil", {
           pageTitle: "Profil",
@@ -59,7 +60,9 @@ exports.postSignIn = (req, res) => {
           token: res.app.locals.token,
           address: res.app.locals.address,
           phone: res.app.locals.phone,
+          friends: req.app.locals.friends,
           id: res.app.locals.id,
+          myProfile: true,
         });
       })
       .catch((error) => {
@@ -75,6 +78,9 @@ exports.getProfil = (req, res) => {
     email: req.app.locals.email,
     address: req.app.locals.address,
     phone: req.app.locals.phone,
+    friends: req.app.locals.friends,
+    id: res.app.locals.id,
+    myProfile: true,
   });
 };
 
@@ -129,6 +135,9 @@ exports.updateUser = (req, res) => {
         email: req.app.locals.email,
         address: req.app.locals.address,
         phone: req.app.locals.phone,
+        friends: req.app.locals.friends,
+        id: res.app.locals.id,
+        myProfile: true,
       });
     })
     .catch((error) => {

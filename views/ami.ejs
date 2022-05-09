@@ -6,13 +6,29 @@
     </form>
     <ul>
         <% if(users){ %> 
-        <% users.forEach(function(user){ %> 
-            <a href="/getAmiProfil/<%= user.id %>"><li><%= user.name %></li></a>
-        <% }); %>
-        <% } %>
+            <% users.forEach(function(user){ %> 
+                <a href="/getAmiProfil/<%= user.id %>"><li><%= user.name %></li></a>
+                <form action="/ajouterAmi/<%= user.id %>" method="post">
+                    <% let ami = false; %>
+                    <% friendsCompare.forEach(function(friend){ %>
+                        <% if(user.id == friend.id && ami == false){ %>
+                            <% ami = true; %> 
+                        <% } %> 
+                    <% }); %>
+                    <% if(ami == true){ %>
+                        <button disabled>Ajouter comme ami</button>
+                    <% } else if (ami == false) { %>
+                        <button>Ajouter comme ami</button>
+                    <% } %>
+                </form>
+            <% }); %>
+        <% }; %> 
     </ul>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
