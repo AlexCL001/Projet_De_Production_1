@@ -1,4 +1,71 @@
-<main class="containerFormulaireSpot">
+<main class="container text-center">
+    <div class="img__container--profil m-auto mt-50">
+      <img
+        src="/img/mountain.png"
+        alt="Photo du Spot"
+        class="img-fluid img-profil"
+      />
+    </div>
+    <h1>Editer Spot</h1>
+    </div>
+    <form action="/updateSpot/<%= id %>?_method=put" method="post">
+      <div class="mb-35 text-center">
+        <div>
+          <label for="nomUtilisateur">Nom du Spot:</label>
+        </div>
+        <input
+          type="text"
+          name="name"
+          class="input"
+          aria-label="Spot name"
+          value="<%= name %>"
+        />
+      </div>
+      <div class="mb-35 text-center">
+        <div>
+          <label for="adresse">Adresse :</label>
+        </div>
+        <input
+          type="text"
+          name="address"
+          class="input"
+          aria-label="adresse"
+          value="<%= address %>"
+        />
+      </div>
+      <div class="mb-35 text-center">
+        <div>
+          <label for="adresse">Niveau de difficulté:</label>
+        </div>
+        <input
+          type="text"
+          name="difficulty"
+          class="input"
+          aria-label="difficulté"
+          value="<%= difficulty %>"
+        />
+      </div>
+      <div class="mb-35 text-center">
+        <div>
+          <label for="adresse">Description:</label>
+        </div>
+        <textarea type="text" name="description"><%= description %></textarea>
+      </div>
+      <div class="mb-35 text-center">
+        <button class="btn__submit" id="connectBtn" type="submit">
+          Enregistrer
+        </button>
+      </div>
+    </form>
+  
+    <div class="my-80"></div>
+</main>
+  
+  
+  
+
+
+<!-- <main class="containerFormulaireSpot">
   <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
   <div class="spotForm">
     <form action="/updateSpot/<%= id %>?_method=put" method="post">
@@ -41,4 +108,4 @@
   <form class="spotFormQuit" action="/feed">
       <button><img src="/img/plusButton.png" alt="X"></button>
   </form>
-</main>
+</main> -->

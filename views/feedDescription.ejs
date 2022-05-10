@@ -1,4 +1,28 @@
-<main class="containerFeedDescription">
+<main class="container text-center">
+    <div class="img__container--profil m-auto mt-50">
+      <img
+        src="/img/mountain.png"
+        alt="Photo du spot"
+        class="img-fluid img-profil"
+      />
+    </div>
+    <h1 class="mt-20"><%= name %></h1>
+    <% if (address != '') {%>
+    <div class="mt-15"><%= address %></div>
+    <% } %>
+    <div class="mt-15"><%= difficulty %></div>
+    <% if (description != '') { %>
+    <div class="mt-15"><%= description %></div>
+    <% } %>
+    <a href="/feed/" class="btn__submit">Retour Aux Spots</a>
+
+    <div class="my-80"></div>
+  </main>
+
+
+
+
+<!-- <main class="containerFeedDescription">
     <img class="imgWoodV" src="/img/plancheVertical.png" alt="Wood">
     <div class="spotAff">
         <div class="spotAffLeft">
@@ -40,4 +64,4 @@
     <form class="spotAffQuit" action="/feed">
         <button><img src="/img/plusButton.png" alt="X"></button>
     </form>
-</main>
+</main> -->

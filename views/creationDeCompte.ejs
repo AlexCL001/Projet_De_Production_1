@@ -1,4 +1,56 @@
-<main>
+<main class="container">
+  <div class="">
+    <h1 class="h1-creation-compte mb-40 text-center">Créer Votre Profil</h1>
+  </div>
+  <form action="/creation-compte-reussi" method="post">
+    <div class="mb-35 text-center">
+      <input
+        type="text"
+        name="nom"
+        class="input"
+        aria-label="nom"
+        placeholder="Nom"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <input
+        type="email"
+        name="email"
+        class="input"
+        id="email"
+        aria-label="email"
+        placeholder="Email"
+        required
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <input
+        type="password"
+        name="motDePasse"
+        class="input"
+        id="password"
+        aria-label="password"
+        placeholder="Mot de Passe"
+        required
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <button class="btn__submit" id="connectBtn" type="submit">
+        Créer un compte
+      </button>
+    </div>
+  </form>
+  <div class="mb-35 text-center">
+    <a href="connexion" class="link">Connexion</a>
+  </div>
+</main>
+
+
+
+
+
+
+<!-- <main>
   <div class="containerCreationCompte">
     <div class="woodCreationCompte">
       <form action="/creation-compte-reussi" method="POST">
@@ -34,4 +86,4 @@
       </form>
     </div>
   </div>
-</main>
+</main> -->

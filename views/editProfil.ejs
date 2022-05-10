@@ -1,4 +1,86 @@
-<main>
+<main class="container text-center">
+  <div class="img__container--profil m-auto mt-50">
+    <img
+      src="/img/profile-photo-sqr.png"
+      alt="Photo de Profil"
+      class="img-fluid img-profil"
+    />
+  </div>
+  <h1>Editer Profil</h1>
+ 
+  
+  </div>
+  <form action="/updateUser?_method=put" method="post">
+    <div class="mb-35 text-center">
+      <div>
+        <label for="nomUtilisateur">Nom d'Utilisateur :</label>
+      </div>
+      <input
+        type="text"
+        name="nomUtilisateur"
+        class="input"
+        aria-label="nom"
+        value="<%= nomUtilisateur %>"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <div>
+        <label for="adresse">Adresse :</label>
+      </div>
+      <input
+        type="text"
+        name="address"
+        class="input"
+        aria-label="adresse"
+        value="<%= address %>"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <div>
+        <label for="adresse">Email :</label>
+      </div>
+      <input
+        type="email"
+        name="email"
+        class="input"
+        id="email"
+        aria-label="email"
+        value="<%= email %>"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <div>
+        <label for="adresse">Phone :</label>
+      </div>
+      <input
+        type="text"
+        name="phone"
+        class="input"
+        aria-label="telephone"
+        value="<%= phone %>"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <button class="btn__submit" id="connectBtn" type="submit">
+        Enregistrer
+      </button>
+    </div>
+  </form>
+
+  <div class="my-80"></div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <main>
   <div class="containerProfil">
     <div class="menu">
       <nav>
@@ -104,4 +186,4 @@
 </main>
 <script src="js/signOut.js"></script>
 <script src="js/scriptAffichageProfil.js"></script>
-<script src="js/updateNom.js"></script>
+<script src="js/updateNom.js"></script> -->
