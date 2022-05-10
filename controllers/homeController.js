@@ -355,7 +355,7 @@ exports.supprimerAmi = (req, res)=>{
   });
 }
 
-exports.testFriends = (req, res)=>{
+exports.testFriends = (req, res, next)=>{
   let accessToken = req.app.locals.token;
   
   axios({
@@ -366,10 +366,11 @@ exports.testFriends = (req, res)=>{
     },
   })
   .then((result)=>{
-    friendsCompare = result.data.friends;
+    friends = result.data.friends;
+    next();
   })
   .catch((error)=>{
-    res.redirect('/ami');
+    console.log(error);
   });
 }
 

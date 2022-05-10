@@ -15,10 +15,10 @@ router.post('/creation-compte-reussi', authentificationController.postConnection
 router.get('/connexion', homeController.getConnexion);
 
 router.get('/logout', authentificationController.getLogout);
+//
+router.post('/affichageProfil', authentificationController.postSignIn, authentificationController.getProfil);
 
-router.post('/affichageProfil', authentificationController.postSignIn);
-
-router.get('/profil', authentificationController.getProfil, homeController.getMyFriends);
+router.get('/profil', authentificationController.getProfil);
 
 router.get('/profil/edit', authentificationController.getEditProfil);
 
