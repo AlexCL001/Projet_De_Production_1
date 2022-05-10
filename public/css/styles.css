@@ -81973,6 +81973,11 @@ header nav li a:hover {
   display: none;
 }
 
+.pagination {
+  color: #FFFFFF;
+  background-color: none;
+}
+
 /* ---------------------------- */
 /*        RECHERCHE AMI         */
 /* ---------------------------- */

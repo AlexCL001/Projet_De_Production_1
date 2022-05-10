@@ -298,6 +298,8 @@ header {
     background: $color-blue;
 }
 
+
+
 .link__ami {
     @include link();
     &:hover {
@@ -308,6 +310,12 @@ header {
 .button__disabled {
     display: none;
 }
+
+.pagination {
+    color: $color-white;
+    background-color: none;
+}
+
 
 
 /* ---------------------------- */
