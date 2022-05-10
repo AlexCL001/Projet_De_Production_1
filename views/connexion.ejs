@@ -1,64 +1,38 @@
-<main>
-  <div class="containerConnexion">
-    <div class="woodConnexion">
-      <form action="/affichageProfil" method="post">
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <h1>Connexion</h1>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img width="100px" src="/img/unSki.png" alt="">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div>
-                  <label for="email">Email: </label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="text" id="email" name="email" placeholder="Email" id="" />
-              </td>
-            </tr>
-            <tr>
-              <td >
-                <div>
-                  <label for="motDePasse">Mot de passe: </label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="password" id="password" name="password" placeholder="Entrer le mot de passe" id=""/>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button id="connectBtn" type="submit">Se connecter</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div>
-                  <a href="">Mot de passe oublié ?</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="creation-de-compte">Pas de compte ?</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </form>
+<main class="container">
+  <div class="h1-index">
+    <h1 class="text-center">the dva</h1>
+  </div>
+  <form action="/affichageProfil" method="post">
+    <div class="mb-35 text-center">
+      <input
+        type="email"
+        name="email"
+        class="input"
+        aria-label="email"
+        placeholder="Email"
+      />
     </div>
-  <img class="skisConnexion" src="/img/skis.png" alt="ski">
-</div>
+    <div class="mb-35 text-center">
+      <input
+        type="password"
+        name="password"
+        class="input"
+        aria-label="password"
+        placeholder="Mot de Passe"
+      />
+    </div>
+    <div class="mb-35 text-center">
+      <button class="btn__submit" id="connectBtn" type="submit">
+        Se connecter
+      </button>
+    </div>
+  </form>
+  <div class="mb-35 text-center">
+    <a href="creation-de-compte" class="link">Pas de compte ?</a>
+  </div>
 </main>
+
+<!-- name="email"
+name="password"
+
+<button id="connectBtn" type="submit">Se connecter</button> -->

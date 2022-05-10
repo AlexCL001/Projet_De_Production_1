@@ -1,103 +1,44 @@
-<main>
-  <div class="containerFeed">
-    <div class="menu">
-      <nav>
-        <form action="/profil" method="get">
-          <button type="submit">Profil</button>
-        </form>
-        <form action="/feed" method="get">
-          <button class="navFeed" type="submit">Feed</button>
-        </form>
-        <form action="" method="get">
-          <button type="submit">Messages</button>
-        </form>
-        <form action="/ami" method="get">
-          <button type="submit">Amis</button>
-        </form>
-      </nav>
-      <img src="/img/carte.png" alt="Carte de mes amis" />
-    </div>
-    <div class="feedPage">
+<main class="container text-center">
+  <h1>Spots</h1>
+  <div class="amis row gx-100 h-25">
+    <% if (!data) {%>
+    <h2>Aucun spot à afficher</h2>
+    <% } else { %> <% data.forEach(spot =>{ %>
 
-      <div class="">
-        <ul>
-          <% for (let i = 1; i <= totalSpots; i++) { %> 
-           
-              <a href="/feed?page=<%= i %> "><%= i %> </a>
-            
-            <% } %> 
-        </ul>
+    <div class="card__border mt-80 col">
+      <div class="img__container--ami">
+        <a href="#">
+          <img src="/img/mountain.png" class="card-img-top" alt="Mountain" />
+        </a>
       </div>
-
-      <div class="headFeedPage">
-        <h1>Bienvenue dans le Feed!</h1>
-        <form action="/formulaireSpot" method="get">
-          <button type="submit">
-            <img src="/img/plusButton.png" alt="symbole ajouter: +" />
-          </button>
+      <div class="card-body">
+        <p class="card-text my-50 text-uppercase"><%= spot.name %></p>
+        <p class="card-text my-50"><%= spot.address %></p>
+        <p class="card-text my-50"><%= spot.description %></p>
+        <p class="card-text my-50"><%= spot.difficulty %></p>
+        <form action="/editSpot/<%= spot._id %> " method="get">
+          <button type="submit" class="btn__submit mb-10">Éditer</button>
         </form>
-      </div>
-      <% if (!data) {%>
-      <h2>Aucun spot à afficher.</h2>
-      <% } else { %> <% data.forEach(element =>{ %>
-
-      <div class="feedListeDesSpots">
-        <div class="spotModifiable">
-          <img
-            class="imgUtilisateurSpotModifiable"
-            src="/img/imageUtilisateur.png"
-            alt="img utilisateur"
-          />
-          <p>Nom de l'auteur en ejs</p>
-          <div class="buttonEditDelete">
-            <form action="/editSpot/<%= element._id %>" method="get">
-              <button type="submit">Éditer</button>
-            </form>
-            <form
-              action="/deleteSpot/<%= element._id %>?_method=delete" method="post">
-              <button type="submit">Supprimer</button>
-            </form>
-          </div>
-        </div>
-        <div class="feedInfoSpot">
-          <div class="partOneInfoSpotFeed">
-            <div class="elegantInfoFeed">
-              <p class="pBold">Nom du Spot:</p>
-              <p><%= element.name %></p>
-            </div>
-            <div class="elegantInfoFeed">
-              <p class="pBold">Emplacement:</p>
-              <p><%= element.address %></p>
-            </div>
-            <div>
-              <p class="pBold">Description:</p>
-              <p class="fontSizeDescriptionSpotFeed">
-                <%= element.description %>
-              </p>
-            </div>
-          </div>
-          <div class="partTwoInfoSpotFeed">
-            <h2>Niveau de difficulté:</h2>
-            <p class="bigNum"><%= element.difficulty %></p>
-            <form action="/feed/description/<%= element._id %>" method="get">
-              <button type="submit">Plus d'info --></button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <% }); %> <% } %>
-      <div class="pagination">
-        <section class="">
-            
-          <a href="?page=1">1</a>
-          <a href="?page=2">2</a>
-          <a href="?page=3">3</a>
-          <a href="?page=4">4</a>
-          <a href="?page=5">5</a>
-          <a href="?page=6">6</a>
-  
-        </section>
+        <form
+          action="/deleteSpot/<%= spot._id %>?_method=delete "
+          method="post"
+        >
+          <button type="submit" class="btn__submit mb-10">Supprimer</button>
+        </form>
+        <form action="/feed/description/<%= spot._id %> " method="get">
+          <button type="submit" class="btn__submit">Plus d'info</button>
+        </form>
       </div>
     </div>
+    <% }); %> <% } %>
   </div>
+  <nav aria-label="Pagination" class="pagination">
+    <ul class="pagination">
+      <% for (let i = 1; i <= totalSpots; i++) { %>
+      <li class="page-item">
+        <a class="page-link" href="/feed?page=<%= i %>"><%= i %></a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
 </main>

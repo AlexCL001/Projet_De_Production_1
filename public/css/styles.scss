@@ -1,653 +1,983 @@
-$woodTxt: white;
-$woodImg: url(../img/planche.png);
-$woodHeadImg: url(../img/plancheHeader.png);
-$seethroughWhite: rgba(255, 255, 255, 0.5);
-
-@mixin flex($dir, $justify, $align) {
-    display: flex;
-    flex-direction: $dir;
-    justify-content: $justify;
-    align-items: $align;
+/* -------------------------------- */
+/*  OVERRIDDEN BOOTSTAP VARIABLES   */
+/* -------------------------------- */
+$spacer: 0.1rem;
+$spacers: (
+    0: 0
+);
+@for $i from 1 to 150 {
+    $spacers: map-merge($spacers, (
+        $i: ($i * $spacer)
+    ));
 }
 
-*{
-    margin: 0;
-    padding: 0;
+/* ---------------------------- */
+/*       BOOTSTRAP IMPORT       */
+/* ---------------------------- */
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons.scss';
+
+
+/* ---------------------------- */
+/*             FONTS            */
+/* ---------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&display=swap');
+// font-family: 'BioRhyme', serif;
+
+@import url("https://use.typekit.net/pwu0vwb.css");
+// Fonts added:
+// Futura PT Medium
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 500;
+// font-style: normal;
+
+// Futura PT Medium Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 500;
+// font-style: italic;
+
+// Futura PT Heavy
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// Futura PT Heavy Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 700;
+// font-style: italic;
+
+// Futura PT Light Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 300;
+// font-style: italic;
+
+// Futura PT Book
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 400;
+// font-style: normal;
+
+// Futura PT Book Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 400;
+// font-style: italic;
+
+// Futura PT Light
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 300;
+// font-style: normal;
+
+// Futura PT Extra Bold
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 800;
+// font-style: normal;
+
+// Futura PT Extra Bold Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 800;
+// font-style: italic;
+
+// Futura PT Demi
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 600;
+// font-style: normal;
+
+// Futura PT Demi Oblique
+
+// font-family: futura-pt, sans-serif;
+// font-weight: 600;
+// font-style: italic;
+
+// Futura PT Bold
+
+// font-family: futura-pt-bold, sans-serif;
+// font-weight: 700;
+// font-style: normal;
+
+// Futura PT Bold Oblique
+
+// font-family: futura-pt-bold, sans-serif;
+// font-weight: 700;
+// font-style: italic;
+
+/* ---------------------------- */
+/*          STYLE GUIDE         */
+/* ---------------------------- */
+
+$color-white: #FFFFFF;
+$color-black: rgba(13, 13, 13, .9);
+$color-blue: #393E59;
+$color-pink: #F22E62;
+$color-light-violet: #B5B4D9;
+$color-dark-violet: #7D7ABF;
+ 
+
+/* ---------------------------- */
+/*          GENERAL CSS         */
+/* ---------------------------- */
+
+html {
+    font-size: 62.5%;
 }
 
-//css du header
-header{
-    @include flex(row, space-between, center);
-    color: $woodTxt;
-    height: 10vh;
-    width: 100%;
-    font-size: 8vh;
-    background-image: $woodHeadImg;
-    background-size: cover;
-    a{
-        @include flex(row, center, center);
-        padding: 0 20px 0 20px;
+
+body {
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background: $color-black;
+    color: $color-white;
+    font-size: 3.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'BioRhyme', serif;
+}
+
+h1 {
+    font-size: 6.4rem;
+}
+
+@mixin button {
+    color: $color-white;
+    font-size: 3.6rem;
+    border-radius: 10px;
+    
+  }
+
+.btn__submit {
+    @include button();
+    background: $color-pink;
+    border: none;
+    padding: 0 30px;
+    font-weight: 200;
+    &:hover {
+        background-color: $color-light-violet;
     }
-    div{
-        @include flex(row, space-around, center);
-        height: 10vh;
-        form{
-            @include flex(row, center, center);
-            height: 10vh;
-            button{
-                border: none;
-                border-radius: 2vw;
-                background-color: white;
-                font-size: 2vh;
-                padding: 1vh 2vw 1vh 2vw;
-                &:hover{
-                    cursor: pointer;
+}
+
+.btn__dark-violet {
+    @include button();
+    background: $color-dark-violet;
+    border: none;
+    padding: 0 30px;
+    font-weight: 200;
+    &:hover {
+        background-color: $color-white;
+        color: $color-dark-violet;
+    }
+}
+
+
+
+@mixin input {
+    color: $color-white;
+    background: none;
+    border: 2px solid $color-white;
+    border-radius: 20px;
+    font-weight: 200;
+    padding: 0 10px;
+    
+}
+
+.input {
+    @include input();
+}
+
+@mixin link {
+    color: $color-white;
+    text-decoration: none;
+    &:hover {
+        color: $color-light-violet;
+    }
+}
+
+.link {
+    @include link();
+}
+
+.href__none {
+    color: $color-white;
+    text-decoration: none;
+    &:hover {
+        color: $color-dark-violet;
+    }
+}
+
+
+/* ---------------------------- */
+/*           MAIN NAV           */
+/* ---------------------------- */
+
+header {
+    nav {
+        
+        li {
+            display: inline-block;
+            font-size: 2.0rem;
+            a {
+                text-decoration: none;
+                color: $color-white;
+                &:hover {
+                    color: #B5B4D9;
                 }
-            }
-        }
-    }
-}
-.logo{
-    height: 9vh;
-}
-.imgUser{
-    height: 9vh;
-}
-
-//css de la page connexion.ejs
-.containerConnexion{
-    @include flex(row, space-between, center);
-    height: 90vh;
-    background-image: url(../img/backgroundConnexion.png);
-    background-size: cover;
-    background-attachment: fixed;
-}
-.woodConnexion{
-    height: 75vh;
-    width: 30vw;
-    background-color: $seethroughWhite;
-    form{
-        @include flex(row, center, center);
-        font-size: 4vh;
-        height: 100%;
-        text-align: center;
-        input{
-            font-size: 4vh;
-            width: 80%;
-            margin-bottom: 1vh;
-        }
-        button{
-            color: $woodTxt;
-            border: none;
-            background-image: $woodImg;
-            font-size: 4vh;
-            margin: 3vh;
-            padding: 1vh 2vw 1vh 2vw;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        img{
-            width: 70%;
-        }
-    }
-}
-.skisConnexion{
-   height: 80vh;
-}
-
-//css de la page creationDeCompte.ejs
-.containerCreationCompte{
-    @include flex(row, center, center);
-    height: 90vh;
-    background-image: url(../img/backgroundCreationCompte.png);
-    background-size: cover;
-    background-attachment: fixed;
-}
-.woodCreationCompte{
-    height: 70vh;
-    width: 30vw;
-    background-color: $seethroughWhite;
-    form{
-        @include flex(row, center, center);
-        font-size: 3vh;
-        height: 100%;
-        text-align: center;
-        input{
-            font-size: 3vh;
-            margin: 0 0 10px 0;
-        }
-        button{
-            color: $woodTxt;
-            border: none;
-            background-image: $woodImg;
-            font-size: 4vh;
-            margin: 3vh;
-            padding: 1vh 2vw 1vh 2vw;
-            &:hover{
-                cursor: pointer;
-            }
-        }
-        img{
-            height: 4vh;
+               
+            }   
         }
     }
 }
 
-//page creationCompteReussi.ejs
-.containerCreationCompteReussi{
-    @include flex(column, space-around, center);
-    height: 75vh;
-    width: 30vw;
-    font-size: 2vh;
-    background-color: $seethroughWhite;
-    button{
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        font-size: 4vh;
-        margin: 3vh;
-        padding: 1vh 2vw 1vh 2vw;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-}
-.creationReussi{
-    text-align: center;
-    font-size: 4vh;
-    padding: 2vh;
+
+
+/* ---------------------------- */
+/*          INDEX PAGE          */
+/* ---------------------------- */
+
+
+/* ---------------------------- */
+/*          INDEX PAGE          */
+/* ---------------------------- */
+
+.h1-index {
+    margin-top: 3%;
+    margin-bottom: 15rem;
 }
 
-//css du menu de gauche commun 
-.menu{
-    width: 22.4vw;
-    button{
-        width: 14vw;
-        text-align: left;
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        background-size: cover;
-        font-size: 4vh;
-        margin-top: 4vh;
-        padding: 1vh 0 1vh 2vw;
-        transition: width 0.5s;
-        &:hover{
-            cursor: pointer;
-            width: 20vw;
-        }
-    }
-    img{
-        width: 16vw;
-        margin: 2vh 0 0 1vw;
-    }
-}
-.navProfil, .navFeed, .navMessages, .navAmis{
-    width: 20vw !important;
+
+/* ---------------------------- */
+/*     CREATION DE COMPTE       */
+/* ---------------------------- */
+
+.h1-creation-compte {
+    margin-top: 3%;
 }
 
-//css de la page profil.ejs
-.containerProfil{
-    display: flex;
-    height: 90vh;
-    width: 100%;
-    float: left;
-    background-image: url(../img/backgroundNeige.png);
-    background-size: cover;
-    background-attachment: fixed;
-}
-.profilPage{
-    height: 90vh;
-    width: 75vw;
-    background-color: $seethroughWhite;
-}
-.topPartProfil{
-    display: flex;
-    font-size: 2.6vh;
-}
-.imgEtIcone{
-    @include flex(column, flex-start, center);
-    .bigImgUtilisateur{
-        height: 40vh;
-        width: 40vh;
-    }
-}
-.icone3{
-    @include flex(row, space-around, flex-start);
-    width: 12vw;
-    img{
-        height: 6vh;
-    }
-}
-.textZoneProfil{
-    width: 100%;
-    p{
-        width: 36vw;
-    }
-}
-.profilNameBar{
-    @include flex(row, space-between, flex-end);
-    font-size: 5vh;
-    button{
-        background: none;
-        border: none;
-        &:hover{
-            cursor: pointer;
-        }
-        img{
-            height: 8vh;
-        }
-    }
-}
-.woodSeparation{
-    height: 1.5vh;
-    width: 36vw;
-    margin: 2vh 0 2vh 0;
-}
-.navSpotDansProfil{
-    width: 100%;
-    margin-top: 4vh;
-    font-size: 6vh;
-    ul{
-        display: flex;
-        list-style: none;
-    }
-    li{
-        margin-left: 2vw;
-        border: 2px solid black;
-        padding: 1vh 1vw 1vh 1vw;
-       &:hover{
-           background-color: white;
-       }
-    }
-}
-.profilListeSpots{
-    @include flex(row, center, flex-start);
-}
-.spotCourtModifiable{
-    @include flex(row, space-between, center);
-    color: $woodTxt;
-    font-size: 6vh;
-    width: 90%;
-    background-image: $woodHeadImg;
-    padding-right: 1vw;
-    border-radius: 5vh;
-}
-.imgUtilisateurSpotCourt{
-    width: 8vh;
-    height: 8vh;
-}
-.threeDots{
-    height: 2vh;
+
+/* ---------------------------- */
+/*             PROFIL           */
+/* ---------------------------- */
+
+.img__container--profil {
+    width: 30%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-//css de la page editProfil.ejs en continuité avec profil.ejs
-.formProfil{
-    margin-top: 4vh;
-    input, select{
-        font-size: 2vh;
-        padding: 0.6vh;
-        width: 15vw;
-    }
-    .descriptionProfil{
-        width: 35vw;
-        height: 15vh;
-        font-size: 2vh;
-    }
-}
-.validFormProfil{
-    @include flex(row, center, flex-end);
-    width: 100%;
-    button{
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        font-size: 5vh;
-        padding: 1.5vh;
-        &:hover{
-            cursor: pointer;
-        }
-    }
+.title__amis {
+    font-family: futura-pt, sans-serif;
+    font-size: 3.6rem;
+    font-weight: 200;
+    text-transform: uppercase;
 }
 
-//css pour la page feed.ejs
-.containerFeed{
-    display: flex;
-    height: 100%;
-    width: 100%;
-    float: left;
-    background-image: url(../img/backgroundNeige.png);
-    background-size: cover;
-    background-attachment: fixed;
-}
-.feedPage{
-    @include flex(column, flex-start, flex-start);
-    height: 100%;
-    width: 75vw;
-    background-color: $seethroughWhite;  
-}
-.headFeedPage{
-    @include flex(row, space-between, center);
-    width: 73vw;
-    padding: 2vh;
-    margin-bottom: 2vh;
-    font-size: 4vh;
-    select{
-        background-image: $woodImg;
-        color: $woodTxt;
-        border: none;
-        padding: 1vh 1vw 1vh 1vw;
-        font-size: 4vh;
-        &:hover{
-            cursor: pointer;
-        }
-        option{
-            color: black;
-        }
-    }
-    button{
-        background: none;
-        border: none;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    img{
-        width: 4vw;
-    }
-}
-.feedListeDesSpots{
-    @include flex(column, flex-start, center);
-    width: 75vw;
-}
-.spotModifiable{
-    @include flex(row, space-between, center);
-    color: $woodTxt;
-    font-size: 6vh;
-    width: 90%;
-    background-image: $woodHeadImg;
-    padding-right: 1vw;
-
-    button{
-        background-color: white;
-        border: none;
-        border-radius: 2vw;
-        margin: 0.5vw;
-        padding: 1vh 1vw 1vh 1vw;
-        font-size: 3vh;
-        &:hover{
-            cursor: pointer;
-        }
-
-    }
-}
-.imgUtilisateurSpotModifiable{
-    width: 4.5vw;
-}
-.buttonEditDelete{
-    @include flex(row, space-evenly, center );
-}
-.feedInfoSpot{
-    @include flex(row, space-between, space-around);
-    width: 90.8%;
-    height: 40vh;
-    border: 0.25vw solid black;
-    margin-bottom: 4vh;
-}
-.partOneInfoSpotFeed{
-    @include flex(column, space-evenly, flex-start);
-    font-size: 4vh;
-    width: 60%;
-    padding: 0 2vw 0 2vw;
-    .pBold{
-        font-weight: bold;
-        margin-right: 1vw;
-    }
-}
-.elegantInfoFeed{
-    @include flex(row, space-between, center);
-}
-.fontSizeDescriptionSpotFeed{
-    font-size: 3vh;
-}
-.partTwoInfoSpotFeed{
-    @include flex(column, space-evenly, center);
-    width: 40%;
-    border-left: 0.25vw solid black;
-    font-size: 3vh;
-    .bigNum{
-        font-size: 6vh;
-    }
-    button{
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        font-size: 3vh;
-        padding: 1vh 1vw 1vh 1vw;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-}
-.pagination{
-    @include flex(row, center, center);
-    width: 100%;
-    color: $woodTxt;
-    font-size: 6vh;
-    margin-bottom: 4vh;
+.img__container--ami {
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $color-black;
 }
 
-//css pour la page formulaireSpot.ejs
-.containerFormulaireSpot{
-    @include flex(row, center, flex-start);
-    height: 90vh;
-    width: 100%;
-    float: left;
-    background-image: url(../img/backgroundNeige.png);
-    background-size: cover;
-    background-attachment: fixed;
-    .imgWoodV{
-        height: 100%;
-    }
-}
-.spotForm{
-    height: 90vh;
-    width: 80%;
-    background-color: $seethroughWhite;
-    font-size: 5vh;
-    form{
-        display: flex;
-        height: 90vh;
-    }
-    input{
-        font-size: 4vh;
-    }
-    textarea{
-        margin-top: 2vh;
-        font-size: 4vh;
-        width: 100%;
-        height: 20vh;
-    }
-}
-.spotFormLeft{
-    @include flex(column, space-evenly, space-between);
-    width: 80%;
-    padding: 1.2vw;
-    input{
-        width: 100%;
-        padding: 1.5vh;
-        color: $woodTxt;
-        border: none;
-        background-image: $woodHeadImg;
-    }
-}
-.containerImgNivDiff{
-    @include flex(row, space-between, flex-start);
-    img{
-        width: 26vw;
-    }
-    p{
-        font-size: 4vh;
-        margin-bottom: 2vh;
-    }
-}
-.nivDiff{
-    @include flex(column, center, center);
-}
-.nivDiffRadio{
-    @include flex(row, center, center);
-    input{
-        border: 0px;
-        width: 100%;
-        height: 3vh;
-        margin: 3vh 0 3vh 0;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    label{
-        display: block;
-        background: #000;
-        margin: 1.5vh;
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        text-align: center;
-        font-size: 4.5vh;
-        padding: 1vh 2vw 1vh 2vw;
-    }
-}
-.spotFormRight{
-    @include flex(column, space-evenly, center);
-    width: 60%;
-    button{
-        color: $woodTxt;
-        border: none;
-        background-image: $woodImg;
-        font-size: 4.5vh;
-        padding: 1vh 2vw 1vh 2vw;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    img{
-        width: 22vw
-    }
-    textarea{
-        width: 100%;
-        height: 150px;
-    }
-}
-.spotFormMap{
-    @include flex(column, space-around, center);
-    height: 80%;
-}
-.spotFormQuit{
-    position: absolute;
-    right: 2.5vw;
-    margin-top: 2vh;
-    button{
-        border: none;
-        background: none;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    img{
-        transform: rotate(45deg);
-        width: 3.5vw;
-    }
+
+/* ---------------------------- */
+/*              FEED            */
+/* ---------------------------- */
+
+.card__background--blue {
+    border-radius: 20px;
+    background: $color-blue;
 }
 
-//page feedDescription.ejs
-.containerFeedDescription{
-    @include flex(row, center, flex-start);
-    height: 90vh;
-    width: 100%;
-    background-image: url(/img/backgroundNeige.png);
-    background-size: cover;
-    background-attachment: fixed;
-    .imgWoodV{
-        height: 100%;
-    }
-    h1{
-        font-size: 7vh;
-    }
-}
-.spotAff{
-    display: flex;
-    height: 90vh;
-    width: 80%;
-    background-color: $seethroughWhite;
-    font-size: 6vh;
-}
-.spotAffLeft{
-    @include flex(column, space-evenly, space-between);
-    width: 80%;
-    padding: 2vw;
-}
-.containerAffImgDiff{
-    @include flex(row, space-between, flex-start);
-    p{
-        font-size: 3.5vh;
-        margin-bottom: 2vh;
-    }
-}
-.imgSpot{
-    width: 26vw;
-}
-.imgUserSpot{
-    height: 9vh;
-}
-.nivDiff{
-    @include flex(column, center, center);
-}
-.affDiffSpot{
-    text-align: center;
-    background-image: $woodImg;
-    color: $woodTxt;
-    padding: 1vh 2vw 1vh 2vw;
 
+
+.link__ami {
+    @include link();
+    &:hover {
+        color: $color-pink;
+    } 
 }
-.affAuteurSpot{
-    @include flex(column, center, center);
-    div{
-        @include flex(column, center, center);
-    }
+
+.button__disabled {
+    display: none;
 }
-.descriptionSpot{
-    font-size: 4vh;
+
+.pagination {
+    color: $color-white;
+    background-color: none;
 }
-.spotAffRight{
-    @include flex(column, space-evenly, center);
-    width: 60%;
-    img{
-        width: 22vw;
-    }
+
+
+
+/* ---------------------------- */
+/*        RECHERCHE AMI         */
+/* ---------------------------- */
+
+.ul__no-bullet {
+    list-style: none;
 }
-.spotAffMap{
-    @include flex(column, space-around, center);
-    height: 80%;
-}
-.descriptionAddress{
-    font-size: 4vh;
-    text-align: center;
-    width: 100%;
-}
-.spotAffQuit{
-    position: absolute;
-    right: 2.5vw;
-    margin-top: 2vh;
-    button{
-        border: none;
-        background: none;
-        &:hover{
-            cursor: pointer;
-        }
-    }
-    img{
-        transform: rotate(45deg);
-        width: 3.5vw;
-    }
-}
+
+
+
+// $woodTxt: white;
+// $woodImg: url(../img/planche.png);
+// $woodHeadImg: url(../img/plancheHeader.png);
+// $seethroughWhite: rgba(255, 255, 255, 0.5);
+
+// @mixin flex($dir, $justify, $align) {
+//     display: flex;
+//     flex-direction: $dir;
+//     justify-content: $justify;
+//     align-items: $align;
+// }
+
+// *{
+//     margin: 0;
+//     padding: 0;
+// }
+
+// //css du header
+// header{
+//     @include flex(row, space-between, center);
+//     color: $woodTxt;
+//     height: 10vh;
+//     width: 100%;
+//     font-size: 8vh;
+//     background-image: $woodHeadImg;
+//     background-size: cover;
+//     a{
+//         @include flex(row, center, center);
+//         padding: 0 20px 0 20px;
+//     }
+//     div{
+//         @include flex(row, space-around, center);
+//         height: 10vh;
+//         form{
+//             @include flex(row, center, center);
+//             height: 10vh;
+//             button{
+//                 border: none;
+//                 border-radius: 2vw;
+//                 background-color: white;
+//                 font-size: 2vh;
+//                 padding: 1vh 2vw 1vh 2vw;
+//                 &:hover{
+//                     cursor: pointer;
+//                 }
+//             }
+//         }
+//     }
+// }
+// .logo{
+//     height: 9vh;
+// }
+// .imgUser{
+//     height: 9vh;
+// }
+
+// //css de la page connexion.ejs
+// .containerConnexion{
+//     @include flex(row, space-between, center);
+//     height: 90vh;
+//     background-image: url(../img/backgroundConnexion.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+// }
+// .woodConnexion{
+//     height: 75vh;
+//     width: 30vw;
+//     background-color: $seethroughWhite;
+//     form{
+//         @include flex(row, center, center);
+//         font-size: 4vh;
+//         height: 100%;
+//         text-align: center;
+//         input{
+//             font-size: 4vh;
+//             width: 80%;
+//             margin-bottom: 1vh;
+//         }
+//         button{
+//             color: $woodTxt;
+//             border: none;
+//             background-image: $woodImg;
+//             font-size: 4vh;
+//             margin: 3vh;
+//             padding: 1vh 2vw 1vh 2vw;
+//             &:hover{
+//                 cursor: pointer;
+//             }
+//         }
+//         img{
+//             width: 70%;
+//         }
+//     }
+// }
+// .skisConnexion{
+//    height: 80vh;
+// }
+
+// //css de la page creationDeCompte.ejs
+// .containerCreationCompte{
+//     @include flex(row, center, center);
+//     height: 90vh;
+//     background-image: url(../img/backgroundCreationCompte.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+// }
+// .woodCreationCompte{
+//     height: 70vh;
+//     width: 30vw;
+//     background-color: $seethroughWhite;
+//     form{
+//         @include flex(row, center, center);
+//         font-size: 3vh;
+//         height: 100%;
+//         text-align: center;
+//         input{
+//             font-size: 3vh;
+//             margin: 0 0 10px 0;
+//         }
+//         button{
+//             color: $woodTxt;
+//             border: none;
+//             background-image: $woodImg;
+//             font-size: 4vh;
+//             margin: 3vh;
+//             padding: 1vh 2vw 1vh 2vw;
+//             &:hover{
+//                 cursor: pointer;
+//             }
+//         }
+//         img{
+//             height: 4vh;
+//         }
+//     }
+// }
+
+// //page creationCompteReussi.ejs
+// .containerCreationCompteReussi{
+//     @include flex(column, space-around, center);
+//     height: 75vh;
+//     width: 30vw;
+//     font-size: 2vh;
+//     background-color: $seethroughWhite;
+//     button{
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         font-size: 4vh;
+//         margin: 3vh;
+//         padding: 1vh 2vw 1vh 2vw;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+// }
+// .creationReussi{
+//     text-align: center;
+//     font-size: 4vh;
+//     padding: 2vh;
+// }
+
+// //css du menu de gauche commun 
+// .menu{
+//     width: 22.4vw;
+//     button{
+//         width: 14vw;
+//         text-align: left;
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         background-size: cover;
+//         font-size: 4vh;
+//         margin-top: 4vh;
+//         padding: 1vh 0 1vh 2vw;
+//         transition: width 0.5s;
+//         &:hover{
+//             cursor: pointer;
+//             width: 20vw;
+//         }
+//     }
+//     img{
+//         width: 16vw;
+//         margin: 2vh 0 0 1vw;
+//     }
+// }
+// .navProfil, .navFeed, .navMessages, .navAmis{
+//     width: 20vw !important;
+// }
+
+// //css de la page profil.ejs
+// .containerProfil{
+//     display: flex;
+//     height: 90vh;
+//     width: 100%;
+//     float: left;
+//     background-image: url(../img/backgroundNeige.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+// }
+// .profilPage{
+//     height: 90vh;
+//     width: 75vw;
+//     background-color: $seethroughWhite;
+// }
+// .topPartProfil{
+//     display: flex;
+//     font-size: 2.6vh;
+// }
+// .imgEtIcone{
+//     @include flex(column, flex-start, center);
+//     .bigImgUtilisateur{
+//         height: 40vh;
+//         width: 40vh;
+//     }
+// }
+// .icone3{
+//     @include flex(row, space-around, flex-start);
+//     width: 12vw;
+//     img{
+//         height: 6vh;
+//     }
+// }
+// .textZoneProfil{
+//     width: 100%;
+//     p{
+//         width: 36vw;
+//     }
+// }
+// .profilNameBar{
+//     @include flex(row, space-between, flex-end);
+//     font-size: 5vh;
+//     button{
+//         background: none;
+//         border: none;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//         img{
+//             height: 8vh;
+//         }
+//     }
+// }
+// .woodSeparation{
+//     height: 1.5vh;
+//     width: 36vw;
+//     margin: 2vh 0 2vh 0;
+// }
+// .navSpotDansProfil{
+//     width: 100%;
+//     margin-top: 4vh;
+//     font-size: 6vh;
+//     ul{
+//         display: flex;
+//         list-style: none;
+//     }
+//     li{
+//         margin-left: 2vw;
+//         border: 2px solid black;
+//         padding: 1vh 1vw 1vh 1vw;
+//        &:hover{
+//            background-color: white;
+//        }
+//     }
+// }
+// .profilListeSpots{
+//     @include flex(row, center, flex-start);
+// }
+// .spotCourtModifiable{
+//     @include flex(row, space-between, center);
+//     color: $woodTxt;
+//     font-size: 6vh;
+//     width: 90%;
+//     background-image: $woodHeadImg;
+//     padding-right: 1vw;
+//     border-radius: 5vh;
+// }
+// .imgUtilisateurSpotCourt{
+//     width: 8vh;
+//     height: 8vh;
+// }
+// .threeDots{
+//     height: 2vh;
+// }
+
+// //css de la page editProfil.ejs en continuité avec profil.ejs
+// .formProfil{
+//     margin-top: 4vh;
+//     input, select{
+//         font-size: 2vh;
+//         padding: 0.6vh;
+//         width: 15vw;
+//     }
+//     .descriptionProfil{
+//         width: 35vw;
+//         height: 15vh;
+//         font-size: 2vh;
+//     }
+// }
+// .validFormProfil{
+//     @include flex(row, center, flex-end);
+//     width: 100%;
+//     button{
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         font-size: 5vh;
+//         padding: 1.5vh;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+// }
+
+// //css pour la page feed.ejs
+// .containerFeed{
+//     display: flex;
+//     height: 100%;
+//     width: 100%;
+//     float: left;
+//     background-image: url(../img/backgroundNeige.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+// }
+// .feedPage{
+//     @include flex(column, flex-start, flex-start);
+//     height: 100%;
+//     width: 75vw;
+//     background-color: $seethroughWhite;  
+// }
+// .headFeedPage{
+//     @include flex(row, space-between, center);
+//     width: 73vw;
+//     padding: 2vh;
+//     margin-bottom: 2vh;
+//     font-size: 4vh;
+//     select{
+//         background-image: $woodImg;
+//         color: $woodTxt;
+//         border: none;
+//         padding: 1vh 1vw 1vh 1vw;
+//         font-size: 4vh;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//         option{
+//             color: black;
+//         }
+//     }
+//     button{
+//         background: none;
+//         border: none;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+//     img{
+//         width: 4vw;
+//     }
+// }
+// .feedListeDesSpots{
+//     @include flex(column, flex-start, center);
+//     width: 75vw;
+// }
+// .spotModifiable{
+//     @include flex(row, space-between, center);
+//     color: $woodTxt;
+//     font-size: 6vh;
+//     width: 90%;
+//     background-image: $woodHeadImg;
+//     padding-right: 1vw;
+
+//     button{
+//         background-color: white;
+//         border: none;
+//         border-radius: 2vw;
+//         margin: 0.5vw;
+//         padding: 1vh 1vw 1vh 1vw;
+//         font-size: 3vh;
+//         &:hover{
+//             cursor: pointer;
+//         }
+
+//     }
+// }
+// .imgUtilisateurSpotModifiable{
+//     width: 4.5vw;
+// }
+// .buttonEditDelete{
+//     @include flex(row, space-evenly, center );
+// }
+// .feedInfoSpot{
+//     @include flex(row, space-between, space-around);
+//     width: 90.8%;
+//     height: 40vh;
+//     border: 0.25vw solid black;
+//     margin-bottom: 4vh;
+// }
+// .partOneInfoSpotFeed{
+//     @include flex(column, space-evenly, flex-start);
+//     font-size: 4vh;
+//     width: 60%;
+//     padding: 0 2vw 0 2vw;
+//     .pBold{
+//         font-weight: bold;
+//         margin-right: 1vw;
+//     }
+// }
+// .elegantInfoFeed{
+//     @include flex(row, space-between, center);
+// }
+// .fontSizeDescriptionSpotFeed{
+//     font-size: 3vh;
+// }
+// .partTwoInfoSpotFeed{
+//     @include flex(column, space-evenly, center);
+//     width: 40%;
+//     border-left: 0.25vw solid black;
+//     font-size: 3vh;
+//     .bigNum{
+//         font-size: 6vh;
+//     }
+//     button{
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         font-size: 3vh;
+//         padding: 1vh 1vw 1vh 1vw;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+// }
+// .pagination{
+//     @include flex(row, center, center);
+//     width: 100%;
+//     color: $woodTxt;
+//     font-size: 6vh;
+//     margin-bottom: 4vh;
+// }
+
+// //css pour la page formulaireSpot.ejs
+// .containerFormulaireSpot{
+//     @include flex(row, center, flex-start);
+//     height: 90vh;
+//     width: 100%;
+//     float: left;
+//     background-image: url(../img/backgroundNeige.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+//     .imgWoodV{
+//         height: 100%;
+//     }
+// }
+// .spotForm{
+//     height: 90vh;
+//     width: 80%;
+//     background-color: $seethroughWhite;
+//     font-size: 5vh;
+//     form{
+//         display: flex;
+//         height: 90vh;
+//     }
+//     input{
+//         font-size: 4vh;
+//     }
+//     textarea{
+//         margin-top: 2vh;
+//         font-size: 4vh;
+//         width: 100%;
+//         height: 20vh;
+//     }
+// }
+// .spotFormLeft{
+//     @include flex(column, space-evenly, space-between);
+//     width: 80%;
+//     padding: 1.2vw;
+//     input{
+//         width: 100%;
+//         padding: 1.5vh;
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodHeadImg;
+//     }
+// }
+// .containerImgNivDiff{
+//     @include flex(row, space-between, flex-start);
+//     img{
+//         width: 26vw;
+//     }
+//     p{
+//         font-size: 4vh;
+//         margin-bottom: 2vh;
+//     }
+// }
+// .nivDiff{
+//     @include flex(column, center, center);
+// }
+// .nivDiffRadio{
+//     @include flex(row, center, center);
+//     input{
+//         border: 0px;
+//         width: 100%;
+//         height: 3vh;
+//         margin: 3vh 0 3vh 0;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+//     label{
+//         display: block;
+//         background: #000;
+//         margin: 1.5vh;
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         text-align: center;
+//         font-size: 4.5vh;
+//         padding: 1vh 2vw 1vh 2vw;
+//     }
+// }
+// .spotFormRight{
+//     @include flex(column, space-evenly, center);
+//     width: 60%;
+//     button{
+//         color: $woodTxt;
+//         border: none;
+//         background-image: $woodImg;
+//         font-size: 4.5vh;
+//         padding: 1vh 2vw 1vh 2vw;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+//     img{
+//         width: 22vw
+//     }
+//     textarea{
+//         width: 100%;
+//         height: 150px;
+//     }
+// }
+// .spotFormMap{
+//     @include flex(column, space-around, center);
+//     height: 80%;
+// }
+// .spotFormQuit{
+//     position: absolute;
+//     right: 2.5vw;
+//     margin-top: 2vh;
+//     button{
+//         border: none;
+//         background: none;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+//     img{
+//         transform: rotate(45deg);
+//         width: 3.5vw;
+//     }
+// }
+
+// //page feedDescription.ejs
+// .containerFeedDescription{
+//     @include flex(row, center, flex-start);
+//     height: 90vh;
+//     width: 100%;
+//     background-image: url(/img/backgroundNeige.png);
+//     background-size: cover;
+//     background-attachment: fixed;
+//     .imgWoodV{
+//         height: 100%;
+//     }
+//     h1{
+//         font-size: 7vh;
+//     }
+// }
+// .spotAff{
+//     display: flex;
+//     height: 90vh;
+//     width: 80%;
+//     background-color: $seethroughWhite;
+//     font-size: 6vh;
+// }
+// .spotAffLeft{
+//     @include flex(column, space-evenly, space-between);
+//     width: 80%;
+//     padding: 2vw;
+// }
+// .containerAffImgDiff{
+//     @include flex(row, space-between, flex-start);
+//     p{
+//         font-size: 3.5vh;
+//         margin-bottom: 2vh;
+//     }
+// }
+// .imgSpot{
+//     width: 26vw;
+// }
+// .imgUserSpot{
+//     height: 9vh;
+// }
+// .nivDiff{
+//     @include flex(column, center, center);
+// }
+// .affDiffSpot{
+//     text-align: center;
+//     background-image: $woodImg;
+//     color: $woodTxt;
+//     padding: 1vh 2vw 1vh 2vw;
+
+// }
+// .affAuteurSpot{
+//     @include flex(column, center, center);
+//     div{
+//         @include flex(column, center, center);
+//     }
+// }
+// .descriptionSpot{
+//     font-size: 4vh;
+// }
+// .spotAffRight{
+//     @include flex(column, space-evenly, center);
+//     width: 60%;
+//     img{
+//         width: 22vw;
+//     }
+// }
+// .spotAffMap{
+//     @include flex(column, space-around, center);
+//     height: 80%;
+// }
+// .descriptionAddress{
+//     font-size: 4vh;
+//     text-align: center;
+//     width: 100%;
+// }
+// .spotAffQuit{
+//     position: absolute;
+//     right: 2.5vw;
+//     margin-top: 2vh;
+//     button{
+//         border: none;
+//         background: none;
+//         &:hover{
+//             cursor: pointer;
+//         }
+//     }
+//     img{
+//         transform: rotate(45deg);
+//         width: 3.5vw;
+//     }
+// }

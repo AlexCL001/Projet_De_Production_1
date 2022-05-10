@@ -12,17 +12,19 @@
  </head>
  <body>
      <header>
-        <a href="/connexion">
-            <img class="logo" src="\img\logo.png" alt="Logo The Spots DVA">
-        </a>
-        <p>The Spots DVA</p>
-        <div>
-            <form action="/logout">
-                <button type="submit">Déconnexion</button>
-            </form>
-            <a href="/profil">
-                <img class="imgUser" src="\img\imageUtilisateur.png" alt="Icône de profil">
-            </a>
-        </div>
+         <% let hideNav =  pageTitle != 'Connexion' && pageTitle != 'Crée une Compte' && pageTitle != '404' %> 
+         <% if (hideNav) {%> 
+         <nav>
+             <ul class="row mt-30 text-center" >
+                 <li class="col"><a href="/profil">profil</a></li>
+                 <li class="col"><a href="/feed/">spots</a></li>
+                 <li class="col"><a href="/ami">trouver amis</a></li>
+                 <li class="col"><a href="/logout">déconnexion</a></li>
+             </ul>
+             
+            
+         </nav>
+         <% } %> 
+        
      </header>
      
