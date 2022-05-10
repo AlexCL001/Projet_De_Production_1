@@ -44,10 +44,10 @@
         </a>
       </div>
       <div class="card-body">
-        <p class="card-text my-50"><%= friend.name %></p>
+        <p class="card-text my-50"><a href="/getAmiProfil/<%= friend.id %>" class="link__ami"><%= friend.name %></a></p>
         <% if(myProfile){ %> 
           <form action="/supprimerAmi/<%= friend.id %>?_method=delete" method="post">
-            <button type="submit" class="btn__submit">Retirer des amis</button>
+            <button type="submit" class="btn__dark-violet">Retirer des amis</button>
           </form>
         <% } %>
       </div>
