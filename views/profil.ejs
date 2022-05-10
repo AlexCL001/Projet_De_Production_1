@@ -47,15 +47,12 @@
         <p class="card-text my-50"><%= friend.name %></p>
         <% if(myProfile){ %> 
           <form action="/supprimerAmi/<%= friend.id %>?_method=delete" method="post">
-            <button type="submit" class="btn__submit">Delete</button>
+            <button type="submit" class="btn__submit">Retirer des amis</button>
           </form>
         <% } %>
       </div>
     </div>
     <% });} %> 
-  </div>
-  <div class="my-80">
-    
   </div>
 </main>
 
