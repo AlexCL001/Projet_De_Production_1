@@ -35,7 +35,8 @@
 
   <h2 class="title__amis mt-90">Amis</h2>
   <div class="amis row gx-80">
-    <% for (let i = 0; i < 12; i++) { %>
+    <% if(friends){ %> 
+    <% friends.forEach(function(friend){ %>
     <div class="card__border mt-80" style="width: 33%">
       <div class="img__container--ami">
         <a href="#">
@@ -43,13 +44,19 @@
         </a>
       </div>
       <div class="card-body">
-        <p class="card-text my-50">Jeremie</p>
-        <button type="button" class="btn__submit">Delete</button>
+        <p class="card-text my-50"><%= friend.name %></p>
+        <% if(myProfile){ %> 
+          <form action="/supprimerAmi/<%= friend.id %>?_method=delete" method="post">
+            <button type="submit" class="btn__submit">Delete</button>
+          </form>
+        <% } %>
       </div>
     </div>
-    <% } %>
+    <% });} %> 
   </div>
-  <div class="my-80"></div>
+  <div class="my-80">
+    
+  </div>
 </main>
 
 <script src="js/signOut.js"></script>
