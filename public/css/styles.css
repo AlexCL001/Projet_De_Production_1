@@ -81856,6 +81856,20 @@ h1, .h1 {
   background-color: #B5B4D9;
 }
 
+.btn__dark-violet {
+  color: #FFFFFF;
+  font-size: 3.6rem;
+  border-radius: 10px;
+  background: #7D7ABF;
+  border: none;
+  padding: 0 30px;
+  font-weight: 200;
+}
+.btn__dark-violet:hover {
+  background-color: #FFFFFF;
+  color: #7D7ABF;
+}
+
 .input {
   color: #FFFFFF;
   background: none;
@@ -81936,8 +81950,22 @@ header nav li a:hover {
   background: #393E59;
 }
 
+.link__ami {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.link__ami:hover {
+  color: #B5B4D9;
+}
+.link__ami:hover {
+  color: #F22E62;
+}
+
 /* ---------------------------- */
 /*        RECHERCHE AMI         */
 /* ---------------------------- */
+.ul__no-bullet {
+  list-style: none;
+}
 
 /*# sourceMappingURL=styles.css.map */

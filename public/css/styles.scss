@@ -168,6 +168,19 @@ h1 {
     }
 }
 
+.btn__dark-violet {
+    @include button();
+    background: $color-dark-violet;
+    border: none;
+    padding: 0 30px;
+    font-weight: 200;
+    &:hover {
+        background-color: $color-white;
+        color: $color-dark-violet;
+    }
+}
+
+
 
 @mixin input {
     color: $color-white;
@@ -279,12 +292,23 @@ header {
     background: $color-blue;
 }
 
+.link__ami {
+    @include link();
+    &:hover {
+        color: $color-pink;
+    } 
+    
+    
+}
+
 
 /* ---------------------------- */
 /*        RECHERCHE AMI         */
 /* ---------------------------- */
 
-
+.ul__no-bullet {
+    list-style: none;
+}
 
 
 
