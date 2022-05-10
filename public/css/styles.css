@@ -81887,6 +81887,14 @@ h1, .h1 {
   color: #B5B4D9;
 }
 
+.href__none {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.href__none:hover {
+  color: #7D7ABF;
+}
+
 /* ---------------------------- */
 /*           MAIN NAV           */
 /* ---------------------------- */
@@ -81959,6 +81967,10 @@ header nav li a:hover {
 }
 .link__ami:hover {
   color: #F22E62;
+}
+
+.button__disabled {
+  display: none;
 }
 
 /* ---------------------------- */

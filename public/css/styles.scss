@@ -206,8 +206,14 @@ h1 {
 
 .link {
     @include link();
-    
-    
+}
+
+.href__none {
+    color: $color-white;
+    text-decoration: none;
+    &:hover {
+        color: $color-dark-violet;
+    }
 }
 
 
@@ -297,8 +303,10 @@ header {
     &:hover {
         color: $color-pink;
     } 
-    
-    
+}
+
+.button__disabled {
+    display: none;
 }
 
 

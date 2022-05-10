@@ -13,7 +13,26 @@
   <div><%= email %></div>
   <% if (phone != '') { %>
   <div><%= phone %></div>
+  <% } %> <% if(myProfile){ %>
+  <button type="submit" class="btn__dark-violet mt-30">
+    <a href="/profil/edit" class="href__none">Editer Profil</a>
+  </button>
+
+
+  
+  <% } %> <% if(!myProfile){ %>
+  <form action="/ajouterAmi/<%= id %>" method="post">
+    <% let ami = false; %> <% friendsCompare.forEach(function(friend){ %> <%
+    if(id == friend.id && ami == false){ %> <% ami = true; %> <% } %> <% }); %>
+    <% if(ami == true){ %>
+    <button class="mt-10 button__disabled" disabled>Ajouter comme ami</button>
+    <% } else if (ami == false) { %>
+    <button class="btn__dark-violet mt-10">Ajouter comme ami</button>
+    <% } %>
+  </form>
   <% } %>
+
+
   <h2 class="title__amis mt-90">Amis</h2>
   <div class="amis row gx-80">
     <% for (let i = 0; i < 12; i++) { %>

@@ -18,7 +18,7 @@
       <% let ami = false; %> <% friendsCompare.forEach(function(friend){ %> <%
       if(user.id == friend.id && ami == false){ %> <% ami = true; %> <% } %> <%
       }); %> <% if(ami == true){ %>
-      <button class="mt-10" disabled>Ajouter comme ami</button>
+      <button class="mt-10 button__disabled" disabled>Ajouter comme ami</button>
       <% } else if (ami == false) { %>
       <button class="btn__dark-violet mt-10">Ajouter comme ami</button>
       <% } %>

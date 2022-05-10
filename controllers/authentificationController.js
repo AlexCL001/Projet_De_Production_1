@@ -72,6 +72,7 @@ exports.postSignIn = (req, res) => {
 };
 
 exports.getProfil = (req, res) => {
+  console.log('friends locals: ', req.app.locals.friends);
   res.render("profil", {
     pageTitle: "Profil",
     nomUtilisateur: req.app.locals.nomUtilisateur,
