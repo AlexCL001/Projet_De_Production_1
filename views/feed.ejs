@@ -1,38 +1,40 @@
 <main class="container text-center">
   <h1>Spots</h1>
-  <div class="amis row gx-100 h-25">
+  <div class="amis row gx-100">
     <% if (!data) {%>
     <h2>Aucun spot à afficher</h2>
     <% } else { %> <% data.forEach(spot =>{ %>
 
-    <div class="card__border mt-80 col">
+    <div class="card__border my-80 col d-flex flex-column justify-content-between">
       <div class="img__container--ami">
         <a href="#">
           <img src="/img/mountain.png" class="card-img-top" alt="Mountain" />
         </a>
       </div>
-      <div class="card-body">
-        <p class="card-text my-50 text-uppercase"><%= spot.name %></p>
-        <p class="card-text my-50"><%= spot.address %></p>
-        <p class="card-text my-50"><%= spot.description %></p>
-        <p class="card-text my-50"><%= spot.difficulty %></p>
-        <form action="/editSpot/<%= spot._id %> " method="get">
-          <button type="submit" class="btn__submit mb-10">Éditer</button>
-        </form>
-        <form
-          action="/deleteSpot/<%= spot._id %>?_method=delete "
-          method="post"
-        >
-          <button type="submit" class="btn__submit mb-10">Supprimer</button>
-        </form>
-        <form action="/feed/description/<%= spot._id %> " method="get">
-          <button type="submit" class="btn__submit">Plus d'info</button>
-        </form>
+      <div class="card-body d-flex flex-column justify-content-between">
+        <p class="card-text my-30 text-uppercase"><%= spot.name %></p>
+        <p class="card-text my-30"><%= spot.address %></p>
+        <p class="card-text my-30"><%= spot.description %></p>
+        <p class="card-text my-30"><%= spot.difficulty %></p>
+        <div>
+          <form action="/editSpot/<%= spot._id %>" method="get">
+            <button type="submit" class="btn__submit mb-10">Éditer</button>
+          </form>
+          <form
+            action="/deleteSpot/<%= spot._id %>?_method=delete"
+            method="post"
+          >
+            <button type="submit" class="btn__submit mb-10">Supprimer</button>
+          </form>
+          <form action="/feed/description/<%= spot._id %>" method="get">
+            <button type="submit" class="btn__submit">Plus d'info</button>
+          </form>
+        </div>
       </div>
     </div>
     <% }); %> <% } %>
   </div>
-  <nav aria-label="Pagination" class="pagination">
+  <nav aria-label="Pagination" class="pagination d-flex justify-content-center">
     <ul class="pagination">
       <% for (let i = 1; i <= totalSpots; i++) { %>
       <li class="page-item">
