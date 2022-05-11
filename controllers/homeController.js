@@ -86,6 +86,7 @@ exports.postNouveauSpot = (req, res) => {
   let difficulty = req.body.nivDiff;
   let coordinates = Array.from(req.body.coordinates.split(","));
   let accessToken = req.app.locals.token;
+  console.log('88888888888888',req.app.locals);
   const url = "https://ski-api.herokuapp.com/ski-spot";
   let data = {
     name: name,
