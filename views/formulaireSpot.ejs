@@ -15,9 +15,9 @@
         </div>
         <input
           type="text"
-          name="nomDuSpot
+          name="nomDuSpot"
           class="input"
-          aria-label="Spot name"
+          aria-label="Nom du spot"
         />
       </div>
       <div class="mb-35 text-center">
@@ -26,25 +26,46 @@
         </div>
         <input
           type="text"
-          name="address"
+          name="address" 
           class="input"
           aria-label="adresse"
         />
       </div>
       <div class="mb-35 text-center">
         <div>
-          <label for="adresse">Niveau de difficulté:</label>
+          <label for="adresse">Coordonnées:</label>
         </div>
         <input
           type="text"
-          name="difficulty"
+          name="coordinates" 
           class="input"
-          aria-label="difficulté"
+          aria-label="Coordonnées"
         />
       </div>
       <div class="mb-35 text-center">
         <div>
-          <label for="adresse">Description:</label>
+          <label for="difficulty">Niveau de difficulté:</label>
+        </div>
+        <div class="nivDiffRadio">
+          <div>
+            <input type="radio" id="html" name="nivDiff" value="facile">
+            <label for="Facile">Facile</label>
+              
+              
+          </div>
+          <div>
+            <input type="radio" id="css" name="nivDiff" value="intermédiaire">
+            <label for="Moyen">Moyen</label>
+          </div>
+          <div> 
+            <input type="radio" id="javascript" name="nivDiff" value="difficile">
+            <label for="Difficile">Difficile</label> 
+          </div>
+      </div>
+      </div>
+      <div class="mb-35 text-center">
+        <div>
+          <label for="description">Description:</label>
         </div>
         <textarea type="text" name="description"></textarea>
       </div>
