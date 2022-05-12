@@ -20,6 +20,7 @@ exports.getConnexion = (req, res) => {
 
 exports.getFormulaireSpot = (req, res) => {
   let accessToken = req.app.locals.token;
+  
   res.render("formulaireSpot", {
     pageTitle: "Formulaire spot",
     accessToken: accessToken,
@@ -37,26 +38,25 @@ exports.getFeed = (req, res) => {
     "Content-type": "application/json",
   };
 
-
-  axios
-    .get(url, {
-      headers: headers,
-    })
-    .then((result) => {
-      res.render("feed", {
-        totalSpots: result.data.totalPages,
-        pageTitle: "Feed",
-        data: result.data.skiSpots,
-      });
-    })
-    .catch((error) => {
-      console.log(error);
+  axios.get(url, {
+    headers: headers,
+  })
+  .then((result) => {
+    res.render("feed", {
+      totalSpots: result.data.totalPages,
+      pageTitle: "Feed",
+      data: result.data.skiSpots,
     });
+  })
+  .catch((error) => {
+    res.redirect("/feed");
+  });
 };
 
 exports.getSkiSpotById = (req, res) => {
   let id = req.params.id;
   let accessToken = req.app.locals.token;
+
   axios({
     method: "get",
     url: `http://ski-api.herokuapp.com/ski-spot/${id}`,
@@ -74,7 +74,6 @@ exports.getSkiSpotById = (req, res) => {
       });
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("feed");
     });
 };
@@ -86,7 +85,7 @@ exports.postNouveauSpot = (req, res) => {
   let difficulty = req.body.nivDiff;
   let coordinates = Array.from(req.body.coordinates.split(","));
   let accessToken = req.app.locals.token;
-  console.log('88888888888888',req.app.locals);
+
   const url = "https://ski-api.herokuapp.com/ski-spot";
   let data = {
     name: name,
@@ -108,7 +107,6 @@ exports.postNouveauSpot = (req, res) => {
       res.redirect("/formulaireSpot");
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("/formulaireSpot");
     });
 };
@@ -139,7 +137,6 @@ exports.editSpot = (req, res) => {
       });
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("/profil");
     });
 };
@@ -172,7 +169,6 @@ exports.updateSpot = (req, res) => {
       res.redirect("/feed");
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("/feed");
     });
 };
@@ -195,7 +191,6 @@ exports.deleteSpot = (req, res) => {
       res.redirect("/feed");
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("/feed");
     });
 };
@@ -230,7 +225,6 @@ exports.getRechercheAmi = (req, res)=>{
     },
   })
   .then((result)=>{
-    // console.log(result.data.users);
     res.render('ami', {
       users: result.data.users,
       pageTitle: "Ami"
@@ -245,8 +239,6 @@ exports.getRechercheAmi = (req, res)=>{
 exports.getAmiProfil = (req, res)=>{
   let accessToken = req.app.locals.token;
   let id = req.params.id;
-  // console.log("id ici :");
-  // console.log(id);
 
   axios({
     method: "get",
@@ -270,8 +262,6 @@ exports.getAmiProfil = (req, res)=>{
     },
   })
   .then((result)=>{
-    // console.log("result.data.user.id :");
-    // console.log(result.data.user.id);
     res.render('profil', {
       pageTitle: "Profil ami",
       nomUtilisateur: result.data.user.name,
@@ -292,10 +282,7 @@ exports.getAmiProfil = (req, res)=>{
 exports.ajouterAmi = (req, res)=>{
   let accessToken = req.app.locals.token;
   id = req.params.id;
-  // console.log("req.params.id :");
-  // console.log(req.params.id);
-  // console.log("req.app.locals.friends :");
-  // console.log(req.app.locals.friends);
+
   axios({
     method: "post",
     url: `http://ski-api.herokuapp.com/friend`,
@@ -307,33 +294,10 @@ exports.ajouterAmi = (req, res)=>{
     },
   })
   .then((result)=>{
-    console.log(result.data);
     res.redirect(`/rechercheAmi`);
   })
   .catch((error)=>{
     res.redirect('/rechercheAmi');
-  });
-}
-
-exports.getMyFriends = (req, res)=>{
-  let accessToken = req.app.locals.token;
-  axios({
-    method: "get",
-    url: `http://ski-api.herokuapp.com/friend`,
-    headers: {
-      Authorization: accessToken,
-    },
-  })
-  .then((result)=>{
-    res.render('profil', {
-      pageTitle: "Profil",
-      friends: result.data.friends,
-      id:undefined,
-      myProfile: true,
-    });
-  })
-  .catch((error)=>{
-    res.redirect('/profil');
   });
 }
 
@@ -355,50 +319,3 @@ exports.supprimerAmi = (req, res)=>{
     res.redirect('/profil');
   });
 }
-
-exports.testFriends = (req, res, next)=>{
-  let accessToken = req.app.locals.token;
-  
-  axios({
-    method: "get",
-    url: `http://ski-api.herokuapp.com/friend`,
-    headers: {
-      Authorization: accessToken,
-    },
-  })
-  .then((result)=>{
-    friends = result.data.friends;
-    next();
-  })
-  .catch((error)=>{
-    console.log(error);
-  });
-}
-
-// exports.amiAmi = (req, res)=>{
-//   let accessToken = req.app.locals.token;
-//   let id = req.params.id;
-//   axios({
-//     method: "get",
-//     url: `http://ski-api.herokuapp.com/friend/${id}`,
-//     headers: {
-//       Authorization: accessToken,
-//     },
-//   })
-//   .then((result)=>{
-//     console.log("result.data.friends :");
-//     console.log(result.data.friends);
-//     res.render('profil', {
-//       pageTitle: "Profil ami",
-//       nomUtilisateur: result.data.user.name,
-//       email: result.data.user.email,
-//       address: result.data.user.address,
-//       phone: result.data.user.phone,
-//       friends: result.data.friends,
-//       id: result.data.user.id,
-//     })
-//   })
-//   .catch((error)=>{
-//     res.redirect('/ami');
-//   });
-// }

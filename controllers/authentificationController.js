@@ -44,7 +44,6 @@ exports.postSignIn = (req, res) => {
       password: password,
     })
     .then((response) => {
-      // req.session.isAuth = true
       let accessToken = response.data.token;
       
       axios({
@@ -60,7 +59,6 @@ exports.postSignIn = (req, res) => {
         res.app.locals.email = response.data.email;
         res.app.locals.address = response.data.address;
         res.app.locals.phone = response.data.phone;
-        // res.app.locals.friends = response.data.friends;
         res.app.locals.id = response.data._id;
 
         res.app.locals.friends = result.data.friends;
@@ -178,7 +176,6 @@ exports.updateUser = (req, res) => {
       });
     })
     .catch((error) => {
-      console.log(error);
       res.redirect("/profil");
     });
 };
