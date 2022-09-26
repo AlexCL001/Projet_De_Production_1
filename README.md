@@ -1,6 +1,6 @@
 # Projet_De_Production_1
 
-*** Il se peut que les liens ne marchent plus et que l'API ne sois plus en ligne.
+*** Il se peut que les liens ne marchent plus et que l'API ne soit plus en ligne.
 Si c'est le cas, j'ai mis des images de la documentation dans le dossier "images_doc" ***
 
 Documentation du projet:
